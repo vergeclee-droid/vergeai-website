@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Default (EN) SEO meta — dynamically swapped via JS -->
+<title id="page-title">Verge AI — Edge Intelligence, Within Reach</title>
+<meta id="meta-desc" name="description" content="Building the Edge AI Ecosystem — From Enterprise to Home. Verge AI Limited develops VergeOps AI appliance and Edge AI products for enterprise and home.">
+<meta name="keywords" content="Verge AI, 蔚科融智, Edge AI, AI appliance, LLM, private AI, edge computing, AI operations, VergeOps, Shenzhen AI company">
+<meta name="author" content="Verge AI Limited / 蔚科融智（深圳）科技有限公司">
+<!-- Canonical URL -->
+<link rel="canonical" href="https://vergeai.net/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vergeai.net/">
+<meta property="og:site_name" content="Verge AI">
+<meta property="og:title" content="Verge AI — Edge Intelligence, Within Reach">
+<meta property="og:description" content="Building the Edge AI Ecosystem — From Enterprise to Home. VergeOps AI appliance and Edge AI products.">
+<meta property="og:image" content="https://vergeai.net/logo.png">
+<meta property="og:locale" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Verge AI — Edge Intelligence, Within Reach">
+<meta name="twitter:description" content="Building the Edge AI Ecosystem — From Enterprise to Home. VergeOps AI appliance and Edge AI products.">
+<meta name="twitter:image" content="https://vergeai.net/logo.png">
+<!-- hreflang for trilingual site -->
+<link rel="alternate" hreflang="en" href="https://vergeai.net/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vergeai.net/">
+<link rel="alternate" hreflang="zh-Hant" href="https://vergeai.net/">
+<link rel="alternate" hreflang="x-default" href="https://vergeai.net/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Verge AI",
+  "alternateName": ["蔚科融智（深圳）科技有限公司", "Verge AI Limited"],
+  "url": "https://vergeai.net/",
+  "logo": "https://vergeai.net/logo.png",
+  "description": "Building the Edge AI Ecosystem — from Enterprise VergeOps AI appliance to home Edge AI products. 100% private, real-time edge intelligence.",
+  "foundingDate": "2026-03-26",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Shenzhen",
+      "addressRegion": "Guangdong",
+      "addressCountry": "CN"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Kwun Tong",
+      "addressRegion": "Kowloon",
+      "addressCountry": "HK"
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "info@vergeai.net"
+  },
+  "sameAs": []
+}
+</script>
+<style>
+/* ========== RESET & BASE ========== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','Noto Sans TC','Microsoft YaHei','PingFang SC',sans-serif;color:#1e293b;background:#ffffff;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:#06b6d420;color:#1e293b}
+
+/* ========== COLORS ========== */
+:root{
+  --blue:#06b6d4;
+  --blue-dark:#0891b2;
+  --indigo:#818cf8;
+  --indigo-dark:#6366f1;
+  --purple:#a78bfa;
+  --purple-light:#c4b5fd;
+  --purple-mist:#f5f3ff;
+  --slate-50:#f8fafc;
+  --slate-100:#f1f5f9;
+  --slate-200:#e2e8f0;
+  --slate-300:#cbd5e1;
+  --slate-600:#475569;
+  --slate-700:#334155;
+  --slate-800:#1e293b;
+  --slate-900:#0f172a;
+  --white:#ffffff;
+  --radius:20px;
+  --nav-h:60px;
+}
+
+/* ========== LANGUAGE SYSTEM ========== */
+[data-lang]{display:none!important}
+html[lang="en"] [data-lang="en"],
+html[lang="zh-hans"] [data-lang="zh-hans"],
+html[lang="zh-hant"] [data-lang="zh-hant"]{display:inline!important}
+html[lang="en"] [data-lang="en"].d-block,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-block,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-block{display:block!important}
+html[lang="en"] [data-lang="en"].d-flex,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-flex,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-flex{display:flex!important}
+html[lang="en"] [data-lang="en"].d-grid,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-grid,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-grid{display:grid!important}
+
+/* ========== TYPOGRAPHY ========== */
+h1,h2,h3,h4{font-weight:700;line-height:1.2;letter-spacing:-0.02em}
+h1{font-size:clamp(2.2rem,5vw,3.8rem)}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);text-align:center;margin-bottom:0.5em}
+h2 .sub{display:block;font-size:0.45em;font-weight:400;color:var(--slate-600);letter-spacing:0;margin-top:0.3em}
+h3{font-size:clamp(1.1rem,2vw,1.4rem);color:var(--slate-800)}
+p{color:var(--slate-600);font-size:clamp(0.95rem,1.2vw,1.1rem);max-width:680px;margin:0 auto}
+.section-tag{display:inline-block;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;padding:0.35em 0.9em;border-radius:999px;margin-bottom:1.2em;color:var(--blue-dark);background:rgba(6,182,212,0.08)}
+
+/* ========== LAYOUT ========== */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:clamp(60px,10vh,120px) 0;position:relative}
+.section-dark{background:var(--slate-800);color:var(--white)}
+.section-dark p{color:var(--slate-300)}
+.section-mist{background:var(--slate-50)}
+
+/* ========== HERO ========== */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--slate-50)0%,var(--white)50%,var(--purple-mist)100%);z-index:0}
+.hero-bg::before{content:'';position:absolute;top:-30%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(129,140,248,0.08)0%,transparent 70%);border-radius:50%}
+.hero-bg::after{content:'';position:absolute;bottom:-20%;left:-15%;width:500px;height:500px;background:radial-gradient(circle,rgba(6,182,212,0.06)0%,transparent 70%);border-radius:50%}
+.hero *{position:relative;z-index:1}
+.hero-logo{width:clamp(120px,18vw,220px);margin-bottom:2rem;filter:drop-shadow(0 2px 8px rgba(6,182,212,0.15))}
+.hero h1{background:linear-gradient(135deg,var(--slate-800)0%,var(--blue)50%,var(--indigo)100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.4em}
+.hero .tagline{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:400;color:var(--slate-600);max-width:640px;margin:0.5em auto 1.5em;line-height:1.5}
+.hero .subtitle{font-size:clamp(0.85rem,1.1vw,1rem);color:var(--slate-400);letter-spacing:0.08em;text-transform:uppercase;font-weight:500}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:12px;font-weight:600;font-size:1rem;transition:all 0.25s ease;cursor:pointer;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--indigo));color:var(--white);box-shadow:0 4px 16px rgba(6,182,212,0.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(6,182,212,0.35)}
+.btn-secondary{border:1.5px solid var(--slate-200);color:var(--slate-700);background:var(--white)}
+.btn-secondary:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--slate-300);font-size:0.75rem;animation:float 2s ease-in-out infinite;z-index:1}
+.scroll-indicator .arrow{width:20px;height:20px;border-right:2px solid var(--slate-300);border-bottom:2px solid var(--slate-300);transform:rotate(45deg);opacity:0.5}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ========== NAV ========== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:all 0.3s ease;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent}
+nav.scrolled{border-bottom:1px solid var(--slate-100);box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem;color:var(--slate-800)}
+.nav-logo img{height:28px;width:auto}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--slate-600);transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--indigo));transition:width 0.3s}
+.nav-links a:hover{color:var(--slate-800)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:8px 20px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--indigo));color:var(--white)!important;font-weight:600;font-size:0.85rem}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{opacity:0.9;color:var(--white)!important}
+
+/* Language Switcher — stays visible in all languages */
+.nav-lang{display:flex;gap:2px;margin-left:16px;padding-left:16px;border-left:1px solid var(--slate-200)}
+.lang-btn{background:none;border:none;display:inline-block!important;font-size:0.78rem;font-weight:600;color:var(--slate-400);cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.2s;font-family:inherit}
+.lang-btn:hover{color:var(--slate-700)}
+.lang-btn.active{color:var(--white);background:linear-gradient(135deg,var(--blue),var(--indigo))}
+
+/* ========== HAMBURGER ========== */
+.hamburger{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--slate-800);padding:4px;line-height:1;z-index:101;transition:transform 0.2s}
+.hamburger.open{transform:rotate(90deg)}
+
+/* ========== MISSION ========== */
+.mission-block{max-width:800px;margin:0 auto;text-align:center}
+.mission-block blockquote{font-size:clamp(1.1rem,2vw,1.35rem);font-weight:500;color:var(--slate-700);line-height:1.7;padding:2em 2.5em;background:linear-gradient(135deg,var(--slate-50),var(--purple-mist));border-radius:var(--radius);margin:1.5em 0;position:relative}
+.mission-block blockquote::before{content:'"';position:absolute;top:12px;left:16px;font-size:3rem;color:var(--indigo);opacity:0.2;line-height:1;font-family:Georgia,serif}
+.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:3rem}
+.mission-card{padding:28px 24px;border-radius:var(--radius);background:var(--white);border:1px solid var(--slate-100);transition:all 0.3s;text-align:left}
+.mission-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.06);border-color:rgba(6,182,212,0.2);transform:translateY(-3px)}
+.mission-card .icon{font-size:1.8rem;margin-bottom:0.5em}
+.mission-card h4{margin-bottom:0.3em;font-size:1rem}
+.mission-card p{font-size:0.88rem;color:var(--slate-600);max-width:100%}
+
+/* ========== VERGEOPS ========== */
+.vergeops-intro{text-align:center;margin-bottom:3rem}
+.vergeops-intro h2{color:var(--white)}
+.vergeops-intro p{color:var(--slate-300)}
+.use-cases{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:1.5rem}
+.use-case{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:28px 24px;transition:all 0.3s}
+.use-case:hover{background:rgba(255,255,255,0.07);border-color:rgba(129,140,248,0.25);transform:translateY(-2px)}
+.use-case .uc-icon{font-size:1.6rem;margin-bottom:0.5em}
+.use-case h4{color:var(--white);margin-bottom:0.4em;font-size:1.05rem}
+.use-case p{font-size:0.88rem;color:var(--slate-300);max-width:100%}
+.use-case .metric{display:inline-block;margin-top:0.8em;padding:4px 12px;border-radius:6px;background:rgba(6,182,212,0.12);color:var(--blue);font-size:0.82rem;font-weight:600}
+.use-case .metric.purple{background:rgba(129,140,248,0.12);color:var(--purple-light)}
+
+/* ========== EDGE AI HOME ========== */
+.edge-intro{text-align:center;margin-bottom:1rem}
+.pillars{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin:2.5rem 0}
+.pillar{flex:1;min-width:220px;max-width:340px;padding:32px 24px;border-radius:var(--radius);background:var(--white);border:1px solid var(--slate-100);transition:all 0.3s;text-align:center}
+.pillar:hover{box-shadow:0 12px 40px rgba(0,0,0,0.06);border-color:rgba(6,182,212,0.15);transform:translateY(-4px)}
+.pillar.featured{border:1.5px solid rgba(6,182,212,0.25);position:relative}
+.pillar.featured::before{content:'Hub';position:absolute;top:-10px;left:50%;transform:translateX(-50%);padding:2px 14px;border-radius:999px;background:linear-gradient(135deg,var(--blue),var(--indigo));color:var(--white);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em}
+.pillar .p-icon{font-size:2rem;margin-bottom:0.5em}
+.pillar h4{font-size:1rem;margin-bottom:0.4em}
+.pillar p{font-size:0.85rem;color:var(--slate-500);max-width:100%}
+
+.products-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:1.5rem}
+.product-card{padding:20px 16px;border-radius:14px;background:var(--slate-50);border:1px solid var(--slate-100);transition:all 0.3s;text-align:center}
+.product-card:hover{background:var(--white);border-color:rgba(129,140,248,0.2);transform:translateY(-2px)}
+.product-card .p-icon{font-size:1.5rem;margin-bottom:0.3em}
+.product-card h5{font-size:0.85rem;font-weight:600;margin-bottom:0.2em}
+.product-card p{font-size:0.78rem;color:var(--slate-500);max-width:100%}
+
+/* ========== TECHNOLOGY ========== */
+.tech-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:2rem}
+.tech-item{text-align:center;padding:24px 16px;border-radius:14px;background:var(--slate-50);border:1px solid var(--slate-100)}
+.tech-item .t-icon{font-size:1.6rem;margin-bottom:0.3em}
+.tech-item h5{font-size:0.9rem;margin-bottom:0.2em}
+.tech-item p{font-size:0.8rem;color:var(--slate-500);max-width:100%}
+
+/* ========== CONTACT ========== */
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:2rem;max-width:800px;margin-left:auto;margin-right:auto}
+.contact-card{padding:28px 24px;border-radius:var(--radius);background:var(--white);border:1px solid var(--slate-100);transition:all 0.3s}
+.contact-card:hover{border-color:rgba(129,140,248,0.2);box-shadow:0 8px 24px rgba(0,0,0,0.04)}
+.contact-card h4{margin-bottom:0.5em;font-size:1rem}
+.contact-card p{font-size:0.88rem;color:var(--slate-500);max-width:100%}
+.contact-card .loc-icon{font-size:1.2rem;margin-right:6px}
+
+/* ========== FOOTER ========== */
+footer{background:var(--slate-800);color:var(--slate-300);padding:40px 0;text-align:center}
+footer p{font-size:0.82rem;max-width:100%}
+footer a{color:var(--blue);transition:color 0.2s}
+footer a:hover{color:var(--indigo)}
+footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:1em 0}
+footer .footer-links a{font-size:0.82rem;color:var(--slate-400)}
+footer .footer-links a:hover{color:var(--white)}
+footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:0.8em}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablets & smaller laptops */
+@media(max-width:1024px){
+  .mission-grid{grid-template-columns:repeat(2,1fr)}
+  .products-row{grid-template-columns:repeat(3,1fr)}
+  .pillars{gap:16px}
+  .pillar{min-width:200px}
+}
+
+/* Tablet portrait */
+@media(max-width:768px){
+  /* Nav – show hamburger, hide desktop links */
+  .hamburger{display:block}
+  .nav-links{position:fixed;top:0;left:0;width:100%;height:100dvh;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;justify-content:center;align-items:center;gap:24px;z-index:100;opacity:0;pointer-events:none;transition:opacity 0.35s ease}
+  .nav-links.open{opacity:1;pointer-events:auto}
+  .nav-links li:nth-child(-n+5){display:block}
+  .nav-links a{font-size:1.2rem;padding:12px 0}
+  .nav-links .nav-cta{font-size:1rem;padding:14px 40px}
+  .nav-lang{margin-left:0;padding-left:0;border-left:none;margin-top:20px;gap:8px}
+  .lang-btn{font-size:0.95rem;padding:8px 18px}
+
+  /* Hero */
+  .hero{padding:80px 20px 60px;min-height:100dvh}
+  .hero-logo{width:clamp(100px,30vw,160px);margin-bottom:1.5rem}
+  .hero .tagline{font-size:clamp(1rem,4vw,1.25rem);padding:0 10px}
+  .hero .subtitle{font-size:clamp(0.72rem,2.5vw,0.85rem)}
+  .btn-group{flex-direction:column;align-items:center;width:100%}
+  .btn{width:100%;max-width:320px;justify-content:center;padding:16px 24px;font-size:1rem}
+  .scroll-indicator{display:none}
+
+  /* Layout */
+  .section{padding:50px 0}
+  .container{padding:0 20px}
+  h2{font-size:clamp(1.5rem,6vw,2rem)}
+  p{font-size:clamp(0.88rem,3vw,0.95rem)}
+  blockquote{font-size:clamp(0.95rem,3.5vw,1.1rem)!important;padding:1.2em 1.5em!important}
+
+  /* Grids stack */
+  .mission-grid{grid-template-columns:1fr;gap:16px}
+  .mission-card{padding:22px 20px}
+  .use-cases{grid-template-columns:1fr;gap:16px}
+  .pillars{flex-direction:column;align-items:stretch;gap:16px}
+  .pillar{min-width:unset;max-width:100%;padding:24px 20px}
+  .products-row{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product-card{padding:16px 12px}
+  .tech-strip{grid-template-columns:repeat(2,1fr);gap:12px}
+  .contact-grid{grid-template-columns:1fr;gap:16px}
+  .contact-card{padding:22px 20px}
+  .contact-card[style*="grid-column"]{grid-column:1!important}
+
+  /* Footer */
+  footer{padding:32px 0}
+  footer .footer-links{gap:16px}
+}
+
+/* Phones */
+@media(max-width:480px){
+  .nav-links a{font-size:1.05rem}
+  .hero{padding:70px 16px 50px}
+  .hero-logo{width:clamp(90px,35vw,130px);margin-bottom:1.2rem}
+  .hero h1{font-size:clamp(1.6rem,8vw,2.2rem)}
+  .hero .tagline{font-size:clamp(0.9rem,4.5vw,1.1rem)}
+  .section{padding:40px 0}
+  .container{padding:0 16px}
+  h2{font-size:clamp(1.3rem,7vw,1.6rem)}
+  .products-row{grid-template-columns:repeat(2,1fr);gap:10px}
+  .tech-strip{grid-template-columns:1fr 1fr;gap:10px}
+  .tech-item{padding:18px 12px}
+  .mission-card{padding:18px 16px}
+  .mission-card .icon{font-size:1.4rem}
+  .pillar{padding:20px 16px}
+  .pillar .p-icon{font-size:1.5rem}
+}
+
+/* Small phones */
+@media(max-width:360px){
+  .products-row{grid-template-columns:1fr 1fr;gap:8px}
+  .product-card{padding:14px 10px}
+  .product-card .p-icon{font-size:1.2rem}
+  .product-card h5{font-size:0.75rem}
+  .product-card p{font-size:0.7rem}
+  .btn{max-width:260px;padding:14px 20px;font-size:0.9rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav id="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <img src="logo-nav.png" alt="Verge AI" style="height:32px;">
+      Verge AI
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="zh-hans">关于</a><a href="#about" data-lang="zh-hant">關於</a></li>
+      <li><a href="#vergeops">VergeOps</a></li>
+      <li><a href="#edge-ai" data-lang="en">Edge AI Home</a><a href="#edge-ai" data-lang="zh-hans">家用系列</a><a href="#edge-ai" data-lang="zh-hant">家用系列</a></li>
+      <li><a href="#tech" data-lang="en">Technology</a><a href="#tech" data-lang="zh-hans">技术</a><a href="#tech" data-lang="zh-hant">技術</a></li>
+      <li><a href="#contact" class="nav-cta" data-lang="en">Contact</a><a href="#contact" class="nav-cta" data-lang="zh-hans">联系</a><a href="#contact" class="nav-cta" data-lang="zh-hant">聯絡</a></li>
+      <li class="nav-lang"><button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button><button class="lang-btn" data-lang="zh-hans" onclick="switchLang('zh-hans')">简体</button><button class="lang-btn" data-lang="zh-hant" onclick="switchLang('zh-hant')">繁體</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <img src="logo.png" alt="Verge AI" class="hero-logo">
+  <h1>Verge AI</h1>
+  <p class="tagline"><span data-lang="en">Building the Edge AI Ecosystem —<br>From Enterprise to Home</span><span data-lang="zh-hans">构建从企业到家庭的<br>边缘智能生态圈</span><span data-lang="zh-hant">構建從企業到家庭的<br>邊緣智能生態圈</span></p>
+  <p class="subtitle">蔚科融智（深圳）科技有限公司 · Verge AI Limited</p>
+  <div class="btn-group">
+    <a href="#vergeops" class="btn btn-primary"><span data-lang="en">Explore VergeOps →</span><span data-lang="zh-hans">探索 VergeOps →</span><span data-lang="zh-hant">探索 VergeOps →</span></a>
+    <a href="#edge-ai" class="btn btn-secondary"><span data-lang="en">Edge AI for Home</span><span data-lang="zh-hans">家用Edge AI</span><span data-lang="zh-hant">家用Edge AI</span></a>
+  </div>
+  <div class="scroll-indicator">
+    <span data-lang="en">Scroll</span><span data-lang="zh-hans">滑动</span><span data-lang="zh-hant">滑動</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ====== ABOUT / MISSION ====== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="mission-block">
+      <div class="section-tag" data-lang="en">About</div>
+      <div class="section-tag" data-lang="zh-hans">关于</div>
+      <div class="section-tag" data-lang="zh-hant">關於</div>
+      <h2>
+        <span data-lang="en">Edge Intelligence, Within Reach</span>
+        <span data-lang="zh-hans">边缘智能，触手可及</span>
+        <span data-lang="zh-hant">邊緣智能，觸手可及</span>
+        <span class="sub" data-lang="en">Bringing AI from the cloud to where it matters</span>
+        <span class="sub" data-lang="zh-hans">将AI从云端带到需要的地方</span>
+        <span class="sub" data-lang="zh-hant">將AI從雲端帶到需要的地方</span>
+      </h2>
+      <p style="margin-top:1.2em" data-lang="en" class="d-block">
+        Verge AI is on a mission to make advanced AI capabilities private, secure, and real-time — 
+        by running them at the edge. From enterprise operations to everyday life at home, 
+        we build intelligent systems that respect your data and deliver when milliseconds matter.
+      </p>
+      <p style="margin-top:1.2em" data-lang="zh-hans" class="d-block">
+        蔚科融智（Verge AI）的使命是将先进的AI能力从云端带到边缘——让每一家企业和每一个家庭都能安全、私密、实时地拥有智能算力。
+        从企业运营到日常生活，我们构建尊重数据隐私、响应毫秒级的智能系统。
+      </p>
+      <p style="margin-top:1.2em" data-lang="zh-hant" class="d-block">
+        蔚科融智（Verge AI）的使命是將先進的AI能力從雲端帶到邊緣——讓每一家企業和每一個家庭都能安全、私密、實時地擁有智能算力。
+        從企業運營到日常生活，我們構建尊重數據私隱、響應毫秒級的智能系統。
+      </p>
+      <blockquote>What happens at home, stays at home.</blockquote>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="icon">🔒</div>
+        <h4 data-lang="en">100% Private</h4>
+        <h4 data-lang="zh-hans">100% 私密</h4>
+        <h4 data-lang="zh-hant">100% 私密</h4>
+        <p data-lang="en" class="d-block">All inference runs on-device. No cloud, no leaks, full compliance with PIPL, MLPS 2.0, and EU AI Act.</p>
+        <p data-lang="zh-hans" class="d-block">所有推理在本地设备完成，无需云端，无数据泄露，满足PIPL、MLPS 2.0和欧盟AI Act合规要求。</p>
+        <p data-lang="zh-hant" class="d-block">所有推理在本地設備完成，無需雲端，無數據洩露，滿足PIPL、MLPS 2.0和歐盟AI Act合規要求。</p>
+      </div>
+      <div class="mission-card">
+        <div class="icon">⚡</div>
+        <h4 data-lang="en">Real-Time Edge</h4>
+        <h4 data-lang="zh-hans">实时边缘</h4>
+        <h4 data-lang="zh-hant">實時邊緣</h4>
+        <p data-lang="en" class="d-block">Millisecond decision-making at the source. No round-trips to distant clouds, no latency compromises.</p>
+        <p data-lang="zh-hans" class="d-block">毫秒级决策。无需往返云端，无延迟妥协。</p>
+        <p data-lang="zh-hant" class="d-block">毫秒級決策。無需往返雲端，無延遲妥協。</p>
+      </div>
+      <div class="mission-card">
+        <div class="icon">🌐</div>
+        <h4 data-lang="en">Ecosystem Lock-In</h4>
+        <h4 data-lang="zh-hans">生态锁定</h4>
+        <h4 data-lang="zh-hant">生態鎖定</h4>
+        <p data-lang="en" class="d-block">Hub + Satellite architecture. A shared intelligence layer that makes every device smarter over time.</p>
+        <p data-lang="zh-hans" class="d-block">Hub + Satellite架构。共享智能层，设备越用越聪明。</p>
+        <p data-lang="zh-hant" class="d-block">Hub + Satellite架構。共享智能層，設備越用越聰明。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== VERGEOPS ====== -->
+<section class="section section-dark" id="vergeops">
+  <div class="container">
+    <div class="vergeops-intro">
+      <div class="section-tag" style="background:rgba(129,140,248,0.12);color:var(--purple-light);" data-lang="en">B2B Product</div>
+      <div class="section-tag" style="background:rgba(129,140,248,0.12);color:var(--purple-light);" data-lang="zh-hans">B2B 企业产品</div>
+      <div class="section-tag" style="background:rgba(129,140,248,0.12);color:var(--purple-light);" data-lang="zh-hant">B2B 企業產品</div>
+      <h2>VergeOps AI Operations Appliance</h2>
+      <p data-lang="en" class="d-block">Turnkey private AI for enterprise IT operations — purpose-built, air-gapped, and deployment-ready.</p>
+      <p data-lang="zh-hans" class="d-block">为IT运维打造的一站式私有AI——开箱即用、离线部署、软硬一体化。</p>
+      <p data-lang="zh-hant" class="d-block">為IT運維打造的一站式私有AI——開箱即用、離線部署、軟硬一體化。</p>
+    </div>
+    <div class="use-cases">
+      <div class="use-case">
+        <div class="uc-icon">🔍</div>
+        <h4 data-lang="en">Root Cause Analysis (RCA)</h4>
+        <h4 data-lang="zh-hans">智能根因分析（RCA）</h4>
+        <h4 data-lang="zh-hant">智能根因分析（RCA）</h4>
+        <p data-lang="en" class="d-block">Reads logs, SLA metrics, and historical tickets to pinpoint failures in seconds. Auto-generates remediation scripts or restart commands.</p>
+        <p data-lang="zh-hans" class="d-block">自动读取日志、SLA指标和历史工单，数秒内定位故障根因，自动生成修复脚本或重启指令。</p>
+        <p data-lang="zh-hant" class="d-block">自動讀取日誌、SLA指標和歷史工單，數秒內定位故障根因，自動生成修復腳本或重啟指令。</p>
+        <div class="metric"><span data-lang="en">8-minute threat-to-report cycle</span><span data-lang="zh-hans">威胁到报告仅需8分钟</span><span data-lang="zh-hant">威脅到報告僅需8分鐘</span></div>
+      </div>
+      <div class="use-case">
+        <div class="uc-icon">📋</div>
+        <h4 data-lang="en">Smart Ticketing (Verge Ticket)</h4>
+        <h4 data-lang="zh-hans">智能工单（Verge Ticket）</h4>
+        <h4 data-lang="zh-hant">智能工單（Verge Ticket）</h4>
+        <p data-lang="en" class="d-block">Multi-format OCR for invoices, POs, and inspection forms. Natural language ticket creation with auto-SOP resolution in 3 seconds.</p>
+        <p data-lang="zh-hans" class="d-block">多格式单据OCR识别（发票、采购单、检验单），自然语言创建工单，3秒内自动生成SOP解决方案。</p>
+        <p data-lang="zh-hant" class="d-block">多格式單據OCR識別（發票、採購單、檢驗單），自然語言創建工單，3秒內自動生成SOP解決方案。</p>
+        <div class="metric purple"><span data-lang="en">Error rate -70%</span><span data-lang="zh-hans">错误率降低70%</span><span data-lang="zh-hant">錯誤率降低70%</span></div>
+      </div>
+      <div class="use-case">
+        <div class="uc-icon">🛡️</div>
+        <h4 data-lang="en">SLA Guardian</h4>
+        <h4 data-lang="zh-hans">SLA 守护者</h4>
+        <h4 data-lang="zh-hant">SLA 守護者</h4>
+        <p data-lang="en" class="d-block">Proactive resource bottleneck prediction. Auto-suggests scaling or failover. Ensures 99.99% high availability.</p>
+        <p data-lang="zh-hans" class="d-block">主动预测资源瓶颈，自动建议扩容或故障切换，确保99.99%高可用。</p>
+        <p data-lang="zh-hant" class="d-block">主動預測資源瓶頸，自動建議擴容或故障切換，確保99.99%高可用。</p>
+        <div class="metric"><span data-lang="en">480x faster than manual</span><span data-lang="zh-hans">比人工快480倍</span><span data-lang="zh-hant">比人工快480倍</span></div>
+      </div>
+      <div class="use-case">
+        <div class="uc-icon">🤖</div>
+        <h4 data-lang="en">Security Autonomous Defense</h4>
+        <h4 data-lang="zh-hans">安全自主防御</h4>
+        <h4 data-lang="zh-hant">安全自主防禦</h4>
+        <p data-lang="en" class="d-block">8 digital avatars covering anomaly login detection, suspicious account lockdown, infected endpoint isolation, and ISO 27001 auto-reporting.</p>
+        <p data-lang="zh-hans" class="d-block">8个数字AI化身，覆盖异常登录检测、可疑账户锁定、感染终端隔离、ISO 27001自动报告。</p>
+        <p data-lang="zh-hant" class="d-block">8個數字AI化身，覆蓋異常登錄檢測、可疑帳戶鎖定、感染終端隔離、ISO 27001自動報告。</p>
+        <div class="metric purple"><span data-lang="en">98% faster response</span><span data-lang="zh-hans">响应速度提升98%</span><span data-lang="zh-hant">響應速度提升98%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== EDGE AI HOME ====== -->
+<section class="section section-mist" id="edge-ai">
+  <div class="container">
+    <div class="edge-intro">
+      <div class="section-tag" data-lang="en">B2C Product</div>
+      <div class="section-tag" data-lang="zh-hans">B2C 消费者产品</div>
+      <div class="section-tag" data-lang="zh-hant">B2C 消費者產品</div>
+      <h2>
+        <span data-lang="en">Edge AI Home Series</span>
+        <span data-lang="zh-hans">Edge AI 家用系列</span>
+        <span data-lang="zh-hant">Edge AI 家用系列</span>
+        <span class="sub" data-lang="en">Intelligent devices that stay private by design</span>
+        <span class="sub" data-lang="zh-hans">天生私密的智能设备</span>
+        <span class="sub" data-lang="zh-hant">天生私密的智能設備</span>
+      </h2>
+      <p data-lang="en" class="d-block">
+        A Hub + Satellite ecosystem where one central Home Hub powers an entire family of edge-native agents — 
+        all running 100% on-device, with zero cloud dependency.
+      </p>
+      <p data-lang="zh-hans" class="d-block">
+        Hub + Satellite 生态系统——一个智慧家庭中控台驱动全家族边缘智能设备，100%本地运行，零云端依赖。
+      </p>
+      <p data-lang="zh-hant" class="d-block">
+        Hub + Satellite 生態系統——一個智慧家庭中控台驅動全家族邊緣智能設備，100%本地運行，零雲端依賴。
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar featured">
+        <div class="p-icon">🏠</div>
+        <h4>AI Home Hub</h4>
+        <p data-lang="en" class="d-block">Central brain with 3B–7B SLM compute, NAS storage, and a transparent holographic display. Powers all satellite devices.</p>
+        <p data-lang="zh-hans" class="d-block">内置3B–7B SLM算力的家庭大脑，透明全息屏+NAS存储，驱动所有卫星设备。</p>
+        <p data-lang="zh-hant" class="d-block">內置3B–7B SLM算力的家庭大腦，透明全息屏+NAS存儲，驅動所有衛星設備。</p>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">🪞</div>
+        <h4>AI Smart Mirror</h4>
+        <p data-lang="en" class="d-block">Beauty & health mirror with visual-feedback AI. Makeup guidance, skin analysis — all processed locally on-device.</p>
+        <p data-lang="zh-hans" class="d-block">美妆健康镜——视觉反馈AI，化妆指导、皮肤分析，全部本地处理。</p>
+        <p data-lang="zh-hant" class="d-block">美妝健康鏡——視覺反饋AI，化妝指導、皮膚分析，全部本地處理。</p>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">🍳</div>
+        <h4>AI Kitchen Agent</h4>
+        <p data-lang="en" class="d-block">Intelligent sous-chef with vision-based ingredient scanning, voice navigation, calorie analysis, and Zero Waste recipe engine.</p>
+        <p data-lang="zh-hans" class="d-block">智能厨房助理——视觉食材扫描、语音导航、热量分析、零浪费食谱引擎。</p>
+        <p data-lang="zh-hant" class="d-block">智能廚房助理——視覺食材掃描、語音導航、熱量分析、零浪費食譜引擎。</p>
+      </div>
+    </div>
+
+    <div class="products-row">
+      <div class="product-card">
+        <div class="p-icon">📚</div>
+        <h5>AI Study Buddy</h5>
+        <p data-lang="en" class="d-block">Personalized learning companion with long-term memory & adaptive tutoring</p>
+        <p data-lang="zh-hans" class="d-block">个性化学习伴侣，长期记忆与自适应辅导</p>
+        <p data-lang="zh-hant" class="d-block">個性化學習伴侶，長期記憶與自適應輔導</p>
+      </div>
+      <div class="product-card">
+        <div class="p-icon">🐾</div>
+        <h5>AI Pet Buddy</h5>
+        <p data-lang="en" class="d-block">Pet health monitor with anomaly detection & auto health logging</p>
+        <p data-lang="zh-hans" class="d-block">宠物健康监测，异常检测与自动健康日志</p>
+        <p data-lang="zh-hant" class="d-block">寵物健康監測，異常檢測與自動健康日誌</p>
+      </div>
+      <div class="product-card">
+        <div class="p-icon">🔄</div>
+        <h5 data-lang="en">OTA Evolution</h5>
+        <h5 data-lang="zh-hans">OTA 进化</h5>
+        <h5 data-lang="zh-hant">OTA 進化</h5>
+        <p data-lang="en" class="d-block">Collective learning via encrypted local updates. Smarter over time.</p>
+        <p data-lang="zh-hans" class="d-block">加密本地学习，OTA知识图谱更新，越用越聪明</p>
+        <p data-lang="zh-hant" class="d-block">加密本地學習，OTA知識圖譜更新，越用越聰明</p>
+      </div>
+      <div class="product-card">
+        <div class="p-icon">🔐</div>
+        <h5 data-lang="en">Zero-Trust Privacy</h5>
+        <h5 data-lang="zh-hans">零信任隐私</h5>
+        <h5 data-lang="zh-hant">零信任私隱</h5>
+        <p data-lang="en" class="d-block">All data stays on-device or in your Hub. No cloud, no exposure.</p>
+        <p data-lang="zh-hans" class="d-block">所有数据留存在设备或Hub中，无需云端，无泄露风险</p>
+        <p data-lang="zh-hant" class="d-block">所有數據留存在設備或Hub中，無需雲端，無洩露風險</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TECHNOLOGY ====== -->
+<section class="section" id="tech">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:1.5rem">
+      <div class="section-tag" data-lang="en">Technology</div>
+      <div class="section-tag" data-lang="zh-hans">技术</div>
+      <div class="section-tag" data-lang="zh-hant">技術</div>
+      <h2>
+        <span data-lang="en">Built for the Edge</span>
+        <span data-lang="zh-hans">为边缘而生</span>
+        <span data-lang="zh-hant">為邊緣而生</span>
+        <span class="sub" data-lang="en">From enterprise clusters to home devices</span>
+        <span class="sub" data-lang="zh-hans">从企业集群到家用设备</span>
+        <span class="sub" data-lang="zh-hant">從企業集群到家用設備</span>
+      </h2>
+      <p style="margin-top:1em" data-lang="en" class="d-block">
+        Every Verge AI product is powered by the same core philosophy: run intelligence where data lives.
+        Our stack scales from 405B-parameter enterprise deployments to 1B-parameter on-device SLMs.
+      </p>
+      <p style="margin-top:1em" data-lang="zh-hans" class="d-block">
+        每个Verge AI产品都遵循同一个核心理念：在数据所在的地方运行AI。从405B参数的企业级部署到1B参数的端侧SLM。
+      </p>
+      <p style="margin-top:1em" data-lang="zh-hant" class="d-block">
+        每個Verge AI產品都遵循同一個核心理念：在數據所在的地方運行AI。從405B參數的企業級部署到1B參數的端側SLM。
+      </p>
+    </div>
+    <div class="tech-strip">
+      <div class="tech-item">
+        <div class="t-icon">🧠</div>
+        <h5 data-lang="en">Private LLM</h5>
+        <h5 data-lang="zh-hans">私有化LLM</h5>
+        <h5 data-lang="zh-hant">私有化LLM</h5>
+        <p data-lang="en" class="d-block">70B–405B on-prem, 1B–7B on-device. Hot-swappable models.</p>
+        <p data-lang="zh-hans" class="d-block">70B–405B本地部署，1B–7B端侧运行，模型热替换。</p>
+        <p data-lang="zh-hant" class="d-block">70B–405B本地部署，1B–7B端側運行，模型熱替換。</p>
+      </div>
+      <div class="tech-item">
+        <div class="t-icon">💾</div>
+        <h5>aiDAPTIV+</h5>
+        <p data-lang="en" class="d-block">Virtual GPU memory via SSD — up to 8TB at 1/2000th the cost of HBM.</p>
+        <p data-lang="zh-hans" class="d-block">通过SSD扩展虚拟GPU显存，最高8TB，成本仅HBM的1/2000。</p>
+        <p data-lang="zh-hant" class="d-block">通過SSD擴展虛擬GPU顯存，最高8TB，成本僅HBM的1/2000。</p>
+      </div>
+      <div class="tech-item">
+        <div class="t-icon">⚙️</div>
+        <h5>Verge Agentic OS</h5>
+        <p data-lang="en" class="d-block">3-tier multi-agent: Commander → Expert → Operator.</p>
+        <p data-lang="zh-hans" class="d-block">三层多智能体协作：Commander → Expert → Operator。</p>
+        <p data-lang="zh-hant" class="d-block">三層多智能體協作：Commander → Expert → Operator。</p>
+      </div>
+      <div class="tech-item">
+        <div class="t-icon">🌍</div>
+        <h5 data-lang="en">METIS Platform</h5>
+        <h5 data-lang="zh-hans">METIS 平台</h5>
+        <h5 data-lang="zh-hant">METIS 平台</h5>
+        <p data-lang="en" class="d-block">No-code AI designer from Dingxin. Cloud or on-prem, zero-code app creation.</p>
+        <p data-lang="zh-hans" class="d-block">鼎新零代码AI设计器，可云可地部署，零代码创建应用。</p>
+        <p data-lang="zh-hant" class="d-block">鼎新零代碼AI設計器，可雲可地部署，零代碼創建應用。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section class="section section-mist" id="contact">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0.5rem">
+      <div class="section-tag" data-lang="en">Contact</div>
+      <div class="section-tag" data-lang="zh-hans">联系</div>
+      <div class="section-tag" data-lang="zh-hant">聯絡</div>
+      <h2>
+        <span data-lang="en">Get in Touch</span>
+        <span data-lang="zh-hans">与我们联系</span>
+        <span data-lang="zh-hant">與我們聯繫</span>
+        <span class="sub" data-lang="en">Let's build the edge intelligence ecosystem together</span>
+        <span class="sub" data-lang="zh-hans">一起构建边缘智能生态圈</span>
+        <span class="sub" data-lang="zh-hant">一起構建邊緣智能生態圈</span>
+      </h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h4><span class="loc-icon">🏙️</span> Shenzhen</h4>
+        <p>蔚科融智（深圳）科技有限公司<br>前海香江金融大廈 1509-004P<br>Shenzhen, China</p>
+      </div>
+      <div class="contact-card">
+        <h4><span class="loc-icon">🌆</span> Hong Kong</h4>
+        <p>Verge AI Limited<br>Kwun Tong, Kowloon<br>Hong Kong</p>
+      </div>
+      <div class="contact-card" style="grid-column:1/-1;text-align:center;border:1.5px solid rgba(6,182,212,0.2);">
+        <h4 style="font-size:1.1rem">📧 <span data-lang="en">Contact Us</span><span data-lang="zh-hans">联系我们</span><span data-lang="zh-hant">聯絡我們</span></h4>
+        <p style="margin-top:0.3em">
+          <a href="mailto:hello@vergeai.net" style="color:var(--blue);font-weight:600;font-size:1.1rem">hello@vergeai.net</a>
+          <br><span style="font-size:0.82rem;color:var(--slate-400)">vergeai.net</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="#top" data-lang="en">Home</a><a href="#top" data-lang="zh-hans">首页</a><a href="#top" data-lang="zh-hant">首頁</a>
+      <a href="#about" data-lang="en">About</a><a href="#about" data-lang="zh-hans">关于</a><a href="#about" data-lang="zh-hant">關於</a>
+      <a href="#vergeops">VergeOps</a>
+      <a href="#edge-ai" data-lang="en">Edge AI Home</a><a href="#edge-ai" data-lang="zh-hans">家用系列</a><a href="#edge-ai" data-lang="zh-hant">家用系列</a>
+      <a href="#tech" data-lang="en">Technology</a><a href="#tech" data-lang="zh-hans">技术</a><a href="#tech" data-lang="zh-hant">技術</a>
+      <a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="zh-hans">联系</a><a href="#contact" data-lang="zh-hant">聯絡</a>
+    </div>
+    <p>© 2026 Verge AI Limited · 蔚科融智（深圳）科技有限公司</p>
+    <p class="footer-tagline" data-lang="en">Edge Intelligence, Within Reach.</p>
+    <p class="footer-tagline" data-lang="zh-hans">边缘智能，触手可及。</p>
+    <p class="footer-tagline" data-lang="zh-hant">邊緣智能，觸手可及。</p>
+  </div>
+</footer>
+
+<script>
+// Language-specific titles & descriptions for dynamic SEO
+const LANG_META = {
+  'en': {
+    title: 'Verge AI — Edge Intelligence, Within Reach',
+    desc: 'Building the Edge AI Ecosystem — From Enterprise to Home. VergeOps AI appliance and Edge AI products for enterprise IT and home living.'
+  },
+  'zh-hans': {
+    title: '蔚科融智（Verge AI）— 边缘智能，触手可及',
+    desc: '构建边缘AI生态系统 — 从企业级 VergeOps AI 一体机到家用智能设备。100% 隐私、实时边缘推理。蔚科融智（深圳）科技有限公司。'
+  },
+  'zh-hant': {
+    title: '蔚科融智（Verge AI）— 邊緣智能，觸手可及',
+    desc: '構建邊緣AI生態系統 — 從企業級 VergeOps AI 一體機到家用智能設備。100% 私隱、實時邊緣推理。蔚科融智（深圳）科技有限公司。'
+  }
+};
+
+// Language switcher
+function switchLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem('vergeai2026-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  // Update SEO meta dynamically
+  const meta = LANG_META[lang] || LANG_META['en'];
+  document.getElementById('page-title').textContent = meta.title;
+  document.getElementById('meta-desc').setAttribute('content', meta.desc);
+}
+
+// Detect preferred language on load
+(function() {
+  const saved = localStorage.getItem('vergeai2026-lang');
+  if (saved) {
+    switchLang(saved);
+  } else {
+    // Try multiple navigator language properties for compatibility
+    const raw = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
+    const navLang = raw.toLowerCase();
+
+    if (navLang.startsWith('zh')) {
+      // Detect Traditional Chinese: zh-TW, zh-HK, zh-MO, zh-Hant
+      if (navLang.includes('tw') || navLang.includes('hk') || navLang.includes('mo') || navLang.includes('hant')) {
+        switchLang('zh-hant');
+      } else {
+        switchLang('zh-hans');
+      }
+    } else {
+      switchLang('en');
+    }
+  }
+})();
+
+// Navbar scroll effect
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    hamburger.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+  });
+  // Close menu on link click
+  navLinks.querySelectorAll('a, .lang-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.textContent = '☰';
+    });
+  });
+  // Close on outside click (overlay area)
+  navLinks.addEventListener('click', e => {
+    if (e.target === navLinks) {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.textContent = '☰';
+    }
+  });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Intersection observer for fade-in animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.mission-card, .use-case, .pillar, .product-card, .tech-item, .contact-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
