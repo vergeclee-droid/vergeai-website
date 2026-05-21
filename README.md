@@ -45,6 +45,7 @@ vergeai-website/
 | Hero | Logo + Tagline（三語）+ CTA 按鈕 |
 | About | 公司使命 + 3 張核心價值卡（Private / Real-Time / Ecosystem） |
 | VergeOps | 4 個 Use Case（RCA / Smart Ticketing / SLA Guardian / Security Defense），深色背景 |
+| Verge Robotics | 2 款機器人產品（Verge Carry 配送 + Verge Scrub 清潔），深色背景 |
 | Edge AI Home | Hub + Satellite 產品結構（Home Hub + Smart Mirror + Kitchen Agent + 4 小卡） |
 | Technology | 4 格技術亮點（Private LLM / aiDAPTIV+ / Verge Agentic OS / METIS） |
 | Contact | 深圳 + 香港地址，hello@vergeai.net |
