@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verge AI Smart Mirror — Product Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Language system */
+[data-lang]{display:none!important}
+html[lang="en"] [data-lang="en"],
+html[lang="zh-hans"] [data-lang="zh-hans"],
+html[lang="zh-hant"] [data-lang="zh-hant"]{display:inline!important}
+html[lang="en"] [data-lang="en"].d-block,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-block,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-block{display:block!important}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#06b6d4;--cyan-dark:#0891b2;--indigo:#818cf8;--indigo-dark:#6366f1;
+  --purple:#a78bfa;--purple-light:#c4b5fd;--purple-mist:#f5f3ff;
+  --slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;
+  --slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;
+  --white:#ffffff;--near-black:#17171c;
+  --radius:22px;--radius-sm:14px;
+  --display:'Space Grotesk','Inter',-apple-system,sans-serif;
+  --body:'Inter',-apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+  --nav-h:60px;
+}
+body{font-family:var(--body);color:var(--slate-800);background:var(--white);line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--slate-200);height:var(--nav-h);display:flex;align-items:center}
+nav .container{display:flex;align-items:center;justify-content:space-between;width:100%}
+nav .logo{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--slate-800)}
+nav .logo span{color:var(--cyan)}
+nav nav-links{display:flex;gap:24px;font-size:0.875rem;font-weight:500;color:var(--slate-600)}
+nav nav-links a{text-decoration:none;color:var(--slate-600);transition:color 0.2s}
+nav nav-links a:hover{color:var(--cyan)}
+nav .back-home{display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:500;color:var(--slate-600);text-decoration:none;padding:6px 16px;border-radius:999px;border:1px solid var(--slate-200);transition:all 0.2s}
+nav .back-home:hover{border-color:var(--cyan);color:var(--cyan-dark)}
+.lang-btn{background:none;border:none;font-size:0.75rem;font-weight:500;color:var(--slate-400);cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.2s;font-family:inherit}
+.lang-btn:hover{color:var(--slate-700)}
+.lang-btn.active{color:var(--white);background:var(--near-black)}
+.hero{background:linear-gradient(135deg,var(--slate-900),#0d1b2a);color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-family:var(--display);font-weight:700;font-size:3.5rem;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--cyan)}
+.hero .subtitle{font-size:1.2rem;color:var(--slate-300);max-width:600px;margin:0 auto 12px}
+.hero .tagline{display:inline-block;background:rgba(6,182,212,0.15);color:var(--cyan);padding:4px 16px;border-radius:999px;font-size:0.875rem;font-weight:500;margin-top:8px}
+section{padding:60px 0}
+section h2{font-family:var(--display);font-weight:600;font-size:2rem;margin-bottom:32px;position:relative;padding-bottom:12px}
+section h2::after{content:'';position:absolute;bottom:0;left:0;width:60px;height:3px;background:var(--indigo);border-radius:2px}
+.mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:40px}
+.mockup-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--slate-200);background:var(--white);transition:border-color 0.3s,transform 0.2s}
+.mockup-card:hover{border-color:var(--indigo);transform:translateY(-2px)}
+.mockup-card img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+.mockup-card .caption{padding:12px 16px;font-size:0.875rem;color:var(--slate-600)}
+.mockup-card .caption strong{color:var(--slate-800)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px}
+.feature-card{background:var(--slate-50);border-radius:var(--radius);padding:28px;border:1px solid var(--slate-200)}
+.feature-card .icon{font-size:2rem;margin-bottom:8px}
+.feature-card h3{font-family:var(--display);font-weight:600;font-size:1.1rem;margin-bottom:8px;color:var(--slate-800)}
+.feature-card p{font-size:0.9rem;color:var(--slate-600);line-height:1.7}
+.specs{width:100%;border-collapse:collapse;margin-top:24px;font-size:0.9rem}
+.specs td{padding:12px 16px;border-bottom:1px solid var(--slate-200);vertical-align:top}
+.specs td:first-child{font-weight:600;color:var(--slate-600);white-space:nowrap;width:180px}
+.specs td:last-child{color:var(--slate-800)}
+.philosophy{background:var(--slate-900);color:var(--white);padding:60px 0}
+.philosophy h2{color:var(--white)}
+.philosophy h2::after{background:var(--cyan)}
+.philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.phil-card{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,0.08)}
+.phil-card h4{color:var(--cyan);font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:6px}
+.phil-card p{color:var(--slate-300);font-size:0.875rem;line-height:1.6}
+.use-case{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.use-case-item{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--slate-200)}
+.use-case-item h3{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--slate-800)}
+.use-case-item h3 .phase{color:var(--indigo);margin-right:8px}
+.use-case-item p{font-size:0.88rem;color:var(--slate-600);line-height:1.7}
+.use-case-item .trigger{background:var(--purple-mist);border-radius:var(--radius-sm);padding:8px 12px;margin-top:12px;font-size:0.82rem;color:var(--indigo-dark)}
+.tech-stack{background:var(--slate-50);border-radius:var(--radius);padding:32px;margin-top:32px;border:1px solid var(--slate-200)}
+.tech-stack h3{font-family:var(--display);font-weight:600;margin-bottom:16px;font-size:1.1rem}
+.tech-stack .tag{display:inline-block;background:var(--white);border:1px solid var(--slate-200);border-radius:999px;padding:3px 14px;font-size:0.8rem;margin:3px 4px;color:var(--slate-700)}
+.tech-stack .tag.highlight{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(6,182,212,0.06)}
+footer{background:var(--slate-900);color:var(--slate-400);text-align:center;padding:40px 0;font-size:0.85rem}
+footer strong{color:var(--white)}
+@media(max-width:768px){.hero h1{font-size:2.2rem}.mockup-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">VERGE<span>AI</span></div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="index.html" class="back-home">← <span data-lang="en">Back to Home</span><span data-lang="zh-hans">返回首页</span><span data-lang="zh-hant">返回首頁</span></a>
+      <div style="display:flex;gap:2px;padding-left:10px;border-left:1px solid var(--slate-200)">
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" data-lang="zh-hans" onclick="switchLang('zh-hans')">简体</button>
+        <button class="lang-btn" data-lang="zh-hant" onclick="switchLang('zh-hant')">繁體</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1 data-lang="en" class="d-block">🪞 AI <span>Smart Mirror</span></h1>
+    <h1 data-lang="zh-hans" class="d-block">🪞 智慧 <span>美妆镜</span></h1>
+    <h1 data-lang="zh-hant" class="d-block">🪞 智慧 <span>美妝鏡</span></h1>
+    <div class="subtitle d-block" data-lang="en">Personal Beauty &amp; Health Concierge — Real-time Visual AI analysis with 100% edge-local privacy</div>
+    <div class="subtitle d-block" data-lang="zh-hans">个人美容与健康管家 — 实时视觉AI分析，100%边缘本地隐私保护</div>
+    <div class="subtitle d-block" data-lang="zh-hant">個人美容與健康管家 — 即時視覺AI分析，100%邊緣本地隱私保護</div>
+    <div class="tagline d-block" data-lang="en">See Yourself Differently</div>
+    <div class="tagline d-block" data-lang="zh-hans">看见不一样的自己</div>
+    <div class="tagline d-block" data-lang="zh-hant">看見不一樣的自己</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 data-lang="en" class="d-block">Design Mockups</h2>
+    <h2 data-lang="zh-hans" class="d-block">设计预览</h2>
+    <h2 data-lang="zh-hant" class="d-block">設計預覽</h2>
+    <div class="mockup-grid">
+      <div class="mockup-card">
+        <img src="mockups/smart-mirror/smart-mirror-1-vanity.jpg" alt="Vanity Setup" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Vanity Setup</div>'">
+        <div class="caption"><span data-lang="en"><strong>Morning Vanity</strong> — Rose gold frame with skin analysis UI overlay</span><span data-lang="zh-hans"><strong>晨间梳妆</strong> — 玫瑰金框搭配皮肤分析UI界面</span><span data-lang="zh-hant"><strong>晨間梳妝</strong> — 玫瑰金框搭配皮膚分析UI界面</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/smart-mirror/smart-mirror-2-makeup-ar.jpg" alt="AR Makeup" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: AR Makeup</div>'">
+        <div class="caption"><span data-lang="en"><strong>AR Makeup Try-On</strong> — Virtual lipstick overlay with symmetry guide lines</span><span data-lang="zh-hans"><strong>AR试妆</strong> — 虚拟口红叠加与对称引导线</span><span data-lang="zh-hant"><strong>AR試妝</strong> — 虛擬口紅疊加與對稱引導線</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/smart-mirror/smart-mirror-3-bathroom-health.jpg" alt="Health Check" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Health Check</div>'">
+        <div class="caption"><span data-lang="en"><strong>Morning Health Check</strong> — Matte white frame, skin analysis with sleep quality score</span><span data-lang="zh-hans"><strong>晨间健康检测</strong> — 哑光白色边框，皮肤分析与睡眠质量评分</span><span data-lang="zh-hant"><strong>晨間健康檢測</strong> — 啞光白色邊框，皮膚分析與睡眠品質評分</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2 data-lang="en" class="d-block">Use Cases</h2>
+    <h2 data-lang="zh-hans" class="d-block">使用场景</h2>
+    <h2 data-lang="zh-hant" class="d-block">使用場景</h2>
+    <div class="use-case">
+      <div class="use-case-item">
+        <h3 data-lang="en" class="d-block"><span class="phase">☀️</span>Morning Health Quick-Check</h3>
+        <h3 data-lang="zh-hans" class="d-block"><span class="phase">☀️</span>晨间快速健康检查</h3>
+        <h3 data-lang="zh-hant" class="d-block"><span class="phase">☀️</span>晨間快速健康檢查</h3>
+        <p data-lang="en" class="d-block">Stand in front of the mirror — <strong>zero touch</strong> required. The system performs a 30-second facial scan analyzing skin tone uniformity, eye bags, and lip color, then delivers a health tip like <em>"Good morning! Sleep quality 75%. Right eye bags are more prominent than usual — suggest 3-min eye massage."</em></p>
+        <p data-lang="zh-hans" class="d-block">站在镜子前 — 无需任何操作。系统进行30秒面部扫描，分析肤色均匀度、眼袋和唇色，然后提供健康建议，如<em>"早上好！睡眠质量75%。右眼袋比平时更明显 — 建议进行3分钟眼部按摩。"</em></p>
+        <p data-lang="zh-hant" class="d-block">站在鏡子前 — 無需任何操作。系統進行30秒面部掃描，分析膚色均勻度、眼袋和唇色，然後提供健康建議，如<em>"早安！睡眠品質75%。右眼袋比平時更明顯 — 建議進行3分鐘眼部按摩。"</em></p>
+      </div>
+      <div class="use-case-item">
+        <h3 data-lang="en" class="d-block"><span class="phase">💄</span>Real-Time Makeup Guidance</h3>
+        <h3 data-lang="zh-hans" class="d-block"><span class="phase">💄</span>实时化妆指导</h3>
+        <h3 data-lang="zh-hant" class="d-block"><span class="phase">💄</span>即時化妝指導</h3>
+        <p data-lang="en" class="d-block">Say <em>"Check if my eyeliner is even"</em> — the mirror analyzes left vs right symmetry in angle, thickness, and height. Overlay guide lines appear on the mirror surface with voice feedback: <em>"Right eyeliner is 2mm higher, adjust 1mm down for perfect symmetry."</em></p>
+        <p data-lang="zh-hans" class="d-block">说<em>"检查我的眼线是否对称"</em> — 镜子分析左右眼线在角度、粗细和高度上的对称性。镜面会叠加引导线并伴有语音反馈：<em>"右眼线高出2毫米，向下调整1毫米即可完美对称。"</em></p>
+        <p data-lang="zh-hant" class="d-block">說<em>"檢查我的眼線是否對稱"</em> — 鏡子分析左右眼線在角度、粗細和高度上的對稱性。鏡面會疊加引導線並伴有語音反饋：<em>"右眼線高出2毫米，向下調整1毫米即可完美對稱。"</em></p>
+      </div>
+      <div class="use-case-item">
+        <h3 data-lang="en" class="d-block"><span class="phase">🎨</span>Virtual Makeup Try-On</h3>
+        <h3 data-lang="zh-hans" class="d-block"><span class="phase">🎨</span>虚拟试妆</h3>
+        <h3 data-lang="zh-hant" class="d-block"><span class="phase">🎨</span>虛擬試妝</h3>
+        <p data-lang="en" class="d-block">Say <em>"Try shade #999 red"</em> — AR overlay renders the lip color in real-time on your reflection. Browse multiple shades without applying a single product. The system recommends complementary shades based on skin tone analysis.</p>
+        <p data-lang="zh-hans" class="d-block">说<em>"试试#999号红色"</em> — AR叠加效果实时渲染唇色到你倒影上。无需涂抹任何产品即可浏览多种色号。系统会根据肤色分析推荐搭配色号。</p>
+        <p data-lang="zh-hant" class="d-block">說<em>"試試#999號紅色"</em> — AR疊加效果實時渲染唇色到你倒影上。無需塗抹任何產品即可瀏覽多種色號。系統會根據膚色分析推薦搭配色號。</p>
+      </div>
+      <div class="use-case-item">
+        <h3 data-lang="en" class="d-block"><span class="phase">📈</span>7-Day Trend Analysis</h3>
+        <h3 data-lang="zh-hans" class="d-block"><span class="phase">📈</span>七日趋势分析</h3>
+        <h3 data-lang="zh-hant" class="d-block"><span class="phase">📈</span>七日趨勢分析</h3>
+        <p data-lang="en" class="d-block">Used a new skincare product for a week? Ask <em>"How has my skin been this week?"</em> — the AI compares daily snapshots over 7 days, tracking pore size, skin evenness, and fine lines. <em>"Left cheek pore size reduced 15%. Overall positive trend."</em></p>
+        <p data-lang="zh-hans" class="d-block">用了一周新的护肤品？问<em>"我的皮肤这周怎么样？"</em> — AI比较过去7天的每日快照，追踪毛孔大小、皮肤均匀度和细纹。<em>"左脸颊毛孔缩小15%。整体趋势向好。"</em></p>
+        <p data-lang="zh-hant" class="d-block">用了一週新的護膚品？問<em>"我的皮膚這週怎麼樣？"</em> — AI比較過去7天的每日快照，追蹤毛孔大小、皮膚均勻度和細紋。<em>"左臉頰毛孔縮小15%。整體趨勢向好。"</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 data-lang="en" class="d-block">Key Features</h2>
+    <h2 data-lang="zh-hans" class="d-block">核心功能</h2>
+    <h2 data-lang="zh-hant" class="d-block">核心功能</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🎯</div>
+        <h3 data-lang="en" class="d-block">Visual Feedback Loop</h3>
+        <h3 data-lang="zh-hans" class="d-block">视觉反馈闭环</h3>
+        <h3 data-lang="zh-hant" class="d-block">視覺反饋閉環</h3>
+        <p data-lang="en" class="d-block">AI identifies whether foundation is evenly applied and eyeliner angles are symmetrical, delivering real-time micro-adjustment suggestions through the mirror display.</p>
+        <p data-lang="zh-hans" class="d-block">AI识别粉底是否涂抹均匀、眼线角度是否对称，通过镜面显示屏提供实时微调建议。</p>
+        <p data-lang="zh-hant" class="d-block">AI識別粉底是否塗抹均勻、眼線角度是否對稱，透過鏡面顯示屏提供即時微調建議。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3 data-lang="en" class="d-block">100% Local Processing</h3>
+        <h3 data-lang="zh-hans" class="d-block">100%本地处理</h3>
+        <h3 data-lang="zh-hant" class="d-block">100%本地處理</h3>
+        <p data-lang="en" class="d-block">All image analysis runs on-device. Physical privacy shutter covers the camera when not in use. Zero data ever leaves your mirror.</p>
+        <p data-lang="zh-hans" class="d-block">所有图像分析均在设备本地运行。物理隐私遮罩在不使用时覆盖摄像头。零数据离开你的镜子。</p>
+        <p data-lang="zh-hant" class="d-block">所有圖像分析均在設備本地運行。物理隱私遮罩在不使用時覆蓋攝像頭。零數據離開你的鏡子。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">👩‍⚕️</div>
+        <h3 data-lang="en" class="d-block">Skin Health Tracking</h3>
+        <h3 data-lang="zh-hans" class="d-block">皮肤健康追踪</h3>
+        <h3 data-lang="zh-hant" class="d-block">皮膚健康追蹤</h3>
+        <p data-lang="en" class="d-block">Daily morning scans build a longitudinal skin health graph. Compare trends over 7/30/90 days — know if your skincare routine is actually working.</p>
+        <p data-lang="zh-hans" class="d-block">每日晨间扫描建立皮肤健康趋势图。比较7/30/90天的数据 — 了解你的护肤程序是否真正有效。</p>
+        <p data-lang="zh-hant" class="d-block">每日晨間掃描建立皮膚健康趨勢圖。比較7/30/90天的數據 — 了解你的護膚程序是否真正有效。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🏋️</div>
+        <h3 data-lang="en" class="d-block">Daily Wellness Snapshot</h3>
+        <h3 data-lang="zh-hans" class="d-block">每日健康快照</h3>
+        <h3 data-lang="zh-hant" class="d-block">每日健康快照</h3>
+        <p data-lang="en" class="d-block">30-second scan at wake-up: skin tone, eye bags, lip color → infer sleep quality, hydration level, and fatigue. Your personal morning wellness ritual.</p>
+        <p data-lang="zh-hans" class="d-block">起床后30秒扫描：肤色、眼袋、唇色 → 推断睡眠质量、水分水平和疲劳程度。你的个人晨间健康仪式。</p>
+        <p data-lang="zh-hant" class="d-block">起床後30秒掃描：膚色、眼袋、唇色 → 推斷睡眠品質、水分水平和疲勞程度。你的個人晨間健康儀式。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2 data-lang="en" class="d-block">Detailed Specifications</h2>
+    <h2 data-lang="zh-hans" class="d-block">详细规格</h2>
+    <h2 data-lang="zh-hant" class="d-block">詳細規格</h2>
+    <table class="specs">
+      <tr><td><span data-lang="en">Display</span><span data-lang="zh-hans">显示屏</span><span data-lang="zh-hant">顯示屏</span></td><td>12"–15" semi-transparent mirror display, 4:3 aspect ratio (optimized for portrait)</td></tr>
+      <tr><td><span data-lang="en">Thickness</span><span data-lang="zh-hans">厚度</span><span data-lang="zh-hant">厚度</span></td><td>≤15mm ultra-slim</td></tr>
+      <tr><td><span data-lang="en">Camera System</span><span data-lang="zh-hans">摄像系统</span><span data-lang="zh-hant">攝像系統</span></td><td>Dual cameras: main RGB (AF, portrait analysis) + 120° wide-angle (full-body, hairstyle)</td></tr>
+      <tr><td><span data-lang="en">Lighting</span><span data-lang="zh-hans">照明系统</span><span data-lang="zh-hant">照明系統</span></td><td>Adjustable color-temperature LED Ring for even facial illumination</td></tr>
+      <tr><td><span data-lang="en">AI SoC</span><span data-lang="zh-hans">AI芯片</span><span data-lang="zh-hant">AI芯片</span></td><td>RK3588 (6 TOPS NPU) + ESP32-S3 (always-on sensor hub)</td></tr>
+      <tr><td><span data-lang="en">SLM Inference</span><span data-lang="zh-hans">小模型推理</span><span data-lang="zh-hant">小模型推理</span></td><td>Qwen3-2B W8A8 @ NPU (11.5 t/s) — local voice dialogue, suggestions</td></tr>
+      <tr><td><span data-lang="en">Computer Vision</span><span data-lang="zh-hans">计算机视觉</span><span data-lang="zh-hant">計算機視覺</span></td><td>MediaPipe + OpenCV + RetinaFace @ NPU — facial landmarks, skin analysis</td></tr>
+      <tr><td><span data-lang="en">Speech (ASR)</span><span data-lang="zh-hans">语音识别</span><span data-lang="zh-hant">語音識別</span></td><td>SenseVoice Small @ NPU (~150ms) — Cantonese + Mandarin</td></tr>
+      <tr><td><span data-lang="en">Speech (TTS)</span><span data-lang="zh-hans">语音合成</span><span data-lang="zh-hant">語音合成</span></td><td>CosyVoice / MeloTTS @ CPU — emotional voice responses</td></tr>
+      <tr><td><span data-lang="en">AR Rendering</span><span data-lang="zh-hans">AR渲染</span><span data-lang="zh-hant">AR渲染</span></td><td>Mali-G610 GPU (Vulkan 1.2) — real-time makeup overlay</td></tr>
+      <tr><td><span data-lang="en">Privacy</span><span data-lang="zh-hans">隐私保护</span><span data-lang="zh-hant">隱私保護</span></td><td>Physical mechanical privacy shutter + local RAM buffer (zero-clear on exit) + red LED indicator when camera active</td></tr>
+      <tr><td><span data-lang="en">Mounting</span><span data-lang="zh-hans">安装方式</span><span data-lang="zh-hant">安裝方式</span></td><td>Wall-mount / desktop stand / recessed in vanity cabinet</td></tr>
+      <tr><td><span data-lang="en">Colors</span><span data-lang="zh-hans">颜色</span><span data-lang="zh-hant">顏色</span></td><td>Rose Gold (vanity首选), Matte White (Nordic), Space Gray (modern/bathroom)</td></tr>
+      <tr><td><span data-lang="en">Materials</span><span data-lang="zh-hans">材质</span><span data-lang="zh-hant">材質</span></td><td>Anodized aluminum frame, tempered glass surface, soft-touch back panel</td></tr>
+      <tr><td><span data-lang="en">Weight</span><span data-lang="zh-hans">重量</span><span data-lang="zh-hant">重量</span></td><td>~1.5–2.5 kg</td></tr>
+    </table>
+
+    <div class="tech-stack">
+      <h3>🧠 <span data-lang="en">Technology Stack</span><span data-lang="zh-hans">技术栈</span><span data-lang="zh-hant">技術棧</span></h3>
+      <span class="tag highlight">Qwen3-2B W8A8 @ RK3588 NPU</span>
+      <span class="tag highlight">SenseVoice Small @ NPU</span>
+      <span class="tag highlight">CosyVoice TTS</span>
+      <span class="tag">MediaPipe + OpenCV</span>
+      <span class="tag">RetinaFace @ NPU</span>
+      <span class="tag">SQLite (local)</span>
+      <span class="tag">Privacy Shutter (HW)</span>
+      <span class="tag">ESP32-S3 (always-on)</span>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="container">
+    <h2 data-lang="en" class="d-block">Design Philosophy</h2>
+    <h2 data-lang="zh-hans" class="d-block">设计理念</h2>
+    <h2 data-lang="zh-hant" class="d-block">設計理念</h2>
+    <div class="philosophy-grid">
+      <div class="phil-card">
+        <h4 data-lang="en" class="d-block">See Yourself Differently</h4>
+        <h4 data-lang="zh-hans" class="d-block">看见不一样的自己</h4>
+        <h4 data-lang="zh-hant" class="d-block">看見不一樣的自己</h4>
+        <p data-lang="en" class="d-block">AI doesn't replace your aesthetic judgment — it helps you see the details you'd otherwise miss.</p>
+        <p data-lang="zh-hans" class="d-block">AI不会取代你的审美判断 — 它帮你看到平时容易忽略的细节。</p>
+        <p data-lang="zh-hant" class="d-block">AI不會取代你的審美判斷 — 它幫你看到平時容易忽略的細節。</p>
+      </div>
+      <div class="phil-card">
+        <h4 data-lang="en" class="d-block">Privacy as Luxury</h4>
+        <h4 data-lang="zh-hans" class="d-block">隐私即奢华</h4>
+        <h4 data-lang="zh-hant" class="d-block">隱私即奢華</h4>
+        <p data-lang="en" class="d-block">The camera faces you — data never goes to the cloud. This is the highest level of privacy commitment.</p>
+        <p data-lang="zh-hans" class="d-block">摄像头对着你 — 数据从未上传云端。这是最高级别的隐私承诺。</p>
+        <p data-lang="zh-hant" class="d-block">攝像頭對著你 — 數據從未上傳雲端。這是最高級別的隱私承諾。</p>
+      </div>
+      <div class="phil-card">
+        <h4 data-lang="en" class="d-block">Zero-Learn</h4>
+        <h4 data-lang="zh-hans" class="d-block">零学习成本</h4>
+        <h4 data-lang="zh-hant" class="d-block">零學習成本</h4>
+        <p data-lang="en" class="d-block">Stand in front of the mirror and it works naturally. No manual required.</p>
+        <p data-lang="zh-hans" class="d-block">站在镜子前即可自然使用，无需说明书。</p>
+        <p data-lang="zh-hant" class="d-block">站在鏡子前即可自然使用，無需說明書。</p>
+      </div>
+      <div class="phil-card">
+        <h4 data-lang="en" class="d-block">Daily Ritual</h4>
+        <h4 data-lang="zh-hans" class="d-block">每日仪式</h4>
+        <h4 data-lang="zh-hant" class="d-block">每日儀式</h4>
+        <p data-lang="en" class="d-block">Not a gadget — a daily health and beauty habit entry point you look forward to.</p>
+        <p data-lang="zh-hans" class="d-block">不是小工具 — 是你期待每天使用的健康美容习惯入口。</p>
+        <p data-lang="zh-hant" class="d-block">不是小工具 — 是你期待每天使用的健康美容習慣入口。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>Verge AI</strong> — <span data-lang="en">Edge Intelligence, Within Reach.</span><span data-lang="zh-hans">触手可及的边缘智能。</span><span data-lang="zh-hant">觸手可及的邊緣智能。</span><br>
+    蔚科融智（深圳）科技有限公司<br>
+    <span data-lang="en">Shenzhen · Hong Kong</span><span data-lang="zh-hans">深圳 · 香港</span><span data-lang="zh-hant">深圳 · 香港</span>
+  </div>
+</footer>
+
+<script>
+function switchLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem('verge-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+}
+
+(function() {
+  var saved = localStorage.getItem('verge-lang');
+  if (saved) { switchLang(saved); return; }
+  var navLang = (navigator.language || '').toLowerCase();
+  if (navLang.startsWith('zh')) {
+    if (navLang === 'zh-hant' || navLang === 'zh-tw' || navLang === 'zh-hk' || navLang === 'zh-mo') {
+      switchLang('zh-hant');
+    } else {
+      switchLang('zh-hans');
+    }
+  } else {
+    switchLang('en');
+  }
+})();
+</script>
+
+</body>
+</html>

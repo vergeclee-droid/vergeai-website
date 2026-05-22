@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verge AI Study Buddy — Product Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#06b6d4;--cyan-dark:#0891b2;--indigo:#818cf8;--indigo-dark:#6366f1;
+  --purple:#a78bfa;--purple-light:#c4b5fd;--purple-mist:#f5f3ff;
+  --slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;
+  --slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;
+  --white:#ffffff;--near-black:#17171c;
+  --radius:22px;--radius-sm:14px;
+  --display:'Space Grotesk','Inter',-apple-system,sans-serif;
+  --body:'Inter',-apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+}
+body{font-family:var(--body);color:var(--slate-800);background:var(--white);line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--slate-200);height:60px;display:flex;align-items:center}
+nav .container{display:flex;align-items:center;justify-content:space-between;width:100%}
+nav .logo{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--slate-800)}
+nav .logo span{color:var(--cyan)}
+.hero{background:linear-gradient(135deg,#0a1628,var(--slate-900));color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-family:var(--display);font-weight:700;font-size:3.5rem;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--indigo)}
+.hero .subtitle{font-size:1.2rem;color:var(--slate-300);max-width:600px;margin:0 auto 12px}
+.hero .tagline{display:inline-block;background:rgba(129,140,248,0.15);color:var(--indigo);padding:4px 16px;border-radius:999px;font-size:0.875rem;font-weight:500;margin-top:8px}
+section{padding:60px 0}
+section h2{font-family:var(--display);font-weight:600;font-size:2rem;margin-bottom:32px;position:relative;padding-bottom:12px}
+section h2::after{content:'';position:absolute;bottom:0;left:0;width:60px;height:3px;background:var(--indigo);border-radius:2px}
+.mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:40px}
+.mockup-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--slate-200);background:var(--white);transition:border-color 0.3s,transform 0.2s}
+.mockup-card:hover{border-color:var(--indigo);transform:translateY(-2px)}
+.mockup-card img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+.mockup-card .caption{padding:12px 16px;font-size:0.875rem;color:var(--slate-600)}
+.mockup-card .caption strong{color:var(--slate-800)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px}
+.feature-card{background:var(--slate-50);border-radius:var(--radius);padding:28px;border:1px solid var(--slate-200)}
+.feature-card .icon{font-size:2rem;margin-bottom:8px}
+.feature-card h3{font-family:var(--display);font-weight:600;font-size:1.1rem;margin-bottom:8px;color:var(--slate-800)}
+.feature-card p{font-size:0.9rem;color:var(--slate-600);line-height:1.7}
+.specs{width:100%;border-collapse:collapse;margin-top:24px;font-size:0.9rem}
+.specs td{padding:12px 16px;border-bottom:1px solid var(--slate-200);vertical-align:top}
+.specs td:first-child{font-weight:600;color:var(--slate-600);white-space:nowrap;width:180px}
+.specs td:last-child{color:var(--slate-800)}
+.philosophy{background:var(--slate-900);color:var(--white);padding:60px 0}
+.philosophy h2{color:var(--white)}
+.philosophy h2::after{background:var(--indigo)}
+.philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.phil-card{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,0.08)}
+.phil-card h4{color:var(--indigo);font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:6px}
+.phil-card p{color:var(--slate-300);font-size:0.875rem;line-height:1.6}
+.use-case{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.use-case-item{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--slate-200)}
+.use-case-item h3{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--slate-800)}
+.use-case-item h3 .phase{color:var(--indigo);margin-right:8px}
+.use-case-item p{font-size:0.88rem;color:var(--slate-600);line-height:1.7}
+.tech-stack{background:var(--slate-50);border-radius:var(--radius);padding:32px;margin-top:32px;border:1px solid var(--slate-200)}
+.tech-stack h3{font-family:var(--display);font-weight:600;margin-bottom:16px;font-size:1.1rem}
+.tech-stack .tag{display:inline-block;background:var(--white);border:1px solid var(--slate-200);border-radius:999px;padding:3px 14px;font-size:0.8rem;margin:3px 4px;color:var(--slate-700)}
+.tech-stack .tag.highlight{border-color:var(--indigo);color:var(--indigo-dark);background:rgba(129,140,248,0.06)}
+footer{background:var(--slate-900);color:var(--slate-400);text-align:center;padding:40px 0;font-size:0.85rem}
+footer strong{color:var(--white)}
+
+/* All visible text needs data-lang — language system handles display:none/block */
+/* ========== LANGUAGE SYSTEM ========== */
+[data-lang]{display:none!important}
+html[lang="en"] [data-lang="en"],
+html[lang="zh-hans"] [data-lang="zh-hans"],
+html[lang="zh-hant"] [data-lang="zh-hant"]{display:inline!important}
+html[lang="en"] [data-lang="en"].d-block,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-block,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-block{display:block!important}
+html[lang="en"] [data-lang="en"].d-flex,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-flex,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-flex{display:flex!important}
+html[lang="en"] [data-lang="en"].d-grid,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-grid,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-grid{display:grid!important}
+
+/* Language Switcher */
+.nav-lang{display:flex;gap:2px;margin-left:16px;padding-left:16px;border-left:1px solid var(--slate-200)}
+.lang-btn{background:none;border:none;display:inline-block!important;font-size:0.75rem;font-weight:500;color:var(--slate-400);cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.2s;font-family:inherit}
+.lang-btn:hover{color:var(--slate-700)}
+.lang-btn.active{color:var(--white);background:var(--near-black)}
+
+@media(max-width:768px){.hero h1{font-size:2.2rem}.mockup-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">VERGE<span>AI</span></div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:500;color:var(--slate-600);text-decoration:none;padding:6px 16px;border-radius:999px;border:1px solid var(--slate-200);transition:all 0.2s" onmouseover="this.style.borderColor='var(--indigo)';this.style.color='var(--indigo-dark)'" onmouseout="this.style.borderColor='var(--slate-200)';this.style.color='var(--slate-600)'">← <span data-lang="en">Back to Home</span><span data-lang="zh-hans">返回首页</span><span data-lang="zh-hant">返回首頁</span></a>
+      <div class="nav-lang"><button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button><button class="lang-btn" data-lang="zh-hans" onclick="switchLang('zh-hans')">简体</button><button class="lang-btn" data-lang="zh-hant" onclick="switchLang('zh-hant')">繁體</button></div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>📚 <span data-lang="en">AI <span style="color:var(--indigo)">Study Buddy</span></span><span data-lang="zh-hans"><span style="color:var(--indigo)">AI 学伴智能体</span></span><span data-lang="zh-hant"><span style="color:var(--indigo)">AI 學伴智能體</span></span></h1>
+    <div class="subtitle" data-lang="en">Personal AI Tutor — Long-term memory meets emotional intelligence in a desktop companion</div>
+    <div class="subtitle" data-lang="zh-hans">个人AI家教 — 长期记忆与情感智能融合的桌面学习伴侣</div>
+    <div class="subtitle" data-lang="zh-hant">個人AI家教 — 長期記憶與情感智能融合的桌面學習伴侶</div>
+    <div class="tagline"><span data-lang="en">Companion. Not a machine.</span><span data-lang="zh-hans">伴侣，而非机器。</span><span data-lang="zh-hant">伴侶，而非機器。</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 data-lang="en">Design Mockups</h2>
+    <h2 data-lang="zh-hans">设计草图</h2>
+    <h2 data-lang="zh-hant">設計草圖</h2>
+    <div class="mockup-grid">
+      <div class="mockup-card">
+        <img src="mockups/study-buddy/study-1-desktop-companion.jpg" alt="Desktop Companion" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Desktop Companion</div>'">
+        <div class="caption"><strong>Desktop Companion</strong> <span data-lang="en">— Cute rounded design with circular animated LCD face, warm white + pastel blue</span><span data-lang="zh-hans">— 圆润可爱设计，圆形动画LCD表情，暖白+淡蓝色</span><span data-lang="zh-hant">— 圓潤可愛設計，圓形動畫LCD表情，暖白+淡藍色</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/study-buddy/study-2-emotional-support.jpg" alt="Emotional Support" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Emotional Support</div>'">
+        <div class="caption"><strong>Emotional Support</strong> <span data-lang="en">— Sensing frustration, Buddy shows a gentle empathetic expression, suggests a break</span><span data-lang="zh-hans">— 感知到挫败情绪时，Buddy会露出温柔的共情表情并建议休息</span><span data-lang="zh-hant">— 感知到挫敗情緒時，Buddy會露出溫柔的共情表情並建議休息</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/study-buddy/study-3-memory-progress.jpg" alt="Progress Tracking" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Progress Tracking</div>'">
+        <div class="caption"><strong>Long-Term Memory</strong> <span data-lang="en">— Displays "Math - 85% improvement!" with encouraging messages based on learning history</span><span data-lang="zh-hans">— 显示"数学 - 进步85%！"及基于学习历史的鼓励信息</span><span data-lang="zh-hant">— 顯示"數學 - 進步85%！"及基於學習歷史的鼓勵信息</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2 data-lang="en">Use Cases</h2>
+    <h2 data-lang="zh-hans">使用场景</h2>
+    <h2 data-lang="zh-hant">使用場景</h2>
+    <div class="use-case">
+      <div class="use-case-item">
+        <h3><span class="phase">🧠</span><span data-lang="en">Long-Term Memory Tutor</span><span data-lang="zh-hans">长期记忆辅导</span><span data-lang="zh-hant">長期記憶輔導</span></h3>
+        <p data-lang="en">"You made the same mistake on this problem type last week — remember the butterfly method?" Study Buddy remembers every wrong answer, every learning milestone, and uses past context to teach better, not just repeat.</p>
+        <p data-lang="zh-hans">"你上周在同一类问题上也犯了同样的错误——还记得蝴蝶法吗？" Study Buddy记住每一个错误答案、每一个学习里程碑，利用过往上下文进行更好的教学，而非简单重复。</p>
+        <p data-lang="zh-hant">"你上週在同一類問題上也犯了同樣的錯誤——還記得蝴蝶法嗎？" Study Buddy記住每一個錯誤答案、每一個學習里程碑，利用過往上下文進行更好的教學，而非簡單重複。</p>
+      </div>
+      <div class="use-case-item">
+        <h3><span class="phase">😊</span><span data-lang="en">Emotion-Aware Learning</span><span data-lang="zh-hans">情绪感知学习</span><span data-lang="zh-hant">情緒感知學習</span></h3>
+        <p data-lang="en">Detecting frustration from voice tone and facial expression, Buddy proactively suggests: <em>"I can see you're getting frustrated — want to switch to a 2-minute math game to reset?"</em> No pressure, no judgment.</p>
+        <p data-lang="zh-hans">Buddy通过语音语调和面部表情检测挫败感，主动建议：<em>"我看你有些沮丧——要不换个2分钟的数学游戏放松一下？"</em> 没有压力，没有评判。</p>
+        <p data-lang="zh-hant">Buddy通過語音語調和面部表情檢測挫敗感，主動建議：<em>"我看你有些沮喪——要不要換個2分鐘的數學遊戲放鬆一下？"</em> 沒有壓力，沒有評判。</p>
+      </div>
+      <div class="use-case-item">
+        <h3><span class="phase">📝</span><span data-lang="en">Smart Error Notebook</span><span data-lang="zh-hans">智能错题本</span><span data-lang="zh-hant">智能錯題本</span></h3>
+        <p data-lang="en">Snap a photo of a problem or say <em>"I don't get this"</em> — AI recognizes the question type, cross-references with the student's error history, and provides scaffolded guidance instead of just giving the answer.</p>
+        <p data-lang="zh-hans">拍下问题照片或说一声<em>"这题我不会"</em>——AI识别题型，关联学生过往错误历史，提供脚手架式引导而非直接给出答案。</p>
+        <p data-lang="zh-hant">拍下問題照片或說一聲<em>"這題我不會"</em>——AI識別題型，關聯學生過往錯誤歷史，提供腳手架式引導而非直接給出答案。</p>
+      </div>
+      <div class="use-case-item">
+        <h3><span class="phase">📊</span><span data-lang="en">Weekly Progress Report</span><span data-lang="zh-hans">每周进度报告</span><span data-lang="zh-hant">每週進度報告</span></h3>
+        <p data-lang="en">Every Monday, parents receive an AI-generated report: topics covered, accuracy trends, areas for improvement, and suggested reinforcement strategies. Transparent, never surveillance.</p>
+        <p data-lang="zh-hans">每周一家长收到AI生成的报告：涵盖知识点、准确率趋势、待提升领域及建议的强化策略。透明可见，绝非监视。</p>
+        <p data-lang="zh-hant">每週一家長收到AI生成的報告：涵蓋知識點、準確率趨勢、待提升領域及建議的強化策略。透明可見，絕非監視。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 data-lang="en">Key Features</h2>
+    <h2 data-lang="zh-hans">核心功能</h2>
+    <h2 data-lang="zh-hant">核心功能</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🧠</div>
+        <h3><span data-lang="en">Long-Term Memory</span><span data-lang="zh-hans">长期记忆</span><span data-lang="zh-hant">長期記憶</span></h3>
+        <p data-lang="en">Remembers every tutoring session — wrong answers, learning pace, even yesterday's frustration. The AI tutor that actually knows your child.</p>
+        <p data-lang="zh-hans">记住每一次辅导——错误答案、学习节奏、甚至昨天的沮丧情绪。真正了解你孩子的AI家教。</p>
+        <p data-lang="zh-hant">記住每一次輔導——錯誤答案、學習節奏、甚至昨天的沮喪情緒。真正了解你孩子的AI家教。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🗣️</div>
+        <h3><span data-lang="en">Conversational Teaching</span><span data-lang="zh-hans">对话式教学</span><span data-lang="zh-hant">對話式教學</span></h3>
+        <p data-lang="en">No fear of asking "stupid questions." Zero-pressure voice environment. Students can ask until they truly understand.</p>
+        <p data-lang="zh-hans">不怕问"蠢问题"。零压力语音环境。学生可以问到真正理解为止。</p>
+        <p data-lang="zh-hant">不怕問"蠢問題"。零壓力語音環境。學生可以問到真正理解為止。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">😊</div>
+        <h3><span data-lang="en">Emotional Perception</span><span data-lang="zh-hans">情感感知</span><span data-lang="zh-hant">情感感知</span></h3>
+        <p data-lang="en">Voice tone + expression analysis detects when a student is overwhelmed. Proactive de-stress suggestions — learn better, not harder.</p>
+        <p data-lang="zh-hans">语音语调+表情分析检测学生是否不堪重负。主动减压建议——更好学，而非更苦学。</p>
+        <p data-lang="zh-hant">語音語調+表情分析檢測學生是否不堪重負。主動減壓建議——更好學，而非更苦學。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">👨‍👩‍👧</div>
+        <h3><span data-lang="en">Parent Transparency</span><span data-lang="zh-hans">家长透明化</span><span data-lang="zh-hant">家長透明化</span></h3>
+        <p data-lang="en">Weekly AI reports highlight progress and areas needing support. Not surveillance — partnership in education.</p>
+        <p data-lang="zh-hans">每周AI报告突出进步和需要支持的领域。不是监视——而是教育中的合作伙伴关系。</p>
+        <p data-lang="zh-hant">每週AI報告突出進步和需要支持的領域。不是監視——而是教育中的合作夥伴關係。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2 data-lang="en">Detailed Specifications</h2>
+    <h2 data-lang="zh-hans">详细规格</h2>
+    <h2 data-lang="zh-hant">詳細規格</h2>
+    <table class="specs">
+      <tr><td data-lang="en">Display</td><td data-lang="zh-hans">显示屏</td><td data-lang="zh-hant">顯示屏</td><td>6"–8" touchscreen, anti-glare, rounded edges</td></tr>
+      <tr><td data-lang="en">Form Factor</td><td data-lang="zh-hans">外形</td><td data-lang="zh-hant">外形</td><td>Desktop, round soft-rubber bumper (child-safe), adjustable angle stand</td></tr>
+      <tr><td data-lang="en">Colors</td><td data-lang="zh-hans">颜色</td><td data-lang="zh-hant">顏色</td><td>Vibrant Blue / Mint Green / Sunshine Yellow</td></tr>
+      <tr><td data-lang="en">Weight</td><td data-lang="zh-hans">重量</td><td data-lang="zh-hant">重量</td><td>~300–500g</td></tr>
+      <tr><td data-lang="en">Battery</td><td data-lang="zh-hans">电池</td><td data-lang="zh-hant">電池</td><td>Built-in lithium, 8h+ battery life</td></tr>
+      <tr><td data-lang="en">Speaker</td><td data-lang="zh-hans">扬声器</td><td data-lang="zh-hant">揚聲器</td><td>Front-firing dual speakers (voice clarity priority)</td></tr>
+      <tr><td data-lang="en">AI SoC (Standalone)</td><td data-lang="zh-hans">AI SoC（独立版）</td><td data-lang="zh-hant">AI SoC（獨立版）</td><td>RK3588 (6 TOPS NPU) + ESP32-S3</td></tr>
+      <tr><td data-lang="en">AI SoC (Satellite)</td><td data-lang="zh-hans">AI SoC（卫星版）</td><td data-lang="zh-hant">AI SoC（衛星版）</td><td>ESP32-S3 only (inference offloaded to AI Home Hub)</td></tr>
+      <tr><td data-lang="en">SLM Inference</td><td data-lang="zh-hans">小模型推理</td><td data-lang="zh-hant">小模型推理</td><td>Qwen3-2B W8A8 @ RK3588 NPU (11.5 t/s)</td></tr>
+      <tr><td data-lang="en">Emotion Sensing</td><td data-lang="zh-hans">情绪感知</td><td data-lang="zh-hant">情緒感知</td><td>OpenCV + Audio Sentiment — expression + voice tone analysis</td></tr>
+      <tr><td data-lang="en">Speech (ASR)</td><td data-lang="zh-hans">语音识别</td><td data-lang="zh-hant">語音識別</td><td>SenseVoice Small @ NPU (~150ms) — Cantonese + Mandarin</td></tr>
+      <tr><td data-lang="en">Speech (TTS)</td><td data-lang="zh-hans">语音合成</td><td data-lang="zh-hant">語音合成</td><td>CosyVoice @ CPU (~300ms) — emotional voice responses</td></tr>
+      <tr><td data-lang="en">Memory Storage</td><td data-lang="zh-hans">存储</td><td data-lang="zh-hant">存儲</td><td>SQLite (local) + Hub Sync — full learning history + error graph</td></tr>
+      <tr><td data-lang="en">Connectivity</td><td data-lang="zh-hans">连接</td><td data-lang="zh-hant">連接</td><td>WiFi + BLE + WebSocket Agent Protocol</td></tr>
+      <tr><td data-lang="en">Safety Design</td><td data-lang="zh-hans">安全设计</td><td data-lang="zh-hant">安全設計</td><td>No sharp edges — fully rounded. No camera streaming — all processing local. Anti-glare screen.</td></tr>
+      <tr><td data-lang="en">Cloud Fallback</td><td data-lang="zh-hans">云端备用</td><td data-lang="zh-hant">雲端備用</td><td>DeepSeek V4-Flash / Qwen3.6-Plus (complex reasoning, optional)</td></tr>
+    </table>
+
+    <div class="tech-stack">
+      <h3><span data-lang="en">🧠 Technology Stack</span><span data-lang="zh-hans">🧠 技术栈</span><span data-lang="zh-hant">🧠 技術棧</span></h3>
+      <span class="tag highlight">Qwen3-2B W8A8 @ RK3588 NPU</span>
+      <span class="tag highlight">SenseVoice Small @ NPU</span>
+      <span class="tag">CosyVoice TTS</span>
+      <span class="tag">OpenCV + Audio Sentiment</span>
+      <span class="tag">SQLite (local)</span>
+      <span class="tag">WebSocket Agent Protocol</span>
+      <span class="tag">ESP32-S3 (always-on)</span>
+      <span class="tag">Hub Sync</span>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="container">
+    <h2 data-lang="en">Design Philosophy</h2>
+    <h2 data-lang="zh-hans">设计理念</h2>
+    <h2 data-lang="zh-hant">設計理念</h2>
+    <div class="philosophy-grid">
+      <div class="phil-card"><h4><span data-lang="en">Companion</span><span data-lang="zh-hans">陪伴</span><span data-lang="zh-hant">陪伴</span></h4><p data-lang="en">Not a Q&A machine — a study partner who remembers you. Learning is personal, not transactional.</p><p data-lang="zh-hans">不是问答机器——是记住你的学习伙伴。学习是个人化的，而非交易式的。</p><p data-lang="zh-hant">不是問答機器——是記住你的學習夥伴。學習是個人化的，而非交易式的。</p></div>
+      <div class="phil-card"><h4><span data-lang="en">Scaffolding</span><span data-lang="zh-hans">脚手架</span><span data-lang="zh-hant">腳手架</span></h4><p data-lang="en">Adapts difficulty automatically. Never too hard (frustration), never too easy (boredom).</p><p data-lang="zh-hans">自动调整难度。不会太难（挫败），也不会太易（无聊）。</p><p data-lang="zh-hant">自動調整難度。不會太難（挫敗），也不會太易（無聊）。</p></div>
+      <div class="phil-card"><h4><span data-lang="en">Positive Reinforcement</span><span data-lang="zh-hans">正向激励</span><span data-lang="zh-hant">正向激勵</span></h4><p data-lang="en">Praises effort over outcome. No scores, no rankings — celebrates progress, not perfection.</p><p data-lang="zh-hans">赞美努力而非结果。没有分数、没有排名——庆祝进步，而非完美。</p><p data-lang="zh-hant">讚美努力而非結果。沒有分數、沒有排名——慶祝進步，而非完美。</p></div>
+      <div class="phil-card"><h4><span data-lang="en">Parent Partnership</span><span data-lang="zh-hans">家长协作</span><span data-lang="zh-hant">家長協作</span></h4><p data-lang="en">Weekly reports inform without surveilling. AI augments the parent-child education relationship.</p><p data-lang="zh-hans">每周报告提供信息而非监视。AI增强亲子教育关系。</p><p data-lang="zh-hant">每週報告提供信息而非監視。AI增強親子教育關係。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>Verge AI</strong> <span data-lang="en">— Edge Intelligence, Within Reach.</span><span data-lang="zh-hans">— 边缘智能，触手可及。</span><span data-lang="zh-hant">— 邊緣智能，觸手可及。</span><br>
+    蔚科融智（深圳）科技有限公司<br>
+    <span data-lang="en">Shenzhen · Hong Kong</span><span data-lang="zh-hans">深圳 · 香港</span><span data-lang="zh-hant">深圳 · 香港</span>
+  </div>
+</footer>
+
+<script>
+function switchLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem('vergeai2026-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+}
+
+// Detect preferred language on load
+(function() {
+  const saved = localStorage.getItem('vergeai2026-lang');
+  if (saved) {
+    switchLang(saved);
+  } else {
+    const raw = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
+    const navLang = raw.toLowerCase();
+    if (navLang.startsWith('zh')) {
+      if (navLang.includes('tw') || navLang.includes('hk') || navLang.includes('mo') || navLang.includes('hant')) {
+        switchLang('zh-hant');
+      } else {
+        switchLang('zh-hans');
+      }
+    } else {
+      switchLang('en');
+    }
+  }
+})();
+</script>
+
+</body>
+</html>

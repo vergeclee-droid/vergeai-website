@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verge AI Kitchen Agent — Product Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+[data-lang]{display:none!important}
+html[lang="en"] [data-lang="en"],
+html[lang="zh-hans"] [data-lang="zh-hans"],
+html[lang="zh-hant"] [data-lang="zh-hant"]{display:inline!important}
+html[lang="en"] [data-lang="en"].d-block,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-block,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-block{display:block!important}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#06b6d4;--cyan-dark:#0891b2;--indigo:#818cf8;--indigo-dark:#6366f1;
+  --purple:#a78bfa;--purple-light:#c4b5fd;--purple-mist:#f5f3ff;
+  --slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;
+  --slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;
+  --white:#ffffff;--near-black:#17171c;
+  --radius:22px;--radius-sm:14px;
+  --display:'Space Grotesk','Inter',-apple-system,sans-serif;
+  --body:'Inter',-apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+}
+body{font-family:var(--body);color:var(--slate-800);background:var(--white);line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--slate-200);height:60px;display:flex;align-items:center}
+nav .container{display:flex;align-items:center;justify-content:space-between;width:100%}
+nav .logo{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--slate-800)}
+nav .logo span{color:var(--cyan)}
+.lang-btn{background:none;border:none;font-size:0.75rem;font-weight:500;color:var(--slate-400);cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.2s;font-family:inherit}
+.lang-btn:hover{color:var(--slate-700)}
+.lang-btn.active{color:var(--white);background:var(--near-black)}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:500;color:var(--slate-600);text-decoration:none;padding:6px 16px;border-radius:999px;border:1px solid var(--slate-200);transition:all 0.2s}
+.back-btn:hover{border-color:var(--cyan);color:var(--cyan-dark)}
+.nav-lang{display:flex;gap:2px;padding-left:10px;border-left:1px solid var(--slate-200)}
+.hero{background:linear-gradient(135deg,#0d1b2a,var(--slate-900));color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-family:var(--display);font-weight:700;font-size:3.5rem;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--cyan)}
+.hero .subtitle{font-size:1.2rem;color:var(--slate-300);max-width:600px;margin:0 auto 12px}
+.hero .tagline{display:inline-block;background:rgba(6,182,212,0.15);color:var(--cyan);padding:4px 16px;border-radius:999px;font-size:0.875rem;font-weight:500;margin-top:8px}
+section{padding:60px 0}
+section h2{font-family:var(--display);font-weight:600;font-size:2rem;margin-bottom:32px;position:relative;padding-bottom:12px}
+section h2::after{content:'';position:absolute;bottom:0;left:0;width:60px;height:3px;background:var(--indigo);border-radius:2px}
+.mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:40px}
+.mockup-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--slate-200);background:var(--white);transition:border-color 0.3s,transform 0.2s}
+.mockup-card:hover{border-color:var(--indigo);transform:translateY(-2px)}
+.mockup-card img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+.mockup-card .caption{padding:12px 16px;font-size:0.875rem;color:var(--slate-600)}
+.mockup-card .caption strong{color:var(--slate-800)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px}
+.feature-card{background:var(--slate-50);border-radius:var(--radius);padding:28px;border:1px solid var(--slate-200)}
+.feature-card .icon{font-size:2rem;margin-bottom:8px}
+.feature-card h3{font-family:var(--display);font-weight:600;font-size:1.1rem;margin-bottom:8px;color:var(--slate-800)}
+.feature-card p{font-size:0.9rem;color:var(--slate-600);line-height:1.7}
+.specs{width:100%;border-collapse:collapse;margin-top:24px;font-size:0.9rem}
+.specs td{padding:12px 16px;border-bottom:1px solid var(--slate-200);vertical-align:top}
+.specs td:first-child{font-weight:600;color:var(--slate-600);white-space:nowrap;width:180px}
+.specs td:last-child{color:var(--slate-800)}
+.philosophy{background:var(--slate-900);color:var(--white);padding:60px 0}
+.philosophy h2{color:var(--white)}
+.philosophy h2::after{background:var(--cyan)}
+.philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.phil-card{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,0.08)}
+.phil-card h4{color:var(--cyan);font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:6px}
+.phil-card p{color:var(--slate-300);font-size:0.875rem;line-height:1.6}
+.use-case{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.use-case-item{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--slate-200)}
+.use-case-item h3{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--slate-800)}
+.use-case-item h3 .phase{color:var(--indigo);margin-right:8px}
+.use-case-item p{font-size:0.88rem;color:var(--slate-600);line-height:1.7}
+.tech-stack{background:var(--slate-50);border-radius:var(--radius);padding:32px;margin-top:32px;border:1px solid var(--slate-200)}
+.tech-stack h3{font-family:var(--display);font-weight:600;margin-bottom:16px;font-size:1.1rem}
+.tech-stack .tag{display:inline-block;background:var(--white);border:1px solid var(--slate-200);border-radius:999px;padding:3px 14px;font-size:0.8rem;margin:3px 4px;color:var(--slate-700)}
+.tech-stack .tag.highlight{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(6,182,212,0.06)}
+footer{background:var(--slate-900);color:var(--slate-400);text-align:center;padding:40px 0;font-size:0.85rem}
+footer strong{color:var(--white)}
+@media(max-width:768px){.hero h1{font-size:2.2rem}.mockup-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">VERGE<span>AI</span></div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="index.html" class="back-btn">← <span data-lang="en">Back to Home</span><span data-lang="zh-hans">返回首页</span><span data-lang="zh-hant">返回首頁</span></a>
+      <div class="nav-lang">
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" data-lang="zh-hans" onclick="switchLang('zh-hans')">简体</button>
+        <button class="lang-btn" data-lang="zh-hant" onclick="switchLang('zh-hant')">繁體</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1><span data-lang="en">🍳 AI <span>Kitchen Agent</span></span><span data-lang="zh-hans">🍳 AI 智能厨房助理</span><span data-lang="zh-hant">🍳 AI 智能廚房助理</span></h1>
+    <div class="subtitle"><span data-lang="en">Intelligent Sous-Chef — Deep reasoning + visual perception for the modern kitchen</span><span data-lang="zh-hans">智能副厨 — 深度推理 + 视觉感知，专为现代厨房打造</span><span data-lang="zh-hant">智能副廚 — 深度推理 + 視覺感知，專為現代廚房打造</span></div>
+    <div class="tagline"><span data-lang="en">Vision-First, Hands-Free</span><span data-lang="zh-hans">视觉优先，解放双手</span><span data-lang="zh-hant">視覺優先，解放雙手</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span data-lang="en">Design Mockups</span><span data-lang="zh-hans">设计预览</span><span data-lang="zh-hant">設計預覽</span></h2>
+    <div class="mockup-grid">
+      <div class="mockup-card">
+        <img src="mockups/kitchen-agent/kitchen-1-fridge-mount.jpg" alt="Fridge Mount" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Fridge Mount</div>'">
+        <div class="caption"><span data-lang="en"><strong>Fridge-Mounted</strong> — Magnetic base, dual-joint camera arm, Zero-Waste UI on display</span><span data-lang="zh-hans"><strong>冰箱壁挂</strong> — 磁吸底座，双轴摄像头臂，零浪费界面</span><span data-lang="zh-hant"><strong>冰箱壁掛</strong> — 磁吸底座，雙軸鏡頭臂，零浪費介面</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/kitchen-agent/kitchen-2-nutrition-scan.jpg" alt="Nutrition Scan" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Nutrition Scan</div>'">
+        <div class="caption"><span data-lang="en"><strong>Visual Nutrition Analysis</strong> — Point camera at food, instant Protein/Carbs/Fat breakdown</span><span data-lang="zh-hans"><strong>视觉营养分析</strong> — 对准食物，即时显示蛋白质/碳水/脂肪分解</span><span data-lang="zh-hant"><strong>視覺營養分析</strong> — 對準食物，即時顯示蛋白質/碳水/脂肪分解</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/kitchen-agent/kitchen-3-voice-timers.jpg" alt="Voice Control" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Voice Control</div>'">
+        <div class="caption"><span data-lang="en"><strong>Voice-First Interaction</strong> — Hands covered in flour? Just speak. Multi-timer orchestration shown.</span><span data-lang="zh-hans"><strong>语音优先互动</strong> — 双手沾满面粉？只需说话。多计时器协同管理。</span><span data-lang="zh-hant"><strong>語音優先互動</strong> — 雙手沾滿麵粉？只需說話。多計時器協同管理。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2><span data-lang="en">Use Cases</span><span data-lang="zh-hans">使用场景</span><span data-lang="zh-hant">使用場景</span></h2>
+    <div class="use-case">
+      <div class="use-case-item">
+        <h3><span class="phase">♻️</span><span data-lang="en">Zero-Waste Mode</span><span data-lang="zh-hans">零浪费模式</span><span data-lang="zh-hant">零浪費模式</span></h3>
+        <p><span data-lang="en">Open the fridge, point the camera at near-expiry ingredients — AI identifies and suggests "rescue recipes" in seconds. <em>Half an onion + soft eggplant + bacon = hearty ratatouille.</em></span><span data-lang="zh-hans">打开冰箱，对准即将过期的食材拍摄 — AI 瞬间识别并推荐「拯救食谱」。<em>半个洋葱 + 软茄子 + 培根 = 丰盛炖菜。</em></span><span data-lang="zh-hant">打開雪櫃，對準即將過期的食材拍攝 — AI 瞬間識別並推薦「拯救食譜」。<em>半個洋蔥 + 軟茄子 + 煙肉 = 豐盛燉菜。</em></span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span class="phase">🔥</span><span data-lang="en">Multi-Timer Orchestration</span><span data-lang="zh-hans">多计时器协同</span><span data-lang="zh-hant">多計時器協同</span></h3>
+        <p><span data-lang="en">Cooking steak + asparagus + potatoes simultaneously? Say <em>"Set 5 mins for potatoes, 3 mins for asparagus, 8 mins for steak"</em> — AI tracks all timers and gives voice cues: <em>"30 seconds to flip the steak!"</em></span><span data-lang="zh-hans">同时烹饪牛排、芦笋和土豆？只需说<em>「土豆5分钟，芦笋3分钟，牛排8分钟」</em> — AI 追踪所有计时器并语音提醒：<em>「30秒后翻牛排！」</em></span><span data-lang="zh-hant">同時烹調牛排、蘆筍和薯仔？只需說<em>「薯仔5分鐘，蘆筍3分鐘，牛排8分鐘」</em> — AI 追蹤所有計時器並語音提醒：<em>「30秒後翻牛排！」</em></span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span class="phase">👁️</span><span data-lang="en">Visual Calorie Estimation</span><span data-lang="zh-hans">视觉卡路里估算</span><span data-lang="zh-hant">視覺卡路里估算</span></h3>
+        <p><span data-lang="en">Place a plate under the camera — volumetric AI estimates portion size and instantly displays <em>"~650 kcal, P:35g C:48g F:22g"</em>. Automatically syncs with Apple Health / Fitbit.</span><span data-lang="zh-hans">将盘子放在摄像头下 — 体积 AI 估算份量并即时显示<em>「~650 千卡，蛋白质:35g 碳水:48g 脂肪:22g」</em>。自动同步 Apple Health / Fitbit。</span><span data-lang="zh-hant">將碟放在鏡頭下 — 體積 AI 估算份量並即時顯示<em>「~650 千卡，蛋白質:35g 碳水:48g 脂肪:22g」</em>。自動同步 Apple Health / Fitbit。</span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span class="phase">🛒</span><span data-lang="en">Smart Grocery & Price Comparison</span><span data-lang="zh-hans">智能购物与比价</span><span data-lang="zh-hant">智能購物與比價</span></h3>
+        <p><span data-lang="en">Agent detects running low on olive oil, auto-adds to shopping list synced to your phone. Asks <em>"Shall I find the best price nearby?"</em> — compares local supermarket prices.</span><span data-lang="zh-hans">AI 检测到橄榄油快用完了，自动加入与手机同步的购物清单。询问<em>「需要我查找附近的最优价格吗？」</em> — 比较本地超市价格。</span><span data-lang="zh-hant">AI 檢測到橄欖油快用完了，自動加入與手機同步的購物清單。詢問<em>「需要我查找附近的最優價格嗎？」</em> — 比較本地超市價格。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span data-lang="en">Key Features</span><span data-lang="zh-hans">核心功能</span><span data-lang="zh-hant">核心功能</span></h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">♻️</div>
+        <h3><span data-lang="en">Zero-Waste Recipe Engine</span><span data-lang="zh-hans">零浪费食谱引擎</span><span data-lang="zh-hant">零浪費食譜引擎</span></h3>
+        <p><span data-lang="en">Camera scan fridge contents → AI cross-references with pantry → suggests recipes using what's about to expire. Reduce food waste intelligently.</span><span data-lang="zh-hans">摄像头扫描冰箱内容物 → AI 与储藏室交叉比对 → 推荐使用即将过期食材的食谱。智能减少食物浪费。</span><span data-lang="zh-hant">鏡頭掃描雪櫃內容物 → AI 與儲藏室交叉比對 → 推薦使用即將過期食材的食譜。智能減少食物浪費。</span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🗣️</div>
+        <h3><span data-lang="en">Voice Interrupt</span><span data-lang="zh-hans">语音打断</span><span data-lang="zh-hant">語音打斷</span></h3>
+        <p><span data-lang="en">Hands covered in raw chicken? Just speak. <em>"How much salt did I add?"</em> — AI responds instantly. Zero-tap design philosophy.</span><span data-lang="zh-hans">双手沾满生鸡肉？只需说话。<em>「我加了多少盐？」</em> — AI 即时回应。零触控设计理念。</span><span data-lang="zh-hant">雙手沾滿生雞肉？只需說話。<em>「我加了多少鹽？」</em> — AI 即時回應。零觸控設計理念。</span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3><span data-lang="en">Physical Privacy Shutter</span><span data-lang="zh-hans">物理隐私快门</span><span data-lang="zh-hant">物理私隱快門</span></h3>
+        <p><span data-lang="en">Mechanical camera cover — hardware-level privacy assurance. <em>"What happens in the kitchen, stays in the kitchen."</em></span><span data-lang="zh-hans">机械摄像头盖 — 硬件级隐私保障。<em>「厨房里的事，留在厨房里。」</em></span><span data-lang="zh-hant">機械鏡頭蓋 — 硬件級私隱保障。<em>「廚房裡的事，留在廚房裡。」</em></span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🏥</div>
+        <h3><span data-lang="en">Health Coach</span><span data-lang="zh-hans">健康教练</span><span data-lang="zh-hant">健康教練</span></h3>
+        <p><span data-lang="en">Tracks full-day nutrition intake, compares against your macros, tells you <em>"Only 600 kcal remaining — your best bet: light salad."</em></span><span data-lang="zh-hans">追踪全天营养摄入，对比你的宏量营养目标，告诉你<em>「还剩 600 千卡 — 建议选择：轻食沙拉。」</em></span><span data-lang="zh-hant">追蹤全天營養攝入，對比你的宏量營養目標，告訴你<em>「仲剩 600 千卡 — 建議選擇：輕食沙律。」</em></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2><span data-lang="en">Detailed Specifications</span><span data-lang="zh-hans">详细规格</span><span data-lang="zh-hant">詳細規格</span></h2>
+    <table class="specs">
+      <tr><td><span data-lang="en">Display</span><span data-lang="zh-hans">显示屏</span><span data-lang="zh-hant">顯示屏</span></td><td>12" display (~270×190mm), flush glass, IP54 splash-proof</td></tr>
+      <tr><td><span data-lang="en">Mount</span><span data-lang="zh-hans">安装方式</span><span data-lang="zh-hant">安裝方式</span></td><td>Magnetic anchor (Neodymium array) + soft-touch silicone backing</td></tr>
+      <tr><td><span data-lang="en">Mechanical Arm</span><span data-lang="zh-hans">机械臂</span><span data-lang="zh-hant">機械臂</span></td><td>Dual-axis friction hinge — Axis 1: swing (left/right), Axis 2: tilt (camera points at counter)</td></tr>
+      <tr><td><span data-lang="en">Camera</span><span data-lang="zh-hans">摄像头</span><span data-lang="zh-hant">鏡頭</span></td><td>120° wide-angle, downward-facing, physical privacy shutter</td></tr>
+      <tr><td><span data-lang="en">AI SoC</span><span data-lang="zh-hans">AI 芯片</span><span data-lang="zh-hant">AI 芯片</span></td><td>RK3588 (6 TOPS NPU) + ESP32-S3 (always-on wake word)</td></tr>
+      <tr><td><span data-lang="en">SLM Inference</span><span data-lang="zh-hans">小模型推理</span><span data-lang="zh-hant">小模型推理</span></td><td>Qwen3-2B W8A8 @ RK3588 NPU (11.5 t/s) — dialogue, recipe reasoning, timer management</td></tr>
+      <tr><td><span data-lang="en">Vision AI</span><span data-lang="zh-hans">视觉 AI</span><span data-lang="zh-hant">視覺 AI</span></td><td>YOLOv8 Nano @ NPU + Qwen3-VL-2B @ NPU — ingredient recognition, volumetric estimation</td></tr>
+      <tr><td><span data-lang="en">Speech (ASR)</span><span data-lang="zh-hans">语音识别</span><span data-lang="zh-hant">語音識別</span></td><td>SenseVoice Small @ NPU (~150ms) — Cantonese + Mandarin, kitchen-noise optimized</td></tr>
+      <tr><td><span data-lang="en">Speech (TTS)</span><span data-lang="zh-hans">语音合成</span><span data-lang="zh-hant">語音合成</span></td><td>CosyVoice @ CPU (~300ms) — emotional voice responses</td></tr>
+      <tr><td><span data-lang="en">Touch</span><span data-lang="zh-hans">触控</span><span data-lang="zh-hant">觸控</span></td><td>High-sensitivity capacitive glass (works with wet hands / thin gloves)</td></tr>
+      <tr><td><span data-lang="en">Cable</span><span data-lang="zh-hans">线缆</span><span data-lang="zh-hant">線纜</span></td><td>Hidden internal channel through arm — braided cable, no exposed wiring</td></tr>
+      <tr><td><span data-lang="en">Status LED</span><span data-lang="zh-hans">状态灯</span><span data-lang="zh-hant">狀態燈</span></td><td>Pulsating light ring around camera — visible across the kitchen</td></tr>
+      <tr><td><span data-lang="en">Colors</span><span data-lang="zh-hans">颜色</span><span data-lang="zh-hant">顏色</span></td><td><span data-lang="en">Slate Gray (Preferred), Midnight Navy, Stainless Steel</span><span data-lang="zh-hans">石板灰（首选），午夜海军蓝，不锈钢</span><span data-lang="zh-hant">石板灰（首選），午夜海軍藍，不鏽鋼</span></td></tr>
+      <tr><td><span data-lang="en">Materials</span><span data-lang="zh-hans">材质</span><span data-lang="zh-hant">材質</span></td><td>Anodized aluminum (anti-fingerprint, heat-dissipating) / optional Matte Ceramic</td></tr>
+      <tr><td><span data-lang="en">Weight</span><span data-lang="zh-hans">重量</span><span data-lang="zh-hant">重量</span></td><td>~800g–1.2 kg</td></tr>
+      <tr><td><span data-lang="en">Connectivity</span><span data-lang="zh-hans">连接</span><span data-lang="zh-hant">連接</span></td><td>WiFi 6, BLE 5.3, WebSocket Agent Protocol (LAN)</td></tr>
+      <tr><td><span data-lang="en">Cloud Fallback</span><span data-lang="zh-hans">云端后备</span><span data-lang="zh-hant">雲端後備</span></td><td>DeepSeek V4-Flash / Qwen3.6-Plus (optional, for complex recipe reasoning)</td></tr>
+    </table>
+
+    <div class="tech-stack">
+      <h3>🧠 <span data-lang="en">Technology Stack</span><span data-lang="zh-hans">技术栈</span><span data-lang="zh-hant">技術棧</span></h3>
+      <span class="tag highlight">Qwen3-2B W8A8 @ RK3588 NPU</span>
+      <span class="tag highlight">YOLOv8 Nano @ NPU</span>
+      <span class="tag highlight">SenseVoice Small @ NPU</span>
+      <span class="tag">CosyVoice TTS</span>
+      <span class="tag">Dual-Axis Hinge</span>
+      <span class="tag">Privacy Shutter (HW)</span>
+      <span class="tag">IP54</span>
+      <span class="tag">WebSocket Agent Protocol</span>
+      <span class="tag">SQLite + Hub NAS</span>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="container">
+    <h2><span data-lang="en">Design Philosophy</span><span data-lang="zh-hans">设计理念</span><span data-lang="zh-hant">設計理念</span></h2>
+    <div class="philosophy-grid">
+      <div class="phil-card"><h4><span data-lang="en">Vision-First, Hands-Free</span><span data-lang="zh-hans">视觉优先，解放双手</span><span data-lang="zh-hant">視覺優先，解放雙手</span></h4><p><span data-lang="en">The Kitchen Agent sees your kitchen, but never needs your hands to touch it.</span><span data-lang="zh-hans">厨房助理看得见你的厨房，但从来不需要你的双手触碰它。</span><span data-lang="zh-hant">廚房助理看得見你的廚房，但從來不需要你的雙手觸碰它。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Zero Tap When Possible</span><span data-lang="zh-hans">零触控优先</span><span data-lang="zh-hant">零觸控優先</span></h4><p><span data-lang="en">Voice and visual interaction are primary. Touch is the fallback, not the default.</span><span data-lang="zh-hans">语音和视觉交互是首选。触控是备用方案，而非默认方式。</span><span data-lang="zh-hant">語音和視覺交互是首選。觸控是備用方案，而非預設方式。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Proactive, Not Reactive</span><span data-lang="zh-hans">主动而非被动</span><span data-lang="zh-hant">主動而非被動</span></h4><p><span data-lang="en">AI anticipates your needs — suggests recipes, warns about burning, times your dishes.</span><span data-lang="zh-hans">AI 预判你的需求 — 推荐食谱，提醒防焦，为菜肴计时。</span><span data-lang="zh-hant">AI 預判你的需求 — 推薦食譜，提醒防焦，為菜餚計時。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Privacy First</span><span data-lang="zh-hans">隐私至上</span><span data-lang="zh-hant">私隱至上</span></h4><p><span data-lang="en">Physical shutter + local buffer. No cloud leakage. What happens in the kitchen stays there.</span><span data-lang="zh-hans">物理快门 + 本地缓存。云端零泄露。厨房里的事留在厨房里。</span><span data-lang="zh-hant">物理快門 + 本地緩存。雲端零洩露。廚房裡的事留在廚房裡。</span></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span data-lang="en"><strong>Verge AI</strong> — Edge Intelligence, Within Reach.<br></span>
+    <span data-lang="zh-hans"><strong>Verge AI</strong> — 触手可及的边缘智能<br></span>
+    <span data-lang="zh-hant"><strong>Verge AI</strong> — 觸手可及的邊緣智能<br></span>
+    蔚科融智（深圳）科技有限公司<br>
+    <span data-lang="en">Shenzhen · Hong Kong</span><span data-lang="zh-hans">深圳 · 香港</span><span data-lang="zh-hant">深圳 · 香港</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const LANG_KEY = 'verge-lang';
+  const SUPPORTED = ['en','zh-hans','zh-hant'];
+  const DEFAULT = 'en';
+
+  function switchLang(code){
+    if(!SUPPORTED.includes(code)) return;
+    document.documentElement.lang = code;
+    try{localStorage.setItem(LANG_KEY,code)}catch(e){}
+    document.querySelectorAll('.lang-btn').forEach(b=>{
+      b.classList.toggle('active',b.getAttribute('data-lang')===code);
+    });
+  }
+
+  function detectLang(){
+    let lang = DEFAULT;
+    try{const stored = localStorage.getItem(LANG_KEY); if(stored && SUPPORTED.includes(stored)) lang = stored}catch(e){}
+    if(!localStorage||!localStorage.getItem(LANG_KEY)){
+      const nav = (navigator.language||navigator.userLanguage||'').toLowerCase();
+      if(nav.startsWith('zh-hans')||nav.startsWith('zh-cn')||nav.startsWith('zh-sg')) lang='zh-hans';
+      else if(nav.startsWith('zh-hant')||nav.startsWith('zh-hk')||nav.startsWith('zh-tw')||nav.startsWith('zh-mo')) lang='zh-hant';
+      else if(nav.startsWith('zh')){const c = navigator.language.toLowerCase(); if(c.includes('hk')||c.includes('tw')||c.includes('mo')) lang='zh-hant'; else lang='zh-hans'}
+    }
+    switchLang(lang);
+  }
+
+  const style = document.createElement('style');
+  style.textContent = `.lang-fade{transition:opacity 0.2s ease}.lang-fade-out{opacity:0}`;
+  document.head.appendChild(style);
+
+  const observer = new MutationObserver(()=>{
+    document.querySelectorAll('[data-lang]').forEach(el=>{
+      if(!el.classList.contains('lang-fade')) el.classList.add('lang-fade');
+    });
+  });
+  observer.observe(document.documentElement,{childList:true,subtree:true});
+
+  document.addEventListener('DOMContentLoaded',detectLang);
+  if(document.readyState==='complete'||document.readyState==='interactive') detectLang();
+})();
+</script>
+
+</body>
+</html>

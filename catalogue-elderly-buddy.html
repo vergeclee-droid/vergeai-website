@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verge AI Elderly Buddy — Product Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+[data-lang]{display:none!important}
+html[lang="en"] [data-lang="en"],
+html[lang="zh-hans"] [data-lang="zh-hans"],
+html[lang="zh-hant"] [data-lang="zh-hant"]{display:inline!important}
+html[lang="en"] [data-lang="en"].d-block,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-block,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-block{display:block!important}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#06b6d4;--cyan-dark:#0891b2;--indigo:#818cf8;--indigo-dark:#6366f1;
+  --purple:#a78bfa;--purple-light:#c4b5fd;--purple-mist:#f5f3ff;
+  --slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;
+  --slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;
+  --white:#ffffff;--near-black:#17171c;
+  --radius:22px;--radius-sm:14px;
+  --display:'Space Grotesk','Inter',-apple-system,sans-serif;
+  --body:'Inter',-apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+}
+body{font-family:var(--body);color:var(--slate-800);background:var(--white);line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--slate-200);height:60px;display:flex;align-items:center}
+nav .container{display:flex;align-items:center;justify-content:space-between;width:100%}
+nav .logo{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--slate-800)}
+nav .logo span{color:var(--cyan)}
+.lang-btn{background:none;border:none;display:inline-block!important;font-size:0.75rem;font-weight:500;color:var(--slate-400);cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.2s;font-family:inherit}
+.lang-btn:hover{color:var(--slate-700)}
+.lang-btn.active{color:var(--white);background:var(--near-black)}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:500;color:var(--slate-600);text-decoration:none;padding:6px 16px;border-radius:999px;border:1px solid var(--slate-200);transition:all 0.2s}
+.back-btn:hover{border-color:var(--cyan);color:var(--cyan-dark)}
+.nav-lang{display:flex;gap:2px;padding-left:10px;border-left:1px solid var(--slate-200)}
+.hero{background:linear-gradient(135deg,#1a0f0a,var(--slate-900));color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-family:var(--display);font-weight:700;font-size:3.5rem;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--cyan)}
+.hero .subtitle{font-size:1.2rem;color:var(--slate-300);max-width:600px;margin:0 auto 12px}
+.hero .tagline{display:inline-block;background:rgba(6,182,212,0.15);color:var(--cyan);padding:4px 16px;border-radius:999px;font-size:0.875rem;font-weight:500;margin-top:8px}
+section{padding:60px 0}
+section h2{font-family:var(--display);font-weight:600;font-size:2rem;margin-bottom:32px;position:relative;padding-bottom:12px}
+section h2::after{content:'';position:absolute;bottom:0;left:0;width:60px;height:3px;background:var(--cyan);border-radius:2px}
+.mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:40px}
+.mockup-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--slate-200);background:var(--white);transition:border-color 0.3s,transform 0.2s}
+.mockup-card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.mockup-card img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+.mockup-card .caption{padding:12px 16px;font-size:0.875rem;color:var(--slate-600)}
+.mockup-card .caption strong{color:var(--slate-800)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px}
+.feature-card{background:var(--slate-50);border-radius:var(--radius);padding:28px;border:1px solid var(--slate-200)}
+.feature-card .icon{font-size:2rem;margin-bottom:8px}
+.feature-card h3{font-family:var(--display);font-weight:600;font-size:1.1rem;margin-bottom:8px;color:var(--slate-800)}
+.feature-card p{font-size:0.9rem;color:var(--slate-600);line-height:1.7}
+.specs{width:100%;border-collapse:collapse;margin-top:24px;font-size:0.9rem}
+.specs td{padding:12px 16px;border-bottom:1px solid var(--slate-200);vertical-align:top}
+.specs td:first-child{font-weight:600;color:var(--slate-600);white-space:nowrap;width:180px}
+.specs td:last-child{color:var(--slate-800)}
+.philosophy{background:var(--slate-900);color:var(--white);padding:60px 0}
+.philosophy h2{color:var(--white)}
+.philosophy h2::after{background:var(--cyan)}
+.philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.phil-card{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,0.08)}
+.phil-card h4{color:var(--cyan);font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:6px}
+.phil-card p{color:var(--slate-300);font-size:0.875rem;line-height:1.6}
+.use-case{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.use-case-item{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--slate-200)}
+.use-case-item h3{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--slate-800)}
+.use-case-item h3 .phase{color:var(--cyan);margin-right:8px}
+.use-case-item p{font-size:0.88rem;color:var(--slate-600);line-height:1.7}
+.tech-stack{background:var(--slate-50);border-radius:var(--radius);padding:32px;margin-top:32px;border:1px solid var(--slate-200)}
+.tech-stack h3{font-family:var(--display);font-weight:600;margin-bottom:16px;font-size:1.1rem}
+.tech-stack .tag{display:inline-block;background:var(--white);border:1px solid var(--slate-200);border-radius:999px;padding:3px 14px;font-size:0.8rem;margin:3px 4px;color:var(--slate-700)}
+.tech-stack .tag.highlight{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(6,182,212,0.06)}
+footer{background:var(--slate-900);color:var(--slate-400);text-align:center;padding:40px 0;font-size:0.85rem}
+footer strong{color:var(--white)}
+@media(max-width:768px){.hero h1{font-size:2.2rem}.mockup-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">VERGE<span>AI</span></div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="index.html" class="back-btn">← <span data-lang="en">Back to Home</span><span data-lang="zh-hans">返回首页</span><span data-lang="zh-hant">返回首頁</span></a>
+      <div class="nav-lang">
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" data-lang="zh-hans" onclick="switchLang('zh-hans')">简体</button>
+        <button class="lang-btn" data-lang="zh-hant" onclick="switchLang('zh-hant')">繁體</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>👴 <span data-lang="en">AI <span>Elderly Buddy</span></span><span data-lang="zh-hans"><span>AI 银发守护</span></span><span data-lang="zh-hant"><span>AI 銀髮守護</span></span></h1>
+    <div class="subtitle"><span data-lang="en">Emotional Companion + Fall Detection + Health Monitoring — 100% offline, all-in-one desktop guardian for seniors</span><span data-lang="zh-hans">情感陪伴 + 跌倒检测 + 健康监测 — 100%离线，专为长者打造的全能桌面守护者</span><span data-lang="zh-hant">情感陪伴 + 跌倒偵測 + 健康監測 — 100%離線，專為長者打造的全能桌面守護者</span></div>
+    <div class="tagline"><span data-lang="en">Independent Living, Intelligent Guardianship.</span><span data-lang="zh-hans">独立生活，智能守护。</span><span data-lang="zh-hant">獨立生活，智能守護。</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span data-lang="en">Design Mockups</span><span data-lang="zh-hans">设计概念图</span><span data-lang="zh-hant">設計概念圖</span></h2>
+    <div class="mockup-grid">
+      <div class="mockup-card">
+        <img src="mockups/elderly-buddy/elderly-1-hero-bedside.jpg" alt="Bedside Hero" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Bedside Hero</div>'">
+        <div class="caption"><span data-lang="en"><strong>Bedside Companion</strong> — Warm white rounded body with wood-textured base, circular LCD face, RGB breathing ring, mmWave radar on top</span><span data-lang="zh-hans"><strong>床头伴侣</strong> — 暖白圆润机身配木质纹理底座，圆形LCD表情屏，RGB呼吸灯环，顶部毫米波雷达</span><span data-lang="zh-hant"><strong>床頭伴侶</strong> — 暖白圓潤機身配木質紋理底座，圓形LCD表情屏，RGB呼吸燈環，頂部毫米波雷達</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/elderly-buddy/elderly-2-grandma-companion.jpg" alt="Grandma Companion" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Grandma Companion</div>'">
+        <div class="caption"><span data-lang="en"><strong>Family Connection</strong> — Elderly grandmother smiling at Buddy on the coffee table. Device shows happy expression, warm amber glow. Natural home integration.</span><span data-lang="zh-hans"><strong>家庭连接</strong> — 长者在咖啡桌旁对着Buddy微笑。设备显示开心表情和暖琥珀光芒。自然融入家居环境。</span><span data-lang="zh-hant"><strong>家庭連繫</strong> — 長者在茶几旁對著Buddy微笑。設備顯示開心表情和暖琥珀光芒。自然融入家居環境。</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/elderly-buddy/elderly-3-night-guardian.jpg" alt="Night Guardian" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Night Guardian</div>'">
+        <div class="caption"><span data-lang="en"><strong>Night Guardian Mode</strong> — Gentle amber breathing nightlight, crescent moon display face, mmWave radar actively sensing. Elderly person sleeping peacefully.</span><span data-lang="zh-hans"><strong>夜间守护模式</strong> — 柔和的琥珀色呼吸夜灯，新月表情屏，毫米波雷达主动感应。长者安然入睡。</span><span data-lang="zh-hant"><strong>夜間守護模式</strong> — 柔和的琥珀色呼吸夜燈，新月表情屏，毫米波雷達主動感應。長者安然入睡。</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/elderly-buddy/elderly-4-health-monitor.jpg" alt="Health Monitor" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Health Monitor</div>'">
+        <div class="caption"><span data-lang="en"><strong>Health Monitoring</strong> — rPPG facial scan shows heart rate, respiration rate, and SpO2 on circular display. Camera and privacy shutter visible.</span><span data-lang="zh-hans"><strong>健康监测</strong> — rPPG面部扫描在圆形屏幕上显示心率、呼吸率和血氧。摄像头和隐私遮挡片清晰可见。</span><span data-lang="zh-hant"><strong>健康監測</strong> — rPPG面部掃描在圓形屏幕上顯示心率、呼吸率和血氧。攝像頭和私隱遮蓋片清晰可見。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2><span data-lang="en">Use Cases</span><span data-lang="zh-hans">使用场景</span><span data-lang="zh-hant">使用場景</span></h2>
+    <div class="use-case">
+      <div class="use-case-item">
+        <h3><span data-lang="en"><span class="phase">🛡️</span>Dual-Sensor Fall Detection</span><span data-lang="zh-hans"><span class="phase">🛡️</span>双传感器跌倒检测</span><span data-lang="zh-hant"><span class="phase">🛡️</span>雙傳感器跌倒偵測</span></h3>
+        <p><span data-lang="en">mmWave radar (60GHz, 24/7, &lt;200ms trigger) + CV pose estimation (second confirmation, &gt;99% accuracy). Three-stage escalation: detected → voice check <em>"Are you okay?"</em> → no response → auto-dial emergency contacts.</span><span data-lang="zh-hans">毫米波雷达（60GHz，全天候，&lt;200ms触发）+ CV姿态估计（二次确认，&gt;99%准确率）。三级升级流程：检测到 → 语音询问<em>"您没事吧？"</em> → 无响应 → 自动拨打紧急联系人。</span><span data-lang="zh-hant">毫米波雷達（60GHz，全天候，&lt;200ms觸發）+ CV姿態估計（二次確認，&gt;99%準確率）。三級升級流程：偵測到 → 語音詢問<em>"您冇事嗎？"</em> → 無響應 → 自動撥打緊急聯絡人。</span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span data-lang="en"><span class="phase">🗣️</span>Emotional Companion with Dialect</span><span data-lang="zh-hans"><span class="phase">🗣️</span>方言情感陪伴</span><span data-lang="zh-hant"><span class="phase">🗣️</span>方言情感陪伴</span></h3>
+        <p><span data-lang="en">Built-in 3B SLM fine-tuned for elderly conversation. Remembers the senior's name, family members, daily habits, favorite topics. Speaks Cantonese / Mandarin / Sichuanese. Proactive morning greetings, medication reminders, and evening goodnights.</span><span data-lang="zh-hans">内置3B SLM模型，针对长者对话微调。记住长者的姓名、家庭成员、日常习惯和喜欢的话题。支持粤语 / 普通话 / 四川话。主动早晨问候、用药提醒和晚间道晚安。</span><span data-lang="zh-hant">內置3B SLM模型，針對長者對話微調。記住長者的姓名、家庭成員、日常習慣和喜好的話題。支援粵語 / 普通話 / 四川話。主動早晨問候、服藥提醒和晚間道晚安。</span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span data-lang="en"><span class="phase">💓</span>30-Second Health Check</span><span data-lang="zh-hans"><span class="phase">💓</span>30秒健康检测</span><span data-lang="zh-hant"><span class="phase">💓</span>30秒健康檢測</span></h3>
+        <p><span data-lang="en">rPPG technology via RGB camera: heart rate (±3bpm), respiration rate (±2bpm), SpO₂ (±2%). Automatic daily scan with trend tracking. &gt;15% deviation from baseline triggers family notification.</span><span data-lang="zh-hans">通过RGB摄像头的rPPG技术：心率（±3bpm）、呼吸率（±2bpm）、血氧饱和度（±2%）。每日自动扫描并跟踪趋势。偏离基线&gt;15%时触发家庭通知。</span><span data-lang="zh-hant">通過RGB攝像頭的rPPG技術：心率（±3bpm）、呼吸率（±2bpm）、血氧飽和度（±2%）。每日自動掃描並追蹤趨勢。偏離基線&gt;15%時觸發家庭通知。</span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span data-lang="en"><span class="phase">👨‍👩‍👧</span>Family Connection App</span><span data-lang="zh-hans"><span class="phase">👨‍👩‍👧</span>家庭连接App</span><span data-lang="zh-hant"><span class="phase">👨‍👩‍👧</span>家庭連繫App</span></h3>
+        <p><span data-lang="en">Children's app receives daily summaries, anomaly alerts, health reports. Push-to-talk lets kids send voice messages that play on Buddy — zero interaction required from the elderly parent. Medication schedules set remotely via app.</span><span data-lang="zh-hans">子女的App接收每日摘要、异常警报和健康报告。一键对讲让子女发送语音消息在Buddy上播放 — 长者无需任何操作。用药计划可通过App远程设置。</span><span data-lang="zh-hant">子女的App接收每日摘要、異常警報和健康報告。一鍵對講讓子女發送語音訊息在Buddy上播放 — 長者無需任何操作。服藥計劃可通過App遠程設置。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span data-lang="en">Key Features</span><span data-lang="zh-hans">核心功能</span><span data-lang="zh-hant">核心功能</span></h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🛡️</div>
+        <h3><span data-lang="en">Dual-Sensor Fall Detection</span><span data-lang="zh-hans">双传感器跌倒检测</span><span data-lang="zh-hant">雙傳感器跌倒偵測</span></h3>
+        <p><span data-lang="en">mmWave radar (60GHz) + CV pose estimation = &gt;99% accuracy, &lt;1 false alarm per month. Three-stage escalation with voice confirmation and auto-dial to emergency contacts.</span><span data-lang="zh-hans">毫米波雷达（60GHz）+ CV姿态估计 = &gt;99%准确率，每月&lt;1次误报。三级升级流程，含语音确认和自动拨打紧急联系人。</span><span data-lang="zh-hant">毫米波雷達（60GHz）+ CV姿態估計 = &gt;99%準確率，每月&lt;1次誤報。三級升級流程，含語音確認和自動撥打緊急聯絡人。</span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🗣️</div>
+        <h3><span data-lang="en">Offline SLM with Dialect Support</span><span data-lang="zh-hans">离线SLM方言支持</span><span data-lang="zh-hant">離線SLM方言支援</span></h3>
+        <p><span data-lang="en">3B–7B quantized model runs entirely on-device. Cantonese, Mandarin, and Sichuanese supported at launch. Long-term memory remembers names, habits, family members — like a companion who truly knows them.</span><span data-lang="zh-hans">3B–7B量化模型完全在设备端运行。首发支持粤语、普通话和四川话。长期记忆记住姓名、习惯、家庭成员 — 如同真正了解他们的伴侣。</span><span data-lang="zh-hant">3B–7B量化模型完全在設備端運行。首發支援粵語、普通話和四川話。長期記憶記住姓名、習慣、家庭成員 — 如同真正了解他們的伴侶。</span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💓</div>
+        <h3><span data-lang="en">rPPG Vital Signs Monitoring</span><span data-lang="zh-hans">rPPG生命体征监测</span><span data-lang="zh-hant">rPPG生命體徵監測</span></h3>
+        <p><span data-lang="en">30-second facial scan extracts heart rate, respiration rate, SpO₂. Daily automatic readings track trends. Bluetooth scale and blood pressure monitor integration available.</span><span data-lang="zh-hans">30秒面部扫描提取心率、呼吸率、血氧饱和度。每日自动读数跟踪趋势。支持蓝牙秤和血压计集成。</span><span data-lang="zh-hant">30秒面部掃描提取心率、呼吸率、血氧飽和度。每日自動讀數追蹤趨勢。支援藍牙秤和血壓計集成。</span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3><span data-lang="en">100% Offline Privacy</span><span data-lang="zh-hans">100%离线隐私保护</span><span data-lang="zh-hant">100%離線私隱保護</span></h3>
+        <p><span data-lang="en">Zero cloud upload for voice, video, or health data. All inference runs locally. Camera-active LED indicator. Hardware privacy switch available. Truly private senior care.</span><span data-lang="zh-hans">语音、视频和健康数据零云端上传。所有推理在本地运行。摄像头运行LED指示灯。可选硬件隐私开关。真正私密的长者关怀。</span><span data-lang="zh-hant">語音、視頻和健康數據零雲端上傳。所有推理在本地運行。攝像頭運行LED指示燈。可選硬件私隱開關。真正私密的長者關懷。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2><span data-lang="en">Detailed Specifications</span><span data-lang="zh-hans">详细规格</span><span data-lang="zh-hant">詳細規格</span></h2>
+    <table class="specs">
+      <tr><td><span data-lang="en">Dimensions</span><span data-lang="zh-hans">尺寸</span><span data-lang="zh-hant">尺寸</span></td><td>~15cm (H) × 12cm (W) × 10cm (D) — desktop, slightly larger than a mug</td></tr>
+      <tr><td><span data-lang="en">Weight</span><span data-lang="zh-hans">重量</span><span data-lang="zh-hant">重量</span></td><td>~600g</td></tr>
+      <tr><td><span data-lang="en">Display</span><span data-lang="zh-hans">显示屏</span><span data-lang="zh-hant">顯示屏</span></td><td>2"–3" round IPS LCD (320×320) — facial expressions, status, simple text</td></tr>
+      <tr><td><span data-lang="en">Indicator</span><span data-lang="zh-hans">指示灯</span><span data-lang="zh-hant">指示燈</span></td><td>RGB LED breathing ring — warm amber (active), green (healthy), red (alert)</td></tr>
+      <tr><td><span data-lang="en">Colors</span><span data-lang="zh-hans">颜色</span><span data-lang="zh-hant">顏色</span></td><td>Warm White + Wood / Light Gray + Wood / Pastel Pink + Wood</td></tr>
+      <tr><td><span data-lang="en">AI SoC (Standalone)</span><span data-lang="zh-hans">AI SoC（独立版）</span><span data-lang="zh-hant">AI SoC（獨立版）</span></td><td>RK3588 (6 TOPS NPU) + ESP32-S3 (always-on sensor hub)</td></tr>
+      <tr><td><span data-lang="en">AI SoC (Satellite)</span><span data-lang="zh-hans">AI SoC（卫星版）</span><span data-lang="zh-hant">AI SoC（衛星版）</span></td><td>ESP32-S3 only (inference offloaded to AI Home Hub)</td></tr>
+      <tr><td><span data-lang="en">SLM Inference</span><span data-lang="zh-hans">SLM推理</span><span data-lang="zh-hant">SLM推理</span></td><td>Qwen2.5-3B Q4_K_M @ RK3588 (~2.5GB, 15–20 t/s) — emotional conversation</td></tr>
+      <tr><td><span data-lang="en">Fall Detection</span><span data-lang="zh-hans">跌倒检测</span><span data-lang="zh-hant">跌倒偵測</span></td><td>60GHz mmWave radar (TI IWR6843) + CV pose estimation — dual fusion, &lt;200ms trigger, &gt;99% accuracy</td></tr>
+      <tr><td><span data-lang="en">Health Monitoring</span><span data-lang="zh-hans">健康监测</span><span data-lang="zh-hant">健康監測</span></td><td>rPPG via RGB camera — HR (±3bpm), RR (±2bpm), SpO₂ (±2%)</td></tr>
+      <tr><td><span data-lang="en">Speech (ASR)</span><span data-lang="zh-hans">语音识别（ASR）</span><span data-lang="zh-hant">語音識別（ASR）</span></td><td>SenseVoice Small @ NPU (~150ms) — Cantonese, Mandarin, Sichuanese</td></tr>
+      <tr><td><span data-lang="en">Speech (TTS)</span><span data-lang="zh-hans">语音合成（TTS）</span><span data-lang="zh-hant">語音合成（TTS）</span></td><td>CosyVoice @ CPU (~300ms) — warm, emotional voice</td></tr>
+      <tr><td><span data-lang="en">Mic Array</span><span data-lang="zh-hans">麦克风阵列</span><span data-lang="zh-hant">麥克風陣列</span></td><td>2-mic beamforming (I2S MEMS), 3–5m effective range</td></tr>
+      <tr><td><span data-lang="en">Speaker</span><span data-lang="zh-hans">扬声器</span><span data-lang="zh-hant">揚聲器</span></td><td>3W full-range</td></tr>
+      <tr><td><span data-lang="en">Memory Storage</span><span data-lang="zh-hans">存储</span><span data-lang="zh-hant">存儲</span></td><td>64GB eMMC — system + model weights + user long-term memory</td></tr>
+      <tr><td><span data-lang="en">Connectivity</span><span data-lang="zh-hans">连接</span><span data-lang="zh-hant">連接</span></td><td>WiFi + BLE + WebSocket Agent Protocol</td></tr>
+      <tr><td><span data-lang="en">Privacy Design</span><span data-lang="zh-hans">隐私设计</span><span data-lang="zh-hant">私隱設計</span></td><td><span data-lang="en">100% local processing. Camera indicator LED. Optional hardware privacy switch.</span><span data-lang="zh-hans">100%本地处理。摄像头指示LED。可选硬件隐私开关。</span><span data-lang="zh-hant">100%本地處理。攝像頭指示LED。可選硬件私隱開關。</span></td></tr>
+      <tr><td><span data-lang="en">Family App</span><span data-lang="zh-hans">家庭App</span><span data-lang="zh-hant">家庭App</span></td><td><span data-lang="en">Daily summary, anomaly push, health reports, push-to-talk, remote medication schedule</span><span data-lang="zh-hans">每日摘要、异常推送、健康报告、一键对讲、远程用药计划</span><span data-lang="zh-hant">每日摘要、異常推送、健康報告、一鍵對講、遠程服藥計劃</span></td></tr>
+      <tr><td><span data-lang="en">Hub Satellite BOM</span><span data-lang="zh-hans">卫星版BOM</span><span data-lang="zh-hant">衛星版BOM</span></td><td><span data-lang="en">ESP32-S3 only: ~¥150–200 — fallback: basic fall detection + local alerts when Hub offline</span><span data-lang="zh-hans">仅ESP32-S3：约¥150–200 — 回退：基础跌倒检测 + Hub离线时本地警报</span><span data-lang="zh-hant">僅ESP32-S3：約¥150–200 — 回退：基礎跌倒偵測 + Hub離線時本地警報</span></td></tr>
+    </table>
+
+    <div class="tech-stack">
+      <h3><span data-lang="en">🧠 Technology Stack</span><span data-lang="zh-hans">🧠 技术栈</span><span data-lang="zh-hant">🧠 技術棧</span></h3>
+      <span class="tag highlight">Qwen2.5-3B Q4_K_M @ RK3588 NPU</span>
+      <span class="tag highlight">mmWave 60GHz Radar</span>
+      <span class="tag highlight">rPPG via RGB Camera</span>
+      <span class="tag">SenseVoice Small (Cantonese+Mandarin)</span>
+      <span class="tag">CosyVoice TTS</span>
+      <span class="tag">ESP32-S3 (always-on)</span>
+      <span class="tag">3B SLM offline</span>
+      <span class="tag">Dual-Sensor Fusion</span>
+      <span class="tag">WebSocket Agent Protocol</span>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="container">
+    <h2><span data-lang="en">Design Philosophy</span><span data-lang="zh-hans">设计理念</span><span data-lang="zh-hant">設計理念</span></h2>
+    <div class="philosophy-grid">
+      <div class="phil-card"><h4><span data-lang="en">Independent Living</span><span data-lang="zh-hans">独立生活</span><span data-lang="zh-hant">獨立生活</span></h4><p><span data-lang="en">Seniors deserve to live independently, with dignity. Buddy enables that — not by replacing human care, but by extending safe boundaries.</span><span data-lang="zh-hans">长者值得有尊严地独立生活。Buddy实现这一点 — 不是取代人的关怀，而是拓展安全边界。</span><span data-lang="zh-hant">長者值得有尊嚴地獨立生活。Buddy實現這一點 — 不是取代人的關懷，而是拓展安全邊界。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Zero-Touch for Seniors</span><span data-lang="zh-hans">长者零操作</span><span data-lang="zh-hant">長者零操作</span></h4><p><span data-lang="en">Plug and play. No buttons, no apps, no learning curve. All configuration happens through the family app. The elderly person just talks.</span><span data-lang="zh-hans">即插即用。无需按键、无需App、无需学习。所有配置通过家庭App完成。长者只需说话。</span><span data-lang="zh-hant">即插即用。無需按鍵、無需App、無需學習。所有配置通過家庭App完成。長者只需說話。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Dialect is Dignity</span><span data-lang="zh-hans">方言即尊严</span><span data-lang="zh-hant">方言即尊嚴</span></h4><p><span data-lang="en">A companion that speaks your mother tongue — not just Mandarin, but Cantonese, Sichuanese, and more. Language is identity.</span><span data-lang="zh-hans">一个说您母语的伴侣 — 不只是普通话，还有粤语、四川话等。语言即是身份认同。</span><span data-lang="zh-hant">一個說您母語的伴侶 — 不只是普通話，還有粵語、四川話等。語言即是身份認同。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Privacy is Care</span><span data-lang="zh-hans">隐私即关爱</span><span data-lang="zh-hant">私隱即關懷</span></h4><p><span data-lang="en">100% offline. No cloud cameras in your parent's bedroom. Real security means the data never leaves home.</span><span data-lang="zh-hans">100%离线。父母的卧室无需云端摄像头。真正的安全意味着数据永不离开家门。</span><span data-lang="zh-hant">100%離線。父母的臥室無需雲端攝像頭。真正的安全意味着數據永不離開家門。</span></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>Verge AI</strong> — <span data-lang="en">Edge Intelligence, Within Reach.</span><span data-lang="zh-hans">边缘智能，触手可及。</span><span data-lang="zh-hant">邊緣智能，觸手可及。</span><br>
+    蔚科融智（深圳）科技有限公司<br>
+    Shenzhen · Hong Kong
+  </div>
+</footer>
+
+<script>
+function switchLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem('vergeai2026-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+}
+(function() {
+  const saved = localStorage.getItem('vergeai2026-lang');
+  if (saved) { switchLang(saved); }
+  else {
+    const raw = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
+    const navLang = raw.toLowerCase();
+    if (navLang.startsWith('zh')) {
+      if (navLang.includes('tw') || navLang.includes('hk') || navLang.includes('mo') || navLang.includes('hant')) {
+        switchLang('zh-hant');
+      } else { switchLang('zh-hans'); }
+    } else { switchLang('en'); }
+  }
+})();
+</script>
+
+</body>
+</html>

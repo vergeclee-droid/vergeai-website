@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verge AI Home Hub — Product Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+[data-lang]{display:none!important}
+html[lang="en"] [data-lang="en"],
+html[lang="zh-hans"] [data-lang="zh-hans"],
+html[lang="zh-hant"] [data-lang="zh-hant"]{display:inline!important}
+html[lang="en"] [data-lang="en"].d-block,
+html[lang="zh-hans"] [data-lang="zh-hans"].d-block,
+html[lang="zh-hant"] [data-lang="zh-hant"].d-block{display:block!important}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#06b6d4;--cyan-dark:#0891b2;--indigo:#818cf8;--indigo-dark:#6366f1;
+  --purple:#a78bfa;--purple-light:#c4b5fd;--purple-mist:#f5f3ff;
+  --slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;
+  --slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;
+  --white:#ffffff;--near-black:#17171c;
+  --radius:22px;--radius-sm:14px;
+  --display:'Space Grotesk','Inter',-apple-system,sans-serif;
+  --body:'Inter',-apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+}
+body{font-family:var(--body);color:var(--slate-800);background:var(--white);line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--slate-200);height:60px;display:flex;align-items:center}
+nav .container{display:flex;align-items:center;justify-content:space-between;width:100%}
+nav .logo{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--slate-800)}
+nav .logo span{color:var(--purple)}
+.lang-btn{background:none;border:none;display:inline-block!important;font-size:0.75rem;font-weight:500;color:var(--slate-400);cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.2s;font-family:inherit}
+.lang-btn:hover{color:var(--slate-700)}
+.lang-btn.active{color:var(--white);background:var(--near-black)}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:500;color:var(--slate-600);text-decoration:none;padding:6px 16px;border-radius:999px;border:1px solid var(--slate-200);transition:all 0.2s}
+.back-btn:hover{border-color:var(--purple);color:var(--indigo-dark)}
+.nav-lang{display:flex;gap:2px;padding-left:10px;border-left:1px solid var(--slate-200)}
+.hero{background:linear-gradient(135deg,#1a0a2e,var(--slate-900));color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-family:var(--display);font-weight:700;font-size:3.5rem;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--purple)}
+.hero .subtitle{font-size:1.2rem;color:var(--slate-300);max-width:600px;margin:0 auto 12px}
+.hero .tagline{display:inline-block;background:rgba(167,139,250,0.15);color:var(--purple);padding:4px 16px;border-radius:999px;font-size:0.875rem;font-weight:500;margin-top:8px}
+section{padding:60px 0}
+section h2{font-family:var(--display);font-weight:600;font-size:2rem;margin-bottom:32px;position:relative;padding-bottom:12px}
+section h2::after{content:'';position:absolute;bottom:0;left:0;width:60px;height:3px;background:var(--purple);border-radius:2px}
+.mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:40px}
+.mockup-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--slate-200);background:var(--white);transition:border-color 0.3s,transform 0.2s}
+.mockup-card:hover{border-color:var(--purple);transform:translateY(-2px)}
+.mockup-card img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+.mockup-card .caption{padding:12px 16px;font-size:0.875rem;color:var(--slate-600)}
+.mockup-card .caption strong{color:var(--slate-800)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px}
+.feature-card{background:var(--slate-50);border-radius:var(--radius);padding:28px;border:1px solid var(--slate-200)}
+.feature-card .icon{font-size:2rem;margin-bottom:8px}
+.feature-card h3{font-family:var(--display);font-weight:600;font-size:1.1rem;margin-bottom:8px;color:var(--slate-800)}
+.feature-card p{font-size:0.9rem;color:var(--slate-600);line-height:1.7}
+.specs{width:100%;border-collapse:collapse;margin-top:24px;font-size:0.9rem}
+.specs td{padding:12px 16px;border-bottom:1px solid var(--slate-200);vertical-align:top}
+.specs td:first-child{font-weight:600;color:var(--slate-600);white-space:nowrap;width:180px}
+.specs td:last-child{color:var(--slate-800)}
+.philosophy{background:var(--slate-900);color:var(--white);padding:60px 0}
+.philosophy h2{color:var(--white)}
+.philosophy h2::after{background:var(--purple)}
+.philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.phil-card{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,0.08)}
+.phil-card h4{color:var(--purple);font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:6px}
+.phil-card p{color:var(--slate-300);font-size:0.875rem;line-height:1.6}
+.use-case{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.use-case-item{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--slate-200)}
+.use-case-item h3{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--slate-800)}
+.use-case-item h3 .phase{color:var(--purple);margin-right:8px}
+.use-case-item p{font-size:0.88rem;color:var(--slate-600);line-height:1.7}
+.tech-stack{background:var(--slate-50);border-radius:var(--radius);padding:32px;margin-top:32px;border:1px solid var(--slate-200)}
+.tech-stack h3{font-family:var(--display);font-weight:600;margin-bottom:16px;font-size:1.1rem}
+.tech-stack .tag{display:inline-block;background:var(--white);border:1px solid var(--slate-200);border-radius:999px;padding:3px 14px;font-size:0.8rem;margin:3px 4px;color:var(--slate-700)}
+.tech-stack .tag.highlight{border-color:var(--purple);color:var(--indigo-dark);background:rgba(167,139,250,0.06)}
+footer{background:var(--slate-900);color:var(--slate-400);text-align:center;padding:40px 0;font-size:0.85rem}
+footer strong{color:var(--white)}
+@media(max-width:768px){.hero h1{font-size:2.2rem}.mockup-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">VERGE<span>AI</span></div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="index.html" class="back-btn">← <span data-lang="en">Back to Home</span><span data-lang="zh-hans">返回首页</span><span data-lang="zh-hant">返回首頁</span></a>
+      <div class="nav-lang">
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" data-lang="zh-hans" onclick="switchLang('zh-hans')">简体</button>
+        <button class="lang-btn" data-lang="zh-hant" onclick="switchLang('zh-hant')">繁體</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>🏠 <span data-lang="en">AI <span>Home Hub</span></span><span data-lang="zh-hans">AI <span>家庭中控台</span></span><span data-lang="zh-hant">AI <span>家庭中控台</span></span></h1>
+    <div class="subtitle"><span data-lang="en">The Central Nervous System of Your Smart Home — Edge SLM compute + NAS + transparent holographic display</span><span data-lang="zh-hans">您智能家居的中枢神经系统 — 边缘SLM计算 + NAS + 透明全息显示屏</span><span data-lang="zh-hant">您智能家居的中樞神經系統 — 邊緣SLM計算 + NAS + 透明全息顯示屏</span></div>
+    <div class="tagline"><span data-lang="en">Offline First. Always Available.</span><span data-lang="zh-hans">离线优先。始终可用。</span><span data-lang="zh-hant">離線優先。始終可用。</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span data-lang="en">Design Mockups</span><span data-lang="zh-hans">设计概念图</span><span data-lang="zh-hant">設計概念圖</span></h2>
+    <div class="mockup-grid">
+      <div class="mockup-card">
+        <img src="mockups/home-hub/hub-1-transparent-display.jpg" alt="Transparent Display" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Transparent Display</div>'">
+        <div class="caption"><span data-lang="en"><strong>Transparent Holographic Display</strong> — 17" dual-sided screen with family photo slideshow, weather widgets, and smart home controls</span><span data-lang="zh-hans"><strong>透明全息显示屏</strong> — 17英寸双面屏，支持家庭照片轮播、天气小部件和智能家居控制</span><span data-lang="zh-hant"><strong>透明全息顯示屏</strong> — 17英寸雙面屏，支援家庭照片輪播、天氣小部件和智能家居控制</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/home-hub/hub-2-smart-home-control.jpg" alt="Smart Home Control" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Smart Home Control</div>'">
+        <div class="caption"><span data-lang="en"><strong>Smart Home Control Center</strong> — Satellite device status, IoT controls (lights/AC/curtains), family calendar — voice controlled</span><span data-lang="zh-hans"><strong>智能家居控制中心</strong> — 卫星设备状态、物联网控制（灯光/空调/窗帘）、家庭日历 — 语音控制</span><span data-lang="zh-hant"><strong>智能家居控制中心</strong> — 衛星設備狀態、物聯網控制（燈光/空調/窗簾）、家庭日曆 — 語音控制</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/home-hub/hub-3-side-profile.jpg" alt="Side Profile" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Side Profile</div>'">
+        <div class="caption"><span data-lang="en"><strong>Ultra-Slim Side Profile</strong> — Only 25mm thick. Anodized aluminum frame with passive cooling vents. Gallery-inspired aesthetic.</span><span data-lang="zh-hans"><strong>超薄侧面机身</strong> — 仅25毫米厚。阳极氧化铝框架，被动散热口。画廊级美学设计。</span><span data-lang="zh-hant"><strong>超薄側面機身</strong> — 僅25毫米厚。陽極氧化鋁框架，被動散熱口。畫廊級美學設計。</span></div>
+      </div>
+      <div class="mockup-card">
+        <img src="mockups/home-hub/hub-4-nas-admin.jpg" alt="NAS Management" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: NAS Admin</div>'">
+        <div class="caption"><span data-lang="en"><strong>Home NAS Management</strong> — Encrypted storage for all satellite data, family photo albums, and backup management dashboard</span><span data-lang="zh-hans"><strong>家庭NAS管理</strong> — 为所有卫星数据提供加密存储，家庭相册和备份管理面板</span><span data-lang="zh-hant"><strong>家庭NAS管理</strong> — 為所有衛星數據提供加密存儲，家庭相冊和備份管理面板</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2><span data-lang="en">Use Cases</span><span data-lang="zh-hans">使用场景</span><span data-lang="zh-hant">使用場景</span></h2>
+    <div class="use-case">
+      <div class="use-case-item">
+        <h3><span data-lang="en"><span class="phase">🏠</span>Family Command Center</span><span data-lang="zh-hans"><span class="phase">🏠</span>家庭指挥中心</span><span data-lang="zh-hant"><span class="phase">🏠</span>家庭指揮中心</span></h3>
+        <p><span data-lang="en">Walk past the Hub — presence sensor activates the transparent display: weather + time + schedule (top-left), satellite device status (top-right), family photo slideshow (center), smart home quick controls (bottom). Zero-touch ambient information.</span><span data-lang="zh-hans">走过中控台 — 存在感应器激活透明显示屏：天气+时间+日程（左上），卫星设备状态（右上），家庭照片轮播（中央），智能家居快速控制（底部）。零触控环境信息。</span><span data-lang="zh-hant">走過中控台 — 存在感應器激活透明顯示屏：天氣+時間+日程（左上），衛星設備狀態（右上），家庭照片輪播（中央），智能家居快速控制（底部）。零觸控環境資訊。</span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span data-lang="en"><span class="phase">📡</span>Satellite Management</span><span data-lang="zh-hans"><span class="phase">📡</span>卫星设备管理</span><span data-lang="zh-hant"><span class="phase">📡</span>衛星設備管理</span></h3>
+        <p><span data-lang="en">The Kitchen Agent detects eggs expiring tomorrow. The Hub cross-references and speaks: <em>"I've added eggs to your shopping list and synced it to your phone and the Kitchen Agent."</em> Unified ecosystem control.</span><span data-lang="zh-hans">厨房助手检测到鸡蛋明天过期。中控台交叉核对并语音提示：<em>"我已将鸡蛋加入您的购物清单，并同步到您的手机和厨房助手。"</em> 统一生态系统控制。</span><span data-lang="zh-hant">廚房助手檢測到雞蛋明天過期。中控台交叉核對並語音提示：<em>"我已將雞蛋加入您的購物清單，並同步到您的手機和廚房助手。"</em> 統一生態系統控制。</span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span data-lang="en"><span class="phase">💾</span>Home NAS & Data Privacy</span><span data-lang="zh-hans"><span class="phase">💾</span>家庭NAS与数据隐私</span><span data-lang="zh-hant"><span class="phase">💾</span>家庭NAS與數據私隱</span></h3>
+        <p><span data-lang="en">All satellite devices store encrypted data on the Hub's NVMe SSD. Ask <em>"What did I eat last Thursday?"</em> — the Hub recalls nutrition logs from the Kitchen Agent and skin analysis from the Smart Mirror, delivering a unified answer.</span><span data-lang="zh-hans">所有卫星设备将加密数据存储在中控台的NVMe SSD上。询问<em>"上周四我吃了什么？"</em> — 中控台从厨房助手调取营养记录，从智能镜子调取皮肤分析数据，给出统一答案。</span><span data-lang="zh-hant">所有衛星設備將加密數據存儲在中控台的NVMe SSD上。詢問<em>"上週四我吃了什麼？"</em> — 中控台從廚房助手調取營養記錄，從智能鏡子調取皮膚分析數據，給出統一答案。</span></p>
+      </div>
+      <div class="use-case-item">
+        <h3><span data-lang="en"><span class="phase">🖼️</span>Ambient Art Mode</span><span data-lang="zh-hans"><span class="phase">🖼️</span>环境艺术模式</span><span data-lang="zh-hant"><span class="phase">🖼️</span>環境藝術模式</span></h3>
+        <p><span data-lang="en">When no one is active, the transparent display transforms into a digital art frame showing family photos or gentle animated scenes. At night, it dims to a subtle ambient clock at just 5W power. Always beautiful, never intrusive.</span><span data-lang="zh-hans">无人活动时，透明显示屏变身为数字艺术画框，展示家庭照片或柔和动画场景。夜间，它暗淡为微妙的氛围时钟，仅耗电5W。永远美丽，绝不打扰。</span><span data-lang="zh-hant">無人活動時，透明顯示屏變身為數字藝術畫框，展示家庭照片或柔和動畫場景。夜間，它暗淡為微妙的氛圍時鐘，僅耗電5W。永遠美麗，絕不打擾。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span data-lang="en">Key Features</span><span data-lang="zh-hans">核心功能</span><span data-lang="zh-hant">核心功能</span></h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🧠</div>
+        <h3><span data-lang="en">Edge SLM Compute (3B–7B)</span><span data-lang="zh-hans">边缘SLM计算 (3B–7B)</span><span data-lang="zh-hant">邊緣SLM計算 (3B–7B)</span></h3>
+        <p><span data-lang="en">RK3588 with 6 TOPS NPU runs Qwen3-2B/4B W8A8 locally. All satellite devices offload heavy inference here — enabling thin, low-cost terminals across the home.</span><span data-lang="zh-hans">RK3588搭配6 TOPS NPU本地运行Qwen3-2B/4B W8A8。所有卫星设备将繁重推理卸载至此 — 实现家中轻量低成本终端。</span><span data-lang="zh-hant">RK3588搭配6 TOPS NPU本地運行Qwen3-2B/4B W8A8。所有衛星設備將繁重推理卸載至此 — 實現家中輕量低成本終端。</span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💾</div>
+        <h3><span data-lang="en">Home NAS (512GB–2TB)</span><span data-lang="zh-hans">家庭NAS (512GB–2TB)</span><span data-lang="zh-hant">家庭NAS (512GB–2TB)</span></h3>
+        <p><span data-lang="en">NVMe SSD with AES-256 + TPM hardware encryption. All satellite data — nutrition logs, beauty trends, learning progress, pet health — stored privately, never in the cloud.</span><span data-lang="zh-hans">NVMe SSD搭配AES-256 + TPM硬件加密。所有卫星数据 — 营养记录、美容趋势、学习进度、宠物健康 — 私密存储，绝不上云。</span><span data-lang="zh-hant">NVMe SSD搭配AES-256 + TPM硬件加密。所有衛星數據 — 營養記錄、美容趨勢、學習進度、寵物健康 — 私密存儲，絕不上雲。</span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🖥️</div>
+        <h3><span data-lang="en">Transparent Holographic Display</span><span data-lang="zh-hans">透明全息显示屏</span><span data-lang="zh-hant">透明全息顯示屏</span></h3>
+        <p><span data-lang="en">15"–21" dual-sided transparent screen. Visible from both sides. When active: smart home dashboard. When idle: family photo gallery. Gallery-grade design that disappears into your wall.</span><span data-lang="zh-hans">15–21英寸双面透明屏幕。两面可见。激活时：智能家居仪表盘。空闲时：家庭照片画廊。画廊级设计，融入您的墙面。</span><span data-lang="zh-hant">15–21英寸雙面透明屏幕。兩面可見。激活時：智能家居儀表盤。空閒時：家庭照片畫廊。畫廊級設計，融入您的牆面。</span></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📡</div>
+        <h3><span data-lang="en">Satellite Gateway</span><span data-lang="zh-hans">卫星网关</span><span data-lang="zh-hant">衛星網關</span></h3>
+        <p><span data-lang="en">WiFi 6 + BLE 5.3 + Thread + Matter compatibility. New satellite devices pair automatically via BLE scan. OTA updates distributed to all satellites from the Hub (delta updates, scheduled 3AM).</span><span data-lang="zh-hans">WiFi 6 + BLE 5.3 + Thread + Matter兼容。新卫星设备通过BLE扫描自动配对。OTA更新从中控台分发至所有卫星（增量更新，凌晨3点调度）。</span><span data-lang="zh-hant">WiFi 6 + BLE 5.3 + Thread + Matter兼容。新衛星設備通過BLE掃描自動配對。OTA更新從中控台分發至所有衛星（增量更新，凌晨3點調度）。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-50)">
+  <div class="container">
+    <h2><span data-lang="en">Detailed Specifications</span><span data-lang="zh-hans">详细规格</span><span data-lang="zh-hant">詳細規格</span></h2>
+    <table class="specs">
+      <tr><td><span data-lang="en">Display</span><span data-lang="zh-hans">显示屏</span><span data-lang="zh-hant">顯示屏</span></td><td>Transparent holographic 15"–21", dual-sided visible</td></tr>
+      <tr><td><span data-lang="en">Mounting</span><span data-lang="zh-hans">安装方式</span><span data-lang="zh-hant">安裝方式</span></td><td>Wall-mount (primary) / desktop stand</td></tr>
+      <tr><td><span data-lang="en">Dimensions</span><span data-lang="zh-hans">尺寸</span><span data-lang="zh-hant">尺寸</span></td><td>~380×280×25mm</td></tr>
+      <tr><td><span data-lang="en">Weight</span><span data-lang="zh-hans">重量</span><span data-lang="zh-hant">重量</span></td><td>~2–3.5kg</td></tr>
+      <tr><td><span data-lang="en">Storage</span><span data-lang="zh-hans">存储</span><span data-lang="zh-hant">儲存</span></td><td>NVMe SSD 512GB–2TB (AES-256 + TPM encrypted)</td></tr>
+      <tr><td><span data-lang="en">Memory</span><span data-lang="zh-hans">内存</span><span data-lang="zh-hant">內存</span></td><td>8–16GB RAM</td></tr>
+      <tr><td><span data-lang="en">AI SoC</span><span data-lang="zh-hans">AI SoC</span><span data-lang="zh-hant">AI SoC</span></td><td>RK3588 (6 TOPS NPU) + ESP32-C6 (connectivity co-processor)</td></tr>
+      <tr><td><span data-lang="en">SLM Inference</span><span data-lang="zh-hans">SLM推理</span><span data-lang="zh-hant">SLM推理</span></td><td>Qwen3-2B/4B W8A8 @ NPU (11.5/5.7 t/s) — RKLLM v1.2.3 / llama.cpp</td></tr>
+      <tr><td><span data-lang="en">Speech (ASR)</span><span data-lang="zh-hans">语音(ASR)</span><span data-lang="zh-hant">語音(ASR)</span></td><td>SenseVoice Small @ NPU (~150ms) — Cantonese + Mandarin</td></tr>
+      <tr><td><span data-lang="en">Speech (TTS)</span><span data-lang="zh-hans">语音(TTS)</span><span data-lang="zh-hant">語音(TTS)</span></td><td>CosyVoice @ CPU (~300ms) — emotional voice synthesis</td></tr>
+      <tr><td><span data-lang="en">Connectivity</span><span data-lang="zh-hans">连接</span><span data-lang="zh-hant">連接</span></td><td>WiFi 6 + Gigabit Ethernet + BLE 5.3 + Thread</td></tr>
+      <tr><td><span data-lang="en">Smart Home</span><span data-lang="zh-hans">智能家居</span><span data-lang="zh-hant">智能家居</span></td><td>Matter / HomeKit compatible</td></tr>
+      <tr><td><span data-lang="en">Satellite Protocol</span><span data-lang="zh-hans">卫星协议</span><span data-lang="zh-hant">衛星協議</span></td><td>WebSocket Agent Protocol (LAN) — all satellite devices</td></tr>
+      <tr><td><span data-lang="en">Database</span><span data-lang="zh-hans">数据库</span><span data-lang="zh-hant">數據庫</span></td><td>SQLite / LiteFS (multi-device sync)</td></tr>
+      <tr><td><span data-lang="en">Cooling</span><span data-lang="zh-hans">散热</span><span data-lang="zh-hant">散熱</span></td><td>Fanless passive cooling — completely silent</td></tr>
+      <tr><td><span data-lang="en">Power</span><span data-lang="zh-hans">电源</span><span data-lang="zh-hant">電源</span></td><td>Idle 5W / Peak 35W</td></tr>
+      <tr><td><span data-lang="en">Design</span><span data-lang="zh-hans">设计</span><span data-lang="zh-hant">設計</span></td><td>Minimalist aluminum frame, concealed antenna, hidden side vents</td></tr>
+      <tr><td><span data-lang="en">Cloud Fallback</span><span data-lang="zh-hans">云端后备</span><span data-lang="zh-hant">雲端後備</span></td><td>DeepSeek V4-Flash / Qwen3.6-Plus (complex tasks, optional)</td></tr>
+    </table>
+
+    <div class="tech-stack">
+      <h3><span data-lang="en">🧠 Technology Stack</span><span data-lang="zh-hans">🧠 技术栈</span><span data-lang="zh-hant">🧠 技術棧</span></h3>
+      <span class="tag highlight">Qwen3-2B/4B W8A8 @ RK3588 NPU</span>
+      <span class="tag highlight">RKLLM v1.2.3 / llama.cpp</span>
+      <span class="tag highlight">Transparent Holographic Display</span>
+      <span class="tag">SenseVoice Small</span>
+      <span class="tag">CosyVoice TTS</span>
+      <span class="tag">NVMe SSD (512GB–2TB)</span>
+      <span class="tag">WiFi 6 + BLE 5.3 + Thread</span>
+      <span class="tag">Matter / HomeKit</span>
+      <span class="tag">WebSocket Agent Protocol</span>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="container">
+    <h2><span data-lang="en">Design Philosophy</span><span data-lang="zh-hans">设计理念</span><span data-lang="zh-hant">設計理念</span></h2>
+    <div class="philosophy-grid">
+      <div class="phil-card"><h4><span data-lang="en">Hub + Satellite</span><span data-lang="zh-hans">中控台 + 卫星</span><span data-lang="zh-hant">中控台 + 衛星</span></h4><p><span data-lang="en">Heavy inference centralized, terminals thinned. Every satellite becomes affordable when the Hub does the thinking.</span><span data-lang="zh-hans">重型推理集中化，终端轻薄化。当中控台负责思考，每个卫星都能变得经济实惠。</span><span data-lang="zh-hant">重型推理集中化，終端輕薄化。當中控台負責思考，每個衛星都能變得經濟實惠。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Offline First</span><span data-lang="zh-hans">离线优先</span><span data-lang="zh-hant">離線優先</span></h4><p><span data-lang="en">All core features work without internet. No cloud dependency — your home intelligence never breaks because your ISP is down.</span><span data-lang="zh-hans">所有核心功能无需互联网即可运行。不依赖云端 — 您的家庭智能不会因网络故障而中断。</span><span data-lang="zh-hant">所有核心功能無需互聯網即可運行。不依賴雲端 — 您的家庭智能不會因網絡故障而中斷。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Ecosystem Lock-In</span><span data-lang="zh-hans">生态系统锁定</span><span data-lang="zh-hant">生態系統鎖定</span></h4><p><span data-lang="en">Satellite devices unlock full potential when connected to the Hub. Once you have 2+ satellites, the value of the ecosystem is irreplaceable.</span><span data-lang="zh-hans">卫星设备连接中控台后才能释放全部潜力。一旦拥有2个以上卫星，生态系统价值无可替代。</span><span data-lang="zh-hant">衛星設備連接中控台後才能釋放全部潛力。一旦擁有2個以上衛星，生態系統價值無可替代。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Dual-Mode Display</span><span data-lang="zh-hans">双模式显示屏</span><span data-lang="zh-hant">雙模式顯示屏</span></h4><p><span data-lang="en">Active = smart control center. Idle = digital art gallery. Always purposeful, never an eyesore.</span><span data-lang="zh-hans">激活 = 智能控制中心。空闲 = 数字艺术画廊。始终有意义，绝不碍眼。</span><span data-lang="zh-hant">激活 = 智能控制中心。空閒 = 數字藝術畫廊。始終有意義，絕不礙眼。</span></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>Verge AI</strong> — <span data-lang="en">Edge Intelligence, Within Reach.</span><span data-lang="zh-hans">边缘智能，触手可及。</span><span data-lang="zh-hant">邊緣智能，觸手可及。</span><br>
+    蔚科融智（深圳）科技有限公司<br>
+    Shenzhen · Hong Kong
+  </div>
+</footer>
+
+<script>
+function switchLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem('vergeai2026-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+}
+(function() {
+  const saved = localStorage.getItem('vergeai2026-lang');
+  if (saved) { switchLang(saved); }
+  else {
+    const raw = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
+    const navLang = raw.toLowerCase();
+    if (navLang.startsWith('zh')) {
+      if (navLang.includes('tw') || navLang.includes('hk') || navLang.includes('mo') || navLang.includes('hant')) {
+        switchLang('zh-hant');
+      } else { switchLang('zh-hans'); }
+    } else { switchLang('en'); }
+  }
+})();
+</script>
+
+</body>
+</html>
