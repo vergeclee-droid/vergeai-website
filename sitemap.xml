@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://vergeai.net/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <loc>https://www.vergeai.net/</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vergeai.net/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vergeai.net/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://vergeai.net/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vergeai.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vergeai.net/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.vergeai.net/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.vergeai.net/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vergeai.net/"/>
   </url>
 </urlset>
