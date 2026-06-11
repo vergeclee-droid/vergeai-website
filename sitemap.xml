@@ -3,12 +3,48 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.vergeai.net/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.vergeai.net/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.vergeai.net/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.vergeai.net/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vergeai.net/"/>
+  </url>
+  <url>
+    <loc>https://www.vergeai.net/catalogue-smart-mirror.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vergeai.net/catalogue-home-hub.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vergeai.net/catalogue-kitchen-agent.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vergeai.net/catalogue-study-buddy.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vergeai.net/catalogue-pet-buddy.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vergeai.net/catalogue-elderly-buddy.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

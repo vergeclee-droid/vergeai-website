@@ -10,6 +10,7 @@
 <meta name="author" content="Verge AI Limited / 蔚科融智（深圳）科技有限公司">
 <!-- Canonical URL -->
 <link rel="canonical" href="https://www.vergeai.net/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.vergeai.net/">
@@ -57,7 +58,7 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
-    "email": "info@vergeai.net"
+    "email": "hello@vergeai.net"
   },
   "sameAs": []
 }
@@ -70,6 +71,10 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans 
 img{max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 ::selection{background:#06b6d420;color:#1e293b}
+
+/* ========== SKIP LINK ========== */
+.skip-link{position:absolute;top:-100px;left:0;z-index:1000;padding:8px 16px;background:var(--near-black);color:var(--white);font-size:0.875rem;font-weight:500;text-decoration:none;transition:top 0.2s}
+.skip-link:focus{top:0;outline:2px solid var(--blue);outline-offset:2px}
 
 /* ========== COLORS ========== */
 :root{
@@ -325,9 +330,15 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
   .product-card p{font-size:0.7rem}
   .btn{max-width:260px;padding:14px 20px;font-size:0.9rem}
 }
+@media(prefers-reduced-motion:reduce){
+  .mission-card,.use-case,.pillar,.product-card,.tech-item,.contact-card{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
+<!-- Skip to main content -->
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <!-- ====== NAV ====== -->
 <nav id="navbar">
@@ -336,7 +347,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
       <img src="logo-nav.png" alt="Verge AI" style="height:32px;">
       Verge AI
     </a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="zh-hans">关于</a><a href="#about" data-lang="zh-hant">關於</a></li>
       <li><a href="#vergeops">VergeOps</a></li>
@@ -368,7 +379,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
 </section>
 
 <!-- ====== ABOUT / MISSION ====== -->
-<section class="section" id="about">
+<section class="section" id="about" id="main-content">
   <div class="container">
     <div class="mission-block">
       <div class="section-tag" data-lang="en">About</div>
@@ -418,9 +429,9 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
       </div>
       <div class="mission-card">
         <div class="icon">🌐</div>
-        <h4 data-lang="en">Ecosystem Lock-In</h4>
-        <h4 data-lang="zh-hans">生态锁定</h4>
-        <h4 data-lang="zh-hant">生態鎖定</h4>
+        <h4 data-lang="en">Shared Intelligence</h4>
+        <h4 data-lang="zh-hans">共享智能</h4>
+        <h4 data-lang="zh-hant">共享智能</h4>
         <p data-lang="en" class="d-block">Hub + Satellite architecture. A shared intelligence layer that makes every device smarter over time.</p>
         <p data-lang="zh-hans" class="d-block">Hub + Satellite架构。共享智能层，设备越用越聪明。</p>
         <p data-lang="zh-hant" class="d-block">Hub + Satellite架構。共享智能層，設備越用越聰明。</p>
@@ -772,7 +783,9 @@ function switchLang(lang) {
   document.documentElement.lang = lang;
   localStorage.setItem('vergeai2026-lang', lang);
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    const isActive = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
   const meta = LANG_META[lang] || LANG_META['en'];
   document.getElementById('page-title').textContent = meta.title;
@@ -812,13 +825,16 @@ if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
     hamburger.classList.toggle('open');
-    hamburger.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+    const isOpen = navLinks.classList.contains('open');
+    hamburger.textContent = isOpen ? '✕' : '☰';
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   });
   navLinks.querySelectorAll('a, .lang-btn').forEach(el => {
     el.addEventListener('click', () => {
       navLinks.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.textContent = '☰';
+      hamburger.setAttribute('aria-label', 'Open menu');
     });
   });
   navLinks.addEventListener('click', e => {
@@ -826,6 +842,7 @@ if (hamburger && navLinks) {
       navLinks.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.textContent = '☰';
+      hamburger.setAttribute('aria-label', 'Open menu');
     }
   });
 }
