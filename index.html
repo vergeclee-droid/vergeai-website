@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 <!-- Default (EN) SEO meta — dynamically swapped via JS -->
 <title id="page-title">Verge AI — Edge Intelligence, Within Reach</title>
 <meta id="meta-desc" name="description" content="Building the Edge AI Ecosystem — From Enterprise to Home. Verge AI Limited develops VergeOps AI appliance and Edge AI products for enterprise and home.">
@@ -98,6 +99,7 @@ a{color:inherit;text-decoration:none}
   --radius:22px;
   --radius-sm:14px;
   --nav-h:60px;
+  --accent:#06b6d4;
   --display:'Space Grotesk','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','Noto Sans TC','Microsoft YaHei','PingFang SC',sans-serif;
   --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','Noto Sans TC','Microsoft YaHei','PingFang SC',sans-serif;
 }
@@ -120,14 +122,14 @@ html[lang="zh-hant"] [data-lang="zh-hant"].d-grid{display:grid!important}
 
 /* ========== TYPOGRAPHY (Cohere-inspired) ========== */
 h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.1;letter-spacing:-0.03em}
-h1{font-size:clamp(2.8rem,6vw,5rem);letter-spacing:-0.04em}
+h1{font-size:clamp(3rem,7vw,5.5rem);letter-spacing:-0.04em}
 h2{font-size:clamp(2rem,4.5vw,3.5rem);text-align:center;margin-bottom:0.4em;letter-spacing:-0.03em}
 h2 .sub{display:block;font-size:clamp(0.85rem,1.2vw,1.1rem);font-weight:400;color:var(--slate-600);letter-spacing:0;margin-top:0.5em;font-family:var(--body);line-height:1.5}
 .section-dark h2 .sub{color:var(--slate-300)}
 .section-mist h2 .sub{color:var(--slate-600)}
 h3{font-size:clamp(1.2rem,2vw,1.6rem);font-family:var(--body);font-weight:500;letter-spacing:-0.02em;color:var(--slate-800)}
 p{color:var(--slate-600);font-size:clamp(0.95rem,1.2vw,1.1rem);max-width:680px;margin:0 auto;line-height:1.6}
-.section-tag{display:inline-block;font-family:var(--display);font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:0.15em;padding:0.4em 1em;border-radius:999px;margin-bottom:1.5em;color:var(--blue-dark);background:rgba(6,182,212,0.08)}
+.section-tag{display:inline-block;font-family:var(--display);font-size:0.8rem;font-weight:500;text-transform:uppercase;letter-spacing:0.15em;padding:0.4em 1em;border-radius:999px;margin-bottom:1.5em;color:var(--blue-dark);background:rgba(6,182,212,0.08)}
 
 /* Section labels — mono-style technical labels (Cohere-inspired) */
 .section-mono{display:inline-block;font-family:'Space Grotesk',monospace;font-size:0.65rem;font-weight:400;text-transform:uppercase;letter-spacing:0.2em;color:var(--slate-400);margin-bottom:1.2em}
@@ -139,6 +141,14 @@ p{color:var(--slate-600);font-size:clamp(0.95rem,1.2vw,1.1rem);max-width:680px;m
 .section-dark p{color:var(--slate-300)}
 .section-mist{background:var(--purple-mist)}
 
+/* Visual texture for dark B2B sections — subtle diagonal grid overlay */
+.section-dark::before{content:'';position:absolute;inset:0;background-image:linear-gradient(45deg,rgba(255,255,255,0.015) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.015) 50%,rgba(255,255,255,0.015) 75%,transparent 75%,transparent);background-size:40px 40px;pointer-events:none;z-index:0}
+.section-dark .container{position:relative;z-index:1}
+
+/* Gradient transition strip between dark slate-900 and purple-mist */
+.section-dark.section-robotics::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;background:linear-gradient(to bottom,var(--slate-900),transparent);pointer-events:none;z-index:0}
+.section-mist::before{content:'';position:absolute;top:-80px;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--purple-mist));pointer-events:none;z-index:0}
+
 /* ========== HERO (Cohere-inspired: massive type, centered, clean) ========== */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 32px 80px;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--slate-50)0%,var(--white)50%,var(--purple-mist)100%);z-index:0}
@@ -148,7 +158,7 @@ p{color:var(--slate-600);font-size:clamp(0.95rem,1.2vw,1.1rem);max-width:680px;m
 .hero .tagline{font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:300;color:var(--slate-600);max-width:700px;margin:0.5em auto 1.2em;line-height:1.4;letter-spacing:-0.01em}
 .hero .subtitle{font-size:clamp(0.75rem,1vw,0.85rem);color:var(--slate-400);letter-spacing:0.1em;text-transform:uppercase;font-weight:400;font-family:var(--display)}
 .btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:2rem}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:999px;font-weight:500;font-size:0.95rem;transition:all 0.25s ease;cursor:pointer;border:none;font-family:var(--body);letter-spacing:-0.01em}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:999px;font-weight:500;font-size:0.95rem;transition:all 0.25s ease;cursor:pointer;border:none;font-family:var(--body);letter-spacing:-0.01em;touch-action:manipulation}
 .btn-primary{background:var(--near-black);color:var(--white)}
 .btn-primary:hover{background:#2a2a2f;transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--slate-600);padding:14px 0;border-radius:0;border-bottom:1px solid var(--slate-200);margin:0 16px}
@@ -245,6 +255,9 @@ footer .footer-links a{font-size:0.82rem;color:var(--slate-400);font-weight:400}
 footer .footer-links a:hover{color:var(--white)}
 footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;font-family:var(--display);letter-spacing:-0.01em}
 
+/* Touch-action on all interactive elements — eliminate 300ms tap delay */
+.mission-card,.use-case,.pillar,.product-card,.tech-item,.contact-card,.btn,.lang-btn,.hamburger,a{touch-action:manipulation}
+
 /* ========== RESPONSIVE ========== */
 
 /* Tablets & smaller laptops */
@@ -334,6 +347,26 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
   .mission-card,.use-case,.pillar,.product-card,.tech-item,.contact-card{opacity:1!important;transform:none!important}
   html{scroll-behavior:auto}
 }
+
+/* Dark mode basic protection */
+@media(prefers-color-scheme:dark){
+  body{background:#0f172a;color:#e2e8f0}
+}
+
+/* Sticky mobile CTA bar — only visible on mobile */
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(255,255,255,0.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--slate-200);padding:12px 20px;justify-content:center;gap:12px;align-items:center}
+.mobile-cta-bar .cta-btn{flex:1;max-width:240px;padding:12px 24px;border-radius:999px;background:var(--near-black);color:var(--white);border:none;font-family:var(--body);font-size:0.9rem;font-weight:500;cursor:pointer;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;touch-action:manipulation}
+.mobile-cta-bar .cta-email{width:44px;height:44px;border-radius:50%;background:var(--slate-100);border:none;font-size:1.2rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:var(--slate-600);touch-action:manipulation}
+@media(max-width:768px){
+  .mobile-cta-bar{display:flex}
+  body{padding-bottom:76px}
+}
+
+/* Product card clickable affordance — "Learn more →" on hover for linked cards */
+.product-card a::after,.pillar a::after{content:none}
+.product-card[href]:hover .p-more,.pillar[href]:hover .p-more{opacity:1}
+.p-more{display:inline-block;font-size:0.75rem;color:var(--blue);margin-top:0.5em;opacity:0;transition:opacity 0.2s;font-weight:500}
+.product-card:not([href]) .p-more,.pillar:not([href]) .p-more{display:none}
 </style>
 </head>
 <body>
@@ -344,7 +377,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
 <nav id="navbar">
   <div class="container">
     <a href="#" class="nav-logo">
-      <img src="logo-nav.png" alt="Verge AI" style="height:32px;">
+      <img src="img/vergeai-logo.svg" alt="Verge AI" style="height:28px;width:auto;">
       Verge AI
     </a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
@@ -363,7 +396,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
 <!-- ====== HERO ====== -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
-  <img src="logo.png" alt="Verge AI" class="hero-logo">
+  <img src="img/vergeai-logo.svg" alt="Verge AI" class="hero-logo">
   <h1>Verge AI</h1>
   <p class="tagline"><span data-lang="en">Building the Edge AI Ecosystem —<br>From Enterprise to Home</span><span data-lang="zh-hans">构建从企业到家庭的<br>边缘智能生态圈</span><span data-lang="zh-hant">構建從企業到家庭的<br>邊緣智能生態圈</span></p>
   <p class="subtitle">蔚科融智（深圳）科技有限公司 · Verge AI Limited</p>
@@ -498,7 +531,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
 </section>
 
 <!-- ====== VERGE ROBOTICS (Cohere-inspired dark band, deeper navy) ====== -->
-<section class="section section-dark" id="robotics" style="background:var(--slate-900);">
+<section class="section section-dark section-robotics" id="robotics" style="background:var(--slate-900);">
   <div class="container">
     <div class="vergeops-intro">
       <div class="section-tag" style="background:rgba(6,182,212,0.12);color:var(--blue);" data-lang="en">B2B Robotics</div>
@@ -582,6 +615,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
         <p data-lang="en" class="d-block">Central brain with 3B–7B SLM compute, NAS storage, and a transparent holographic display. Powers all satellite devices.</p>
         <p data-lang="zh-hans" class="d-block">内置3B–7B SLM算力的家庭大脑，透明全息屏+NAS存储，驱动所有卫星设备。</p>
         <p data-lang="zh-hant" class="d-block">內置3B–7B SLM算力的家庭大腦，透明全息屏+NAS存儲，驅動所有衛星設備。</p>
+        <span class="p-more" data-lang="en">Learn more →</span><span class="p-more" data-lang="zh-hans">了解更多 →</span><span class="p-more" data-lang="zh-hant">了解更多 →</span>
       </a>
       <a href="catalogue-smart-mirror.html" class="pillar" style="cursor:pointer;text-decoration:none;display:block">
         <div class="p-icon">🪞</div>
@@ -589,6 +623,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
         <p data-lang="en" class="d-block">Beauty & health mirror with visual-feedback AI. Makeup guidance, skin analysis — all processed locally on-device.</p>
         <p data-lang="zh-hans" class="d-block">美妆健康镜——视觉反馈AI，化妆指导、皮肤分析，全部本地处理。</p>
         <p data-lang="zh-hant" class="d-block">美妝健康鏡——視覺反饋AI，化妝指導、皮膚分析，全部本地處理。</p>
+        <span class="p-more" data-lang="en">Learn more →</span><span class="p-more" data-lang="zh-hans">了解更多 →</span><span class="p-more" data-lang="zh-hant">了解更多 →</span>
       </a>
       <a href="catalogue-kitchen-agent.html" class="pillar" style="cursor:pointer;text-decoration:none;display:block">
         <div class="p-icon">🍳</div>
@@ -596,6 +631,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
         <p data-lang="en" class="d-block">Intelligent sous-chef with vision-based ingredient scanning, voice navigation, calorie analysis, and Zero Waste recipe engine.</p>
         <p data-lang="zh-hans" class="d-block">智能厨房助理——视觉食材扫描、语音导航、热量分析、零浪费食谱引擎。</p>
         <p data-lang="zh-hant" class="d-block">智能廚房助理——視覺食材掃描、語音導航、熱量分析、零浪費食譜引擎。</p>
+        <span class="p-more" data-lang="en">Learn more →</span><span class="p-more" data-lang="zh-hans">了解更多 →</span><span class="p-more" data-lang="zh-hant">了解更多 →</span>
       </a>
     </div>
 
@@ -606,6 +642,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
         <p data-lang="en" class="d-block">Personalized learning companion with long-term memory & adaptive tutoring</p>
         <p data-lang="zh-hans" class="d-block">个性化学习伴侣，长期记忆与自适应辅导</p>
         <p data-lang="zh-hant" class="d-block">個性化學習伴侶，長期記憶與自適應輔導</p>
+        <span class="p-more" data-lang="en">Learn more →</span><span class="p-more" data-lang="zh-hans">了解更多 →</span><span class="p-more" data-lang="zh-hant">了解更多 →</span>
       </a>
       <a href="catalogue-pet-buddy.html" class="product-card" style="cursor:pointer;text-decoration:none;display:block">
         <div class="p-icon">🐾</div>
@@ -613,6 +650,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
         <p data-lang="en" class="d-block">Pet health monitor with anomaly detection & auto health logging</p>
         <p data-lang="zh-hans" class="d-block">宠物健康监测，异常检测与自动健康日志</p>
         <p data-lang="zh-hant" class="d-block">寵物健康監測，異常檢測與自動健康日誌</p>
+        <span class="p-more" data-lang="en">Learn more →</span><span class="p-more" data-lang="zh-hans">了解更多 →</span><span class="p-more" data-lang="zh-hant">了解更多 →</span>
       </a>
       <a href="catalogue-elderly-buddy.html" class="product-card" style="cursor:pointer;text-decoration:none;display:block">
         <div class="p-icon">👴</div>
@@ -620,6 +658,7 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
         <p data-lang="en" class="d-block">Emotional companion with fall detection, health monitoring & dialect support</p>
         <p data-lang="zh-hans" class="d-block">银发守护智能体，跌倒检测+健康监测+方言陪伴</p>
         <p data-lang="zh-hant" class="d-block">銀髮守護智能體，跌倒檢測+健康監測+方言陪伴</p>
+        <span class="p-more" data-lang="en">Learn more →</span><span class="p-more" data-lang="zh-hans">了解更多 →</span><span class="p-more" data-lang="zh-hant">了解更多 →</span>
       </a>
       <div class="product-card">
         <div class="p-icon">🔄</div>
@@ -758,8 +797,19 @@ footer .footer-tagline{color:var(--slate-500);font-size:0.8rem;margin-top:1em;fo
     <p class="footer-tagline" data-lang="en">Edge Intelligence, Within Reach.</p>
     <p class="footer-tagline" data-lang="zh-hans">边缘智能，触手可及。</p>
     <p class="footer-tagline" data-lang="zh-hant">邊緣智能，觸手可及。</p>
+    <div class="footer-links" style="gap:20px;margin-top:1.2em">
+      <a href="#" aria-label="LinkedIn" title="LinkedIn (placeholder)">in</a>
+      <a href="#" aria-label="Twitter / X" title="Twitter / X (placeholder)">𝕏</a>
+      <a href="#" aria-label="GitHub" title="GitHub (placeholder)">GH</a>
+    </div>
   </div>
 </footer>
+
+<!-- ====== MOBILE CTA BAR (visible < 768px) ====== -->
+<div class="mobile-cta-bar">
+  <a href="#contact" class="cta-btn"><span data-lang="en">Contact Sales</span><span data-lang="zh-hans">联系销售</span><span data-lang="zh-hant">聯絡銷售</span></a>
+  <a href="mailto:hello@vergeai.net" class="cta-email" aria-label="Email">✉️</a>
+</div>
 
 <script>
 // Language-specific titles & descriptions for dynamic SEO

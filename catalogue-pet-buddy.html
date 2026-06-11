@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 <title>Verge AI Pet Buddy — Product Catalogue</title>
 <meta name="description" content="Verge AI Pet Buddy — AI-powered pet companion with real-time health monitoring, behavior analysis, and automated care routines. 100% local edge AI, privacy-first.">
 <!-- Open Graph -->
@@ -38,82 +39,30 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Common catalogue styles -->
+<link rel="stylesheet" href="css/catalogue-common.css">
+<!-- Product-specific styles -->
 <style>
-[data-lang]{display:none!important}
-html[lang="en"] [data-lang="en"],
-html[lang="zh-hans"] [data-lang="zh-hans"],
-html[lang="zh-hant"] [data-lang="zh-hant"]{display:inline!important}
-html[lang="en"] [data-lang="en"].d-block,
-html[lang="zh-hans"] [data-lang="zh-hans"].d-block,
-html[lang="zh-hant"] [data-lang="zh-hant"].d-block{display:block!important}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --cyan:#06b6d4;--cyan-dark:#0891b2;--indigo:#818cf8;--indigo-dark:#6366f1;
-  --purple:#a78bfa;--purple-light:#c4b5fd;--purple-mist:#f5f3ff;
-  --slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;
-  --slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;
-  --white:#ffffff;--near-black:#17171c;
-  --radius:22px;--radius-sm:14px;
-  --display:'Space Grotesk','Inter',-apple-system,sans-serif;
-  --body:'Inter',-apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+  --accent:#f59e0b;--accent-dark:#d97706;--accent-light:rgba(245,158,11,0.2);
+  --accent-bg:rgba(245,158,11,0.15);
+  --hero-bg:linear-gradient(135deg,#0f1a0f,var(--slate-900));
 }
-body{font-family:var(--body);color:var(--slate-800);background:var(--white);line-height:1.6;overflow-x:hidden}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--slate-200);height:60px;display:flex;align-items:center}
-nav .container{display:flex;align-items:center;justify-content:space-between;width:100%}
-nav .logo{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--slate-800)}
-nav .logo span{color:var(--cyan)}
-.lang-btn{background:none;border:none;display:inline-block!important;font-size:0.75rem;font-weight:500;color:var(--slate-400);cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.2s;font-family:inherit}
-.lang-btn:hover{color:var(--slate-700)}
-.lang-btn.active{color:var(--white);background:var(--near-black)}
-.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:500;color:var(--slate-600);text-decoration:none;padding:6px 16px;border-radius:999px;border:1px solid var(--slate-200);transition:all 0.2s}
-.back-btn:hover{border-color:var(--cyan);color:var(--cyan-dark)}
-.nav-lang{display:flex;gap:2px;padding-left:10px;border-left:1px solid var(--slate-200)}
-.hero{background:linear-gradient(135deg,#0f1a0f,var(--slate-900));color:var(--white);padding:80px 0 60px;text-align:center}
-.hero h1{font-family:var(--display);font-weight:700;font-size:3.5rem;line-height:1.15;margin-bottom:16px}
-.hero h1 span{color:var(--cyan)}
-.hero .subtitle{font-size:1.2rem;color:var(--slate-300);max-width:600px;margin:0 auto 12px}
-.hero .tagline{display:inline-block;background:rgba(6,182,212,0.15);color:var(--cyan);padding:4px 16px;border-radius:999px;font-size:0.875rem;font-weight:500;margin-top:8px}
-section{padding:60px 0}
-section h2{font-family:var(--display);font-weight:600;font-size:2rem;margin-bottom:32px;position:relative;padding-bottom:12px}
-section h2::after{content:'';position:absolute;bottom:0;left:0;width:60px;height:3px;background:var(--cyan);border-radius:2px}
-.mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:40px}
-.mockup-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--slate-200);background:var(--white);transition:border-color 0.3s,transform 0.2s}
-.mockup-card:hover{border-color:var(--cyan);transform:translateY(-2px)}
-.mockup-card img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
-.mockup-card .caption{padding:12px 16px;font-size:0.875rem;color:var(--slate-600)}
-.mockup-card .caption strong{color:var(--slate-800)}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px}
-.feature-card{background:var(--slate-50);border-radius:var(--radius);padding:28px;border:1px solid var(--slate-200)}
-.feature-card .icon{font-size:2rem;margin-bottom:8px}
-.feature-card h3{font-family:var(--display);font-weight:600;font-size:1.1rem;margin-bottom:8px;color:var(--slate-800)}
-.feature-card p{font-size:0.9rem;color:var(--slate-600);line-height:1.7}
-.specs{width:100%;border-collapse:collapse;margin-top:24px;font-size:0.9rem}
-.specs td{padding:12px 16px;border-bottom:1px solid var(--slate-200);vertical-align:top}
-.specs td:first-child{font-weight:600;color:var(--slate-600);white-space:nowrap;width:180px}
-.specs td:last-child{color:var(--slate-800)}
-.philosophy{background:var(--slate-900);color:var(--white);padding:60px 0}
-.philosophy h2{color:var(--white)}
-.philosophy h2::after{background:var(--cyan)}
-.philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.phil-card{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:24px;border:1px solid rgba(255,255,255,0.08)}
-.phil-card h4{color:var(--cyan);font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:6px}
-.phil-card p{color:var(--slate-300);font-size:0.875rem;line-height:1.6}
-.use-case{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.use-case-item{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--slate-200)}
-.use-case-item h3{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--slate-800)}
-.use-case-item h3 .phase{color:var(--cyan);margin-right:8px}
-.use-case-item p{font-size:0.88rem;color:var(--slate-600);line-height:1.7}
-.tech-stack{background:var(--slate-50);border-radius:var(--radius);padding:32px;margin-top:32px;border:1px solid var(--slate-200)}
-.tech-stack h3{font-family:var(--display);font-weight:600;margin-bottom:16px;font-size:1.1rem}
-.tech-stack .tag{display:inline-block;background:var(--white);border:1px solid var(--slate-200);border-radius:999px;padding:3px 14px;font-size:0.8rem;margin:3px 4px;color:var(--slate-700)}
-.tech-stack .tag.highlight{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(6,182,212,0.06)}
-footer{background:var(--slate-900);color:var(--slate-400);text-align:center;padding:40px 0;font-size:0.85rem}
-footer strong{color:var(--white)}
-@media(max-width:768px){.hero h1{font-size:2.2rem}.mockup-grid{grid-template-columns:1fr}}
+.hero h1 span{color:var(--accent)}
+.hero .tagline{background:var(--accent-bg);color:var(--accent)}
+.back-btn:hover{border-color:var(--accent);color:var(--accent-dark)}
+section h2::after,.philosophy h2::after{background:var(--accent)}
+.phil-card h4{color:var(--accent)}
+.use-case-item h3 .phase{color:var(--accent)}
+.mockup-card:hover{border-color:var(--accent)}
+.tech-stack .tag.highlight{border-color:var(--accent);color:var(--accent-dark);background:var(--accent-bg)}
+.product-card,.pillar,a,.back-btn,.lang-btn,.mockup-card,.use-case-item,.feature-card,.tech-item,.contact-card{touch-action:manipulation}
 </style>
 </head>
 <body>
+
+<!-- Skip to main content -->
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <nav>
   <div class="container">
@@ -129,7 +78,7 @@ footer strong{color:var(--white)}
   </div>
 </nav>
 
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="container">
     <h1>🐾 <span data-lang="en">AI <span>Pet Buddy</span></span><span data-lang="zh-hans"><span>AI 宠物伴侣</span></span><span data-lang="zh-hant"><span>AI 寵物伴侶</span></span></h1>
     <div class="subtitle"><span data-lang="en">Pet Wellness Guardian — Edge-based animal behavior AI with 24/7 health tracking</span><span data-lang="zh-hans">宠物健康守护者 — 基于边缘计算的动物行为AI，全天候健康追踪</span><span data-lang="zh-hant">寵物健康守護者 — 基於邊緣計算的動物行為AI，全天候健康追蹤</span></div>
@@ -142,15 +91,15 @@ footer strong{color:var(--white)}
     <h2><span data-lang="en">Design Mockups</span><span data-lang="zh-hans">设计概念图</span><span data-lang="zh-hant">設計概念圖</span></h2>
     <div class="mockup-grid">
       <div class="mockup-card">
-        <img src="mockups/pet-buddy/pet-1-dog-tracking.jpg" alt="Dog Tracking" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Dog Tracking</div>'">
+        <img src="mockups/pet-buddy/pet-1-dog-tracking.jpg" alt="Dog Tracking" loading="lazy" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Dog Tracking</div>'">
         <div class="caption"><span data-lang="en"><strong>Active Pet Tracking</strong> — PTZ camera automatically follows a golden retriever playing on the living room floor</span><span data-lang="zh-hans"><strong>主动宠物跟踪</strong> — PTZ摄像头自动跟踪在客厅玩耍的金毛犬</span><span data-lang="zh-hant"><strong>主動寵物追蹤</strong> — PTZ攝像頭自動追蹤在客廳玩耍的金毛犬</span></div>
       </div>
       <div class="mockup-card">
-        <img src="mockups/pet-buddy/pet-2-cat-health-alert.jpg" alt="Cat Health Alert" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Cat Health Alert</div>'">
+        <img src="mockups/pet-buddy/pet-2-cat-health-alert.jpg" alt="Cat Health Alert" loading="lazy" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Cat Health Alert</div>'">
         <div class="caption"><span data-lang="en"><strong>Health Anomaly Alert</strong> — Amber indicator signals decreased water intake detected in a cat, triggering a Level 2 alert</span><span data-lang="zh-hans"><strong>健康异常预警</strong> — 琥珀色指示灯显示检测到猫咪饮水量减少，触发二级警报</span><span data-lang="zh-hant"><strong>健康異常預警</strong> — 琥珀色指示燈顯示檢測到貓咪飲水量減少，觸發二級警報</span></div>
       </div>
       <div class="mockup-card">
-        <img src="mockups/pet-buddy/pet-3-night-vision.jpg" alt="Night Vision" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Night Vision</div>'">
+        <img src="mockups/pet-buddy/pet-3-night-vision.jpg" alt="Night Vision" loading="lazy" onerror="this.outerHTML='<div style=background:var(--slate-100);height:200px;display:flex;align-items:center;justify-content:center;color:var(--slate-400);font-size:0.9rem>Mockup: Night Vision</div>'">
         <div class="caption"><span data-lang="en"><strong>Night Vision Mode</strong> — IR LEDs enable silent pet monitoring in total darkness, cat sleeping safely</span><span data-lang="zh-hans"><strong>夜视模式</strong> — 红外LED实现全黑环境下无声宠物监控，猫咪安睡</span><span data-lang="zh-hant"><strong>夜視模式</strong> — 紅外LED實現全黑環境下無聲寵物監控，貓咪安睡</span></div>
       </div>
     </div>
@@ -198,12 +147,12 @@ footer strong{color:var(--white)}
       <div class="feature-card">
         <div class="icon">🔒</div>
         <h3><span data-lang="en">Edge-First Privacy</span><span data-lang="zh-hans">边缘优先隐私</span><span data-lang="zh-hant">邊緣優先隱私</span></h3>
-        <p><span data-lang="en">All video analysis runs on-device. No cloud uploads. Your pet's daily life stays in your home — not on a server somewhere.</span><span data-lang="zh-hans">所有视频分析均在设备端运行。不上传云端。宠物的日常生活留在家中，而非某个服务器上。</span><span data-lang="zh-hant">所有視頻分析均在設備端運行。不上傳雲端。寵物的日常生活留在家中，而非某個服務器上。</span></p>
+        <p><span data-lang="en">All video analysis runs on-device. No footage leaves the local NPU buffer — not even encrypted. Pet Buddy watches without recording.</span><span data-lang="zh-hans">所有视频分析在设备端运行。无视频数据离开本地NPU缓冲区 — 即使加密后也不离设备。Pet Buddy只观察，不录制。</span><span data-lang="zh-hant">所有視頻分析在設備端運行。無視頻數據離開本地NPU緩衝區 — 即使加密後也不離設備。Pet Buddy只觀察，不錄製。</span></p>
       </div>
       <div class="feature-card">
-        <div class="icon">📱</div>
-        <h3><span data-lang="en">Smartphone Integration</span><span data-lang="zh-hans">智能手机集成</span><span data-lang="zh-hant">智能手機集成</span></h3>
-        <p><span data-lang="en">Push notifications, remote play, weekly reports — all through a companion app. Peace of mind whether you're at work or on vacation.</span><span data-lang="zh-hans">推送通知、远程互动、每周报告 — 全部通过配套App。无论在工作还是度假，都能安心。</span><span data-lang="zh-hant">推送通知、遠程互動、每週報告 — 全部通過配套App。無論在工作還是度假，都能安心。</span></p>
+        <div class="icon">🌙</div>
+        <h3><span data-lang="en">24/7 Night Vision</span><span data-lang="zh-hans">全天候夜视</span><span data-lang="zh-hant">全天候夜視</span></h3>
+        <p><span data-lang="en">Starlight-grade CMOS sensor + IR LED array enables behavior monitoring in absolute darkness. Sleep tracking for nocturnal pets.</span><span data-lang="zh-hans">星光级CMOS传感器 + 红外LED阵列实现全黑环境行为监测。为夜行宠物提供睡眠追踪。</span><span data-lang="zh-hant">星光級CMOS傳感器 + 紅外LED陣列實現全黑環境行為監測。為夜行寵物提供睡眠追蹤。</span></p>
       </div>
     </div>
   </div>
@@ -213,34 +162,29 @@ footer strong{color:var(--white)}
   <div class="container">
     <h2><span data-lang="en">Detailed Specifications</span><span data-lang="zh-hans">详细规格</span><span data-lang="zh-hant">詳細規格</span></h2>
     <table class="specs">
-      <tr><td><span data-lang="en">Camera</span><span data-lang="zh-hans">摄像头</span><span data-lang="zh-hant">攝像頭</span></td><td>Wide-angle FHD + 2-axis Pan/Tilt (360° coverage)</td></tr>
-      <tr><td><span data-lang="en">Night Vision</span><span data-lang="zh-hans">夜视</span><span data-lang="zh-hant">夜視</span></td><td>Infrared LEDs (pet-friendly low intensity)</td></tr>
-      <tr><td><span data-lang="en">Interaction Add-ons</span><span data-lang="zh-hans">交互配件</span><span data-lang="zh-hant">交互配件</span></td><td>Optional laser pointer / treat dispenser module</td></tr>
-      <tr><td><span data-lang="en">Dimensions</span><span data-lang="zh-hans">尺寸</span><span data-lang="zh-hant">尺寸</span></td><td>~Ø80×120mm (compact cylinder)</td></tr>
-      <tr><td><span data-lang="en">Weight</span><span data-lang="zh-hans">重量</span><span data-lang="zh-hant">重量</span></td><td>~200–350g</td></tr>
-      <tr><td><span data-lang="en">Power</span><span data-lang="zh-hans">电源</span><span data-lang="zh-hant">電源</span></td><td>DC 5V / optional UPS (sends last location on power loss)</td></tr>
-      <tr><td><span data-lang="en">AI SoC (Standalone)</span><span data-lang="zh-hans">AI SoC（独立版）</span><span data-lang="zh-hant">AI SoC（獨立版）</span></td><td>RK3588 (6 TOPS NPU) + ESP32-S3</td></tr>
-      <tr><td><span data-lang="en">AI SoC (Satellite)</span><span data-lang="zh-hans">AI SoC（卫星版）</span><span data-lang="zh-hant">AI SoC（衛星版）</span></td><td>ESP32-S3 only (inference offloaded to AI Home Hub)</td></tr>
-      <tr><td><span data-lang="en">Vision AI</span><span data-lang="zh-hans">视觉AI</span><span data-lang="zh-hant">視覺AI</span></td><td>YOLOv8 Nano + Pose Estimation @ NPU — detection, behavior classification, gait analysis</td></tr>
-      <tr><td><span data-lang="en">Edge Inference</span><span data-lang="zh-hans">边缘推理</span><span data-lang="zh-hant">邊緣推理</span></td><td>MediaPipe + TensorFlow Lite — on-device processing</td></tr>
-      <tr><td><span data-lang="en">Speech (optional)</span><span data-lang="zh-hans">语音（可选）</span><span data-lang="zh-hant">語音（可選）</span></td><td>SenseVoice Small @ NPU (~150ms) for voice commands</td></tr>
-      <tr><td><span data-lang="en">Local Storage</span><span data-lang="zh-hans">本地存储</span><span data-lang="zh-hant">本地存儲</span></td><td>SQLite — behavior trend logs</td></tr>
-      <tr><td><span data-lang="en">Connectivity</span><span data-lang="zh-hans">连接</span><span data-lang="zh-hant">連接</span></td><td>WiFi + BLE + WebSocket Agent Protocol</td></tr>
-      <tr><td><span data-lang="en">Mobile App</span><span data-lang="zh-hans">手机App</span><span data-lang="zh-hant">手機App</span></td><td>Flutter / React Native — push notifications, remote play, weekly reports</td></tr>
-      <tr><td><span data-lang="en">Safety Design</span><span data-lang="zh-hans">安全设计</span><span data-lang="zh-hant">安全設計</span></td><td>Class 1 safe laser (no UV), rounded corners, concealed cables (anti-chew), low-noise motors</td></tr>
+      <tr><td><span data-lang="en">Camera</span><span data-lang="zh-hans">摄像头</span><span data-lang="zh-hant">攝像頭</span></td><td>4K RGB (SONY IMX678) + starlight CMOS, 2-axis PTZ (pan 360°, tilt 120°)</td></tr>
+      <tr><td><span data-lang="en">Night Vision</span><span data-lang="zh-hans">夜视</span><span data-lang="zh-hant">夜視</span></td><td>8× IR LED array, 940nm invisible, effective range 10m</td></tr>
+      <tr><td><span data-lang="en">AI Compute</span><span data-lang="zh-hans">AI算力</span><span data-lang="zh-hant">AI算力</span></td><td>RK3588 (6 TOPS NPU) for standalone OR ESP32-S3 (satellite to Home Hub)</td></tr>
+      <tr><td><span data-lang="en">Computer Vision</span><span data-lang="zh-hans">计算机视觉</span><span data-lang="zh-hant">計算機視覺</span></td><td>OpenCV + custom animal behavior model @ NPU — gait analysis, posture, activity level</td></tr>
+      <tr><td><span data-lang="en">Multi-Pet Support</span><span data-lang="zh-hans">多宠物支持</span><span data-lang="zh-hant">多寵物支持</span></td><td>Up to 5 pets — facial recognition + individual baselines</td></tr>
+      <tr><td><span data-lang="en">Alert Levels</span><span data-lang="zh-hans">警报级别</span><span data-lang="zh-hant">警報級別</span></td><td>3 tiers: 🟡 Mild (>1σ), 🟠 Moderate (>2σ), 🔴 Emergency (>3σ deviation)</td></tr>
+      <tr><td><span data-lang="en">Audio</span><span data-lang="zh-hans">音频</span><span data-lang="zh-hant">音頻</span></td><td>Dual microphones (voice command + howl/whine detection) + speaker (treat dispenser trigger)</td></tr>
+      <tr><td><span data-lang="en">Connectivity</span><span data-lang="zh-hans">连接</span><span data-lang="zh-hant">連接</span></td><td>WiFi 6 + BLE 5.3 + WebSocket Agent Protocol</td></tr>
+      <tr><td><span data-lang="en">Storage</span><span data-lang="zh-hans">存储</span><span data-lang="zh-hant">存儲</span></td><td>Local microSD (32GB) — 30-day behavior log + trend data</td></tr>
+      <tr><td><span data-lang="en">Power</span><span data-lang="zh-hans">电源</span><span data-lang="zh-hant">電源</span></td><td>5V/2A USB-C or battery base (6h battery, auto-return to charge)</td></tr>
+      <tr><td><span data-lang="en">Dimensions</span><span data-lang="zh-hans">尺寸</span><span data-lang="zh-hant">尺寸</span></td><td>120×100×150mm</td></tr>
+      <tr><td><span data-lang="en">Weight</span><span data-lang="zh-hans">重量</span><span data-lang="zh-hant">重量</span></td><td>~450g</td></tr>
     </table>
 
     <div class="tech-stack">
-      <h3><span data-lang="en">🧠 Technology Stack</span><span data-lang="zh-hans">🧠 技术栈</span><span data-lang="zh-hant">🧠 技術棧</span></h3>
-      <span class="tag highlight">YOLOv8 Nano @ NPU</span>
-      <span class="tag highlight">Pose Estimation @ NPU</span>
-      <span class="tag">MediaPipe + TF Lite</span>
-      <span class="tag">SenseVoice Small</span>
-      <span class="tag">Pan/Tilt 360°</span>
-      <span class="tag">IR Night Vision</span>
+      <h3>🧠 <span data-lang="en">Technology Stack</span><span data-lang="zh-hans">技术栈</span><span data-lang="zh-hant">技術棧</span></h3>
+      <span class="tag highlight">OpenCV + Animal Behavior AI @ RK3588 NPU</span>
+      <span class="tag highlight">Starlight CMOS + IR</span>
       <span class="tag">SQLite (local)</span>
-      <span class="tag">WebSocket Protocol</span>
-      <span class="tag">ESP32-S3</span>
+      <span class="tag">WebSocket Agent Protocol</span>
+      <span class="tag">ESP32-S3 (always-on)</span>
+      <span class="tag">PTZ + Auto-Tracking</span>
+      <span class="tag">Hub Sync</span>
     </div>
   </div>
 </section>
@@ -249,10 +193,10 @@ footer strong{color:var(--white)}
   <div class="container">
     <h2><span data-lang="en">Design Philosophy</span><span data-lang="zh-hans">设计理念</span><span data-lang="zh-hant">設計理念</span></h2>
     <div class="philosophy-grid">
-      <div class="phil-card"><h4><span data-lang="en">Watch, Don't Record</span><span data-lang="zh-hans">只观察，不录制</span><span data-lang="zh-hant">只觀察，不錄製</span></h4><p><span data-lang="en">Real-time analysis, not cloud surveillance. Your pet's day stays in your home.</span><span data-lang="zh-hans">实时分析，而非云端监控。宠物的一天留在您家中。</span><span data-lang="zh-hant">實時分析，而非雲端監控。寵物的一天留在您家中。</span></p></div>
-      <div class="phil-card"><h4><span data-lang="en">Catch Early, Act Fast</span><span data-lang="zh-hans">尽早发现，快速行动</span><span data-lang="zh-hant">盡早發現，快速行動</span></h4><p><span data-lang="en">Anomalies detected in seconds, not at the next vet visit. Early intervention saves lives.</span><span data-lang="zh-hans">异常在数秒内被检测，而非等到下次兽医检查。早期干预挽救生命。</span><span data-lang="zh-hant">異常在數秒內被檢測，而非等到下次獸醫檢查。早期干預挽救生命。</span></p></div>
-      <div class="phil-card"><h4><span data-lang="en">Personality-Aware</span><span data-lang="zh-hans">个性识别</span><span data-lang="zh-hant">個性識別</span></h4><p><span data-lang="en">Every pet is unique. AI learns their individual baseline — no two animals are treated the same.</span><span data-lang="zh-hans">每只宠物都独一无二。AI学习它们的个体基线 — 没有两只动物被同等对待。</span><span data-lang="zh-hant">每隻寵物都獨一無二。AI學習它們的個體基線 — 沒有兩隻動物被同等對待。</span></p></div>
-      <div class="phil-card"><h4><span data-lang="en">Owner Peace of Mind</span><span data-lang="zh-hans">主人安心</span><span data-lang="zh-hant">主人安心</span></h4><p><span data-lang="en">Designed to reduce anxiety, not create it. Know your pet is safe without checking cameras constantly.</span><span data-lang="zh-hans">旨在减少焦虑，而非制造焦虑。无需频繁查看摄像头，也能知道宠物安全。</span><span data-lang="zh-hant">旨在減少焦慮，而非製造焦慮。無需頻繁查看攝像頭，也能知道寵物安全。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Watch, Don't Record</span><span data-lang="zh-hans">只观察，不录制</span><span data-lang="zh-hant">只觀察，不錄製</span></h4><p><span data-lang="en">Privacy is for pets too. All analysis is ephemeral — no recordings ever leave the device, not even stored.</span><span data-lang="zh-hans">宠物也有隐私权。所有分析都是即时性的 — 不存储录像，不传输数据。</span><span data-lang="zh-hant">寵物也有隱私權。所有分析都是即時性的 — 不存儲錄像，不傳輸數據。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Subtle Intelligence</span><span data-lang="zh-hans">隐形的智能</span><span data-lang="zh-hant">隱形的智能</span></h4><p><span data-lang="en">No screens, no notifications. Just a gentle amber alert when your pet needs attention. Technology that fades into the background.</span><span data-lang="zh-hans">无屏幕，无通知。当宠物需要关注时，只有柔和的琥珀色提示。技术融入背景不打扰。</span><span data-lang="zh-hant">無屏幕，無通知。當寵物需要關注時，只有柔和的琥珀色提示。技術融入背景不打擾。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Health First</span><span data-lang="zh-hans">健康优先</span><span data-lang="zh-hant">健康優先</span></h4><p><span data-lang="en">Early detection saves veterinary bills — and lives. Pet Buddy catches subtle changes humans miss.</span><span data-lang="zh-hans">早发现省下兽医费用——和生命。Pet Buddy捕捉人类忽略的细微变化。</span><span data-lang="zh-hant">早發現省下獸醫費用——和生命。Pet Buddy捕捉人類忽略的細微變化。</span></p></div>
+      <div class="phil-card"><h4><span data-lang="en">Natural Interaction</span><span data-lang="zh-hans">自然互动</span><span data-lang="zh-hant">自然互動</span></h4><p><span data-lang="en">Treat dispenser + laser pointer controlled by AI or remotely via app. Play with your pet from anywhere.</span><span data-lang="zh-hans">AI或App远程控制零食机和激光笔。随时随地与宠物互动。</span><span data-lang="zh-hant">AI或App遠程控制零食機和激光筆。隨時隨地與寵物互動。</span></p></div>
     </div>
   </div>
 </section>
@@ -261,29 +205,35 @@ footer strong{color:var(--white)}
   <div class="container">
     <strong>Verge AI</strong> — <span data-lang="en">Edge Intelligence, Within Reach.</span><span data-lang="zh-hans">边缘智能，触手可及。</span><span data-lang="zh-hant">邊緣智能，觸手可及。</span><br>
     蔚科融智（深圳）科技有限公司<br>
-    Shenzhen · Hong Kong
+    <span data-lang="en">Shenzhen · Hong Kong</span><span data-lang="zh-hans">深圳 · 香港</span><span data-lang="zh-hant">深圳 · 香港</span>
+    <div class="footer-socials">
+      <a href="#" aria-label="LinkedIn" title="LinkedIn (placeholder)">in</a>
+      <a href="#" aria-label="Twitter / X" title="Twitter / X (placeholder)">𝕏</a>
+      <a href="#" aria-label="GitHub" title="GitHub (placeholder)">GH</a>
+    </div>
   </div>
 </footer>
 
 <script>
 function switchLang(lang) {
   document.documentElement.lang = lang;
-  localStorage.setItem('vergeai2026-lang', lang);
-  document.querySelectorAll('.lang-btn').forEach(btn => {
+  localStorage.setItem('verge-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
 }
 (function() {
-  const saved = localStorage.getItem('vergeai2026-lang');
-  if (saved) { switchLang(saved); }
-  else {
-    const raw = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
-    const navLang = raw.toLowerCase();
-    if (navLang.startsWith('zh')) {
-      if (navLang.includes('tw') || navLang.includes('hk') || navLang.includes('mo') || navLang.includes('hant')) {
-        switchLang('zh-hant');
-      } else { switchLang('zh-hans'); }
-    } else { switchLang('en'); }
+  var saved = localStorage.getItem('verge-lang');
+  if (saved) { switchLang(saved); return; }
+  var navLang = (navigator.language || '').toLowerCase();
+  if (navLang.startsWith('zh')) {
+    if (navLang === 'zh-hant' || navLang === 'zh-tw' || navLang === 'zh-hk' || navLang === 'zh-mo') {
+      switchLang('zh-hant');
+    } else {
+      switchLang('zh-hans');
+    }
+  } else {
+    switchLang('en');
   }
 })();
 </script>
