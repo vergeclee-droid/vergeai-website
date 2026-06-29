@@ -83,6 +83,7 @@ typography:
 rounded:
   sm: 14px
   md: 22px
+  xs: 6px
   full: 9999px
 spacing:
   container-x: 32px
@@ -287,7 +288,7 @@ No blur except navbar backdrop. No drop shadows on cards. No glassmorphism.
 - **Product cards, mobile CTA buttons:** 14px.
 - **Buttons and nav CTA:** Fully rounded (9999px) pill shape.
 - **Section tags, metric badges:** Fully rounded pills.
-- **Language switcher buttons:** 6px — subtle, not pill-shaped.
+- **Language switcher buttons:** `{rounded.xs}` — subtle, not pill-shaped.
 
 ## Animations
 
