@@ -1,0 +1,1021 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "DESIGN.md",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "design",
+      "community": 2,
+      "norm_label": "design.md"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L188",
+      "_origin": "ast",
+      "id": "design_overview",
+      "community": 2,
+      "norm_label": "overview"
+    },
+    {
+      "label": "Brand & Style",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L194",
+      "_origin": "ast",
+      "id": "design_brand_style",
+      "community": 2,
+      "norm_label": "brand & style"
+    },
+    {
+      "label": "Colors",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L200",
+      "_origin": "ast",
+      "id": "design_colors",
+      "community": 4,
+      "norm_label": "colors"
+    },
+    {
+      "label": "Core palette",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L204",
+      "_origin": "ast",
+      "id": "design_core_palette",
+      "community": 4,
+      "norm_label": "core palette"
+    },
+    {
+      "label": "Accent palette",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L210",
+      "_origin": "ast",
+      "id": "design_accent_palette",
+      "community": 4,
+      "norm_label": "accent palette"
+    },
+    {
+      "label": "Section backgrounds",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L217",
+      "_origin": "ast",
+      "id": "design_section_backgrounds",
+      "community": 4,
+      "norm_label": "section backgrounds"
+    },
+    {
+      "label": "Section transition system",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L224",
+      "_origin": "ast",
+      "id": "design_section_transition_system",
+      "community": 4,
+      "norm_label": "section transition system"
+    },
+    {
+      "label": "Typography",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L229",
+      "_origin": "ast",
+      "id": "design_typography",
+      "community": 5,
+      "norm_label": "typography"
+    },
+    {
+      "label": "Type scale philosophy",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L236",
+      "_origin": "ast",
+      "id": "design_type_scale_philosophy",
+      "community": 5,
+      "norm_label": "type scale philosophy"
+    },
+    {
+      "label": "Chinese type",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L247",
+      "_origin": "ast",
+      "id": "design_chinese_type",
+      "community": 5,
+      "norm_label": "chinese type"
+    },
+    {
+      "label": "Layout",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L251",
+      "_origin": "ast",
+      "id": "design_layout",
+      "community": 6,
+      "norm_label": "layout"
+    },
+    {
+      "label": "Page flow",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L259",
+      "_origin": "ast",
+      "id": "design_page_flow",
+      "community": 6,
+      "norm_label": "page flow"
+    },
+    {
+      "label": "Grid patterns",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L263",
+      "_origin": "ast",
+      "id": "design_grid_patterns",
+      "community": 6,
+      "norm_label": "grid patterns"
+    },
+    {
+      "label": "Elevation & Depth",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L274",
+      "_origin": "ast",
+      "id": "design_elevation_depth",
+      "community": 2,
+      "norm_label": "elevation & depth"
+    },
+    {
+      "label": "Shapes",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L285",
+      "_origin": "ast",
+      "id": "design_shapes",
+      "community": 2,
+      "norm_label": "shapes"
+    },
+    {
+      "label": "Animations",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L293",
+      "_origin": "ast",
+      "id": "design_animations",
+      "community": 2,
+      "norm_label": "animations"
+    },
+    {
+      "label": "Negative space",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L305",
+      "_origin": "ast",
+      "id": "design_negative_space",
+      "community": 2,
+      "norm_label": "negative space"
+    },
+    {
+      "label": "Components",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L309",
+      "_origin": "ast",
+      "id": "design_components",
+      "community": 1,
+      "norm_label": "components"
+    },
+    {
+      "label": "Navigation",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L311",
+      "_origin": "ast",
+      "id": "design_navigation",
+      "community": 1,
+      "norm_label": "navigation"
+    },
+    {
+      "label": "Hero",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L316",
+      "_origin": "ast",
+      "id": "design_hero",
+      "community": 1,
+      "norm_label": "hero"
+    },
+    {
+      "label": "Mission Cards (About section)",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L325",
+      "_origin": "ast",
+      "id": "design_mission_cards_about_section",
+      "community": 1,
+      "norm_label": "mission cards (about section)"
+    },
+    {
+      "label": "Dark Section Cards (VergeOps)",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L332",
+      "_origin": "ast",
+      "id": "design_dark_section_cards_vergeops",
+      "community": 1,
+      "norm_label": "dark section cards (vergeops)"
+    },
+    {
+      "label": "Pillar Cards (Edge AI Home)",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L340",
+      "_origin": "ast",
+      "id": "design_pillar_cards_edge_ai_home",
+      "community": 1,
+      "norm_label": "pillar cards (edge ai home)"
+    },
+    {
+      "label": "Product Cards (Edge AI Home sub-products)",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L348",
+      "_origin": "ast",
+      "id": "design_product_cards_edge_ai_home_sub_products",
+      "community": 1,
+      "norm_label": "product cards (edge ai home sub-products)"
+    },
+    {
+      "label": "Technology Cards",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L355",
+      "_origin": "ast",
+      "id": "design_technology_cards",
+      "community": 1,
+      "norm_label": "technology cards"
+    },
+    {
+      "label": "Contact Cards",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L358",
+      "_origin": "ast",
+      "id": "design_contact_cards",
+      "community": 1,
+      "norm_label": "contact cards"
+    },
+    {
+      "label": "Footer",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L361",
+      "_origin": "ast",
+      "id": "design_footer",
+      "community": 1,
+      "norm_label": "footer"
+    },
+    {
+      "label": "Sticky Mobile CTA Bar",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L364",
+      "_origin": "ast",
+      "id": "design_sticky_mobile_cta_bar",
+      "community": 1,
+      "norm_label": "sticky mobile cta bar"
+    },
+    {
+      "label": "Language System",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L367",
+      "_origin": "ast",
+      "id": "design_language_system",
+      "community": 2,
+      "norm_label": "language system"
+    },
+    {
+      "label": "Product catalogue pages",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L376",
+      "_origin": "ast",
+      "id": "design_product_catalogue_pages",
+      "community": 2,
+      "norm_label": "product catalogue pages"
+    },
+    {
+      "label": "Do's and Don'ts",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L380",
+      "_origin": "ast",
+      "id": "design_do_s_and_don_ts",
+      "community": 2,
+      "norm_label": "do's and don'ts"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 3,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Verge AI \u5b98\u65b9\u7db2\u7ad9",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme_verge_ai_\u5b98\u65b9\u7db2\u7ad9",
+      "community": 3,
+      "norm_label": "verge ai \u5b98\u65b9\u7db2\u7ad9"
+    },
+    {
+      "label": "\u6a94\u6848\u7d50\u69cb",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "readme_\u6a94\u6848\u7d50\u69cb",
+      "community": 3,
+      "norm_label": "\u6a94\u6848\u7d50\u69cb"
+    },
+    {
+      "label": "SEO \u512a\u5316\u5167\u5bb9",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "readme_seo_\u512a\u5316\u5167\u5bb9",
+      "community": 3,
+      "norm_label": "seo \u512a\u5316\u5167\u5bb9"
+    },
+    {
+      "label": "\u6280\u8853\u898f\u683c",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "readme_\u6280\u8853\u898f\u683c",
+      "community": 3,
+      "norm_label": "\u6280\u8853\u898f\u683c"
+    },
+    {
+      "label": "\u8a9e\u8a00\u7cfb\u7d71",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "readme_\u8a9e\u8a00\u7cfb\u7d71",
+      "community": 3,
+      "norm_label": "\u8a9e\u8a00\u7cfb\u7d71"
+    },
+    {
+      "label": "\u9801\u9762\u7d50\u69cb",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "readme_\u9801\u9762\u7d50\u69cb",
+      "community": 3,
+      "norm_label": "\u9801\u9762\u7d50\u69cb"
+    },
+    {
+      "label": "\u90e8\u7f72\u65b9\u5f0f",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "readme_\u90e8\u7f72\u65b9\u5f0f",
+      "community": 3,
+      "norm_label": "\u90e8\u7f72\u65b9\u5f0f"
+    },
+    {
+      "label": "seo-submission-guide.md",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "seo_submission_guide",
+      "community": 0,
+      "norm_label": "seo-submission-guide.md"
+    },
+    {
+      "label": "SEO Submission Guide \u2014 www.vergeai.net",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "seo_submission_guide_seo_submission_guide_www_vergeai_net",
+      "community": 0,
+      "norm_label": "seo submission guide \u2014 www.vergeai.net"
+    },
+    {
+      "label": "\u2705 Already done (preparation)",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "seo_submission_guide_already_done_preparation",
+      "community": 0,
+      "norm_label": "\u2705 already done (preparation)"
+    },
+    {
+      "label": "\ud83d\udccb Google Search Console",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "seo_submission_guide_google_search_console",
+      "community": 0,
+      "norm_label": "\ud83d\udccb google search console"
+    },
+    {
+      "label": "What I prepared:",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "seo_submission_guide_what_i_prepared",
+      "community": 0,
+      "norm_label": "what i prepared:"
+    },
+    {
+      "label": "What you need to do:",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "seo_submission_guide_what_you_need_to_do",
+      "community": 0,
+      "norm_label": "what you need to do:"
+    },
+    {
+      "label": "\ud83d\udccb Baidu\uff08\u767e\u5ea6\u7ad9\u9577\u5e73\u53f0\uff09",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "seo_submission_guide_baidu_\u767e\u5ea6\u7ad9\u9577\u5e73\u53f0",
+      "community": 0,
+      "norm_label": "\ud83d\udccb baidu(\u767e\u5ea6\u7ad9\u9577\u5e73\u53f0)"
+    },
+    {
+      "label": "Important finding:",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "seo_submission_guide_important_finding",
+      "community": 0,
+      "norm_label": "important finding:"
+    },
+    {
+      "label": "What I prepared:",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "seo_submission_guide_what_i_prepared_36",
+      "community": 0,
+      "norm_label": "what i prepared:"
+    },
+    {
+      "label": "What you need to do (if targeting China):",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "seo_submission_guide_what_you_need_to_do_if_targeting_china",
+      "community": 0,
+      "norm_label": "what you need to do (if targeting china):"
+    },
+    {
+      "label": "\ud83d\udccb Bing Webmaster Tools (optional)",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "seo_submission_guide_bing_webmaster_tools_optional",
+      "community": 0,
+      "norm_label": "\ud83d\udccb bing webmaster tools (optional)"
+    },
+    {
+      "label": "\u26a1 Speed checklist",
+      "file_type": "document",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "seo_submission_guide_speed_checklist",
+      "community": 0,
+      "norm_label": "\u26a1 speed checklist"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L293",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_animations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_brand_style",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_colors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L309",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L380",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_do_s_and_don_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L274",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_elevation_depth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L367",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_language_system",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L251",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_layout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L305",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_negative_space",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L376",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_product_catalogue_pages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L285",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_shapes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "design",
+      "target": "design_typography",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_accent_palette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_core_palette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_section_backgrounds",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_section_transition_system",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L247",
+      "weight": 1.0,
+      "source": "design_typography",
+      "target": "design_chinese_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L236",
+      "weight": 1.0,
+      "source": "design_typography",
+      "target": "design_type_scale_philosophy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L263",
+      "weight": 1.0,
+      "source": "design_layout",
+      "target": "design_grid_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L259",
+      "weight": 1.0,
+      "source": "design_layout",
+      "target": "design_page_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L358",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_contact_cards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L332",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_dark_section_cards_vergeops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L361",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L316",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_hero",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L325",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_mission_cards_about_section",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L311",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_navigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L340",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_pillar_cards_edge_ai_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L348",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_product_cards_edge_ai_home_sub_products",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L364",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_sticky_mobile_cta_bar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_technology_cards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "readme_verge_ai_\u5b98\u65b9\u7db2\u7ad9",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "readme_verge_ai_\u5b98\u65b9\u7db2\u7ad9",
+      "target": "readme_seo_\u512a\u5316\u5167\u5bb9",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "readme_verge_ai_\u5b98\u65b9\u7db2\u7ad9",
+      "target": "readme_\u6280\u8853\u898f\u683c",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "readme_verge_ai_\u5b98\u65b9\u7db2\u7ad9",
+      "target": "readme_\u6a94\u6848\u7d50\u69cb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "readme_verge_ai_\u5b98\u65b9\u7db2\u7ad9",
+      "target": "readme_\u8a9e\u8a00\u7cfb\u7d71",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "readme_verge_ai_\u5b98\u65b9\u7db2\u7ad9",
+      "target": "readme_\u90e8\u7f72\u65b9\u5f0f",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "readme_verge_ai_\u5b98\u65b9\u7db2\u7ad9",
+      "target": "readme_\u9801\u9762\u7d50\u69cb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "seo_submission_guide",
+      "target": "seo_submission_guide_seo_submission_guide_www_vergeai_net",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "seo_submission_guide_seo_submission_guide_www_vergeai_net",
+      "target": "seo_submission_guide_already_done_preparation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "seo_submission_guide_seo_submission_guide_www_vergeai_net",
+      "target": "seo_submission_guide_baidu_\u767e\u5ea6\u7ad9\u9577\u5e73\u53f0",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "seo_submission_guide_seo_submission_guide_www_vergeai_net",
+      "target": "seo_submission_guide_bing_webmaster_tools_optional",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "seo_submission_guide_seo_submission_guide_www_vergeai_net",
+      "target": "seo_submission_guide_google_search_console",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "seo_submission_guide_seo_submission_guide_www_vergeai_net",
+      "target": "seo_submission_guide_speed_checklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "seo_submission_guide_google_search_console",
+      "target": "seo_submission_guide_what_i_prepared",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "seo_submission_guide_google_search_console",
+      "target": "seo_submission_guide_what_you_need_to_do",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "seo_submission_guide_baidu_\u767e\u5ea6\u7ad9\u9577\u5e73\u53f0",
+      "target": "seo_submission_guide_important_finding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "seo_submission_guide_baidu_\u767e\u5ea6\u7ad9\u9577\u5e73\u53f0",
+      "target": "seo_submission_guide_what_i_prepared_36",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seo-submission-guide.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "seo_submission_guide_baidu_\u767e\u5ea6\u7ad9\u9577\u5e73\u53f0",
+      "target": "seo_submission_guide_what_you_need_to_do_if_targeting_china",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "28ea79f604fdff56a89d7aed398656aaac0ffe17"
+}

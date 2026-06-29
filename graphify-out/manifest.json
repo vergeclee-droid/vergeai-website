@@ -1,0 +1,192 @@
+{
+  ".github/workflows/azure-static-web-apps-gray-field-099848900.yml": {
+    "mtime": 1779509066.5969799,
+    "ast_hash": "3f883d476dd3d1a126353dc3062874d4",
+    "semantic_hash": ""
+  },
+  ".github/workflows/azure-static-web-apps-mango-coast-03e179d00.yml": {
+    "mtime": 1779646740.745432,
+    "ast_hash": "f5750e676d527987bcab6630a3e01a9b",
+    "semantic_hash": ""
+  },
+  "DESIGN.md": {
+    "mtime": 1782756649.272091,
+    "ast_hash": "8b5ae917ae448afc254d699c7ef97c30",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1779404590.6930256,
+    "ast_hash": "65ebce485f17af527cdb0991c5e8360b",
+    "semantic_hash": ""
+  },
+  "catalogue-elderly-buddy.html": {
+    "mtime": 1781209479.0078714,
+    "ast_hash": "823f14f93235150609c0cabaf21c1972",
+    "semantic_hash": ""
+  },
+  "catalogue-home-hub.html": {
+    "mtime": 1781209273.918872,
+    "ast_hash": "b2690db46b1eb29541cf9364b40cd36d",
+    "semantic_hash": ""
+  },
+  "catalogue-kitchen-agent.html": {
+    "mtime": 1781209323.509872,
+    "ast_hash": "994650331d301746f8e7a32d1303b1e5",
+    "semantic_hash": ""
+  },
+  "catalogue-pet-buddy.html": {
+    "mtime": 1781209423.1058714,
+    "ast_hash": "a47ab4ee7e92eab749b2745d97db51e6",
+    "semantic_hash": ""
+  },
+  "catalogue-smart-mirror.html": {
+    "mtime": 1781209218.1888723,
+    "ast_hash": "ed34f2d8ecd0e30b273eb4a156b424e2",
+    "semantic_hash": ""
+  },
+  "catalogue-study-buddy.html": {
+    "mtime": 1781209368.9258718,
+    "ast_hash": "17e34de8ed4a257dbf5ad52b3886ae7e",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1781211070.8888655,
+    "ast_hash": "7f3cd4a19ec9f184cb24504ae5fd1d65",
+    "semantic_hash": ""
+  },
+  "robots.txt": {
+    "mtime": 1779648832.9994242,
+    "ast_hash": "79805ced33683323a890074bd4499feb",
+    "semantic_hash": ""
+  },
+  "seo-submission-guide.md": {
+    "mtime": 1779646783.7214317,
+    "ast_hash": "2fd2c2052eadb6d6ece63b2936085ee1",
+    "semantic_hash": ""
+  },
+  "dns_screenshot.jpg": {
+    "mtime": 1779646740.7794318,
+    "ast_hash": "3a4484bac95c3af37f8cc873b2b8b7d8",
+    "semantic_hash": ""
+  },
+  "favicon.svg": {
+    "mtime": 1781208125.8298764,
+    "ast_hash": "9da1527546e01d98eab05d6a41790cc0",
+    "semantic_hash": ""
+  },
+  "logo-nav.png": {
+    "mtime": 1779211819.2317786,
+    "ast_hash": "4b00c0d0402406ac144e6d44c5eeff25",
+    "semantic_hash": ""
+  },
+  "logo.png": {
+    "mtime": 1781211051.212865,
+    "ast_hash": "2936ce3791f32ffb0f2919df0b795818",
+    "semantic_hash": ""
+  },
+  "mockups/elderly-buddy/elderly-1-hero-bedside.jpg": {
+    "mtime": 1779489664.5490537,
+    "ast_hash": "629327d0fe2a67a0a2bb11ada5e74c4c",
+    "semantic_hash": ""
+  },
+  "mockups/elderly-buddy/elderly-2-grandma-companion.jpg": {
+    "mtime": 1779489664.5490537,
+    "ast_hash": "cb78a3aad83ae5edc72112a4b1bf2add",
+    "semantic_hash": ""
+  },
+  "mockups/elderly-buddy/elderly-3-night-guardian.jpg": {
+    "mtime": 1779489664.5490537,
+    "ast_hash": "1afcabb8a41668779d49dfcc8a1f9dc7",
+    "semantic_hash": ""
+  },
+  "mockups/elderly-buddy/elderly-4-health-monitor.jpg": {
+    "mtime": 1779489664.5490537,
+    "ast_hash": "58e0168ed937695ccc15c82d09a03fa2",
+    "semantic_hash": ""
+  },
+  "mockups/home-hub/hub-1-transparent-display.jpg": {
+    "mtime": 1779489664.5460536,
+    "ast_hash": "1bb195f204b087afc4eaf85955b90388",
+    "semantic_hash": ""
+  },
+  "mockups/home-hub/hub-2-smart-home-control.jpg": {
+    "mtime": 1779489664.5460536,
+    "ast_hash": "0c514dadde53fee66bbec33c1b9f2f8a",
+    "semantic_hash": ""
+  },
+  "mockups/home-hub/hub-3-side-profile.jpg": {
+    "mtime": 1779489664.5460536,
+    "ast_hash": "19ef75ba75bcd1dec1f91e2cdf6a420f",
+    "semantic_hash": ""
+  },
+  "mockups/home-hub/hub-4-nas-admin.jpg": {
+    "mtime": 1779489664.5460536,
+    "ast_hash": "3ba5c46e37c62b8d06abe2abdb913777",
+    "semantic_hash": ""
+  },
+  "mockups/kitchen-agent/kitchen-1-fridge-mount.jpg": {
+    "mtime": 1779489664.5380538,
+    "ast_hash": "977493284fc13dcfa313274d11ed1dc5",
+    "semantic_hash": ""
+  },
+  "mockups/kitchen-agent/kitchen-2-nutrition-scan.jpg": {
+    "mtime": 1779489664.5380538,
+    "ast_hash": "082743f922cd27827e37c0e906d38674",
+    "semantic_hash": ""
+  },
+  "mockups/kitchen-agent/kitchen-3-voice-timers.jpg": {
+    "mtime": 1779489664.5380538,
+    "ast_hash": "3bcb16ce2ab3d87745cbaac6d5e5949b",
+    "semantic_hash": ""
+  },
+  "mockups/pet-buddy/pet-1-dog-tracking.jpg": {
+    "mtime": 1779489664.5430536,
+    "ast_hash": "d4c7da8f9d1e8c042680c347f37dc3d0",
+    "semantic_hash": ""
+  },
+  "mockups/pet-buddy/pet-2-cat-health-alert.jpg": {
+    "mtime": 1779489664.5430536,
+    "ast_hash": "0ac3664a66d6cf973579d59bcd68adef",
+    "semantic_hash": ""
+  },
+  "mockups/pet-buddy/pet-3-night-vision.jpg": {
+    "mtime": 1779489664.5430536,
+    "ast_hash": "0b6f9be8c43b0a80c2a7ac5bcc651121",
+    "semantic_hash": ""
+  },
+  "mockups/smart-mirror/smart-mirror-1-vanity.jpg": {
+    "mtime": 1779489664.5340538,
+    "ast_hash": "9d33b57dc3d951dae92b44643639950d",
+    "semantic_hash": ""
+  },
+  "mockups/smart-mirror/smart-mirror-2-makeup-ar.jpg": {
+    "mtime": 1779489664.5340538,
+    "ast_hash": "0dab82a4b1e5069142db4bef6b098978",
+    "semantic_hash": ""
+  },
+  "mockups/smart-mirror/smart-mirror-3-bathroom-health.jpg": {
+    "mtime": 1779489664.5340538,
+    "ast_hash": "17fb7124f2dd907778f6292712b7a30a",
+    "semantic_hash": ""
+  },
+  "mockups/study-buddy/study-1-desktop-companion.jpg": {
+    "mtime": 1779489664.5400538,
+    "ast_hash": "1e557b67d953a6ba58bd211fd342a3e0",
+    "semantic_hash": ""
+  },
+  "mockups/study-buddy/study-2-emotional-support.jpg": {
+    "mtime": 1779489664.5400538,
+    "ast_hash": "187539c86599a6b5f8b12be66ad588aa",
+    "semantic_hash": ""
+  },
+  "mockups/study-buddy/study-3-memory-progress.jpg": {
+    "mtime": 1779489664.5400538,
+    "ast_hash": "2087a10ac97f09af5100a8f5440dda68",
+    "semantic_hash": ""
+  },
+  "vision_test.jpg": {
+    "mtime": 1779646740.8094318,
+    "ast_hash": "3a4484bac95c3af37f8cc873b2b8b7d8",
+    "semantic_hash": ""
+  }
+}

@@ -1,0 +1,38 @@
+# Verge AI — Edge Intelligence, Within Reach
+
+> Building the Edge AI Ecosystem — From Enterprise to Home
+
+## About
+Verge AI (蔚科融智（深圳）科技有限公司 / Verge AI Limited) develops edge AI hardware and software that runs 100% on-device — no cloud dependency. From enterprise operations to consumer homes, every product is designed around privacy, real-time performance, and intelligent autonomy.
+
+## Products
+
+### Enterprise
+- **VergeOps AI Appliance** — Turnkey private AI for enterprise IT operations. Root cause analysis, smart ticketing, SLA guardian, security autonomous defense. Air-gapped, deployment-ready.
+
+### Edge AI Home Series (Hub + Satellite Architecture)
+- **Edge AI Home Hub** — Central brain with 3B–7B SLM compute, NAS storage, transparent holographic display. Powers all satellite devices.
+- **AI Smart Mirror** — Beauty & health mirror with visual-feedback AI, makeup guidance, skin analysis.
+- **AI Kitchen Agent** — Intelligent sous-chef with vision-based ingredient scanning, voice navigation, calorie analysis.
+- **AI Study Buddy** — Personalized learning companion with long-term memory and emotional intelligence.
+- **AI Pet Buddy** — Pet health monitor with anomaly detection, gait analysis, 24/7 health tracking.
+- **AI Elderly Buddy** — Emotional companion with fall detection, health monitoring, dialect support.
+
+### Robotics
+- **Verge Robotics** — Purpose-built delivery (Verge Carry) and cleaning (Verge Scrub) robots for hospitality, healthcare, and commercial spaces.
+
+## Tech Stack
+- **Private LLM**: 70B–405B on-prem, 1B–7B on-device. Hot-swappable models.
+- **aiDAPTIV+**: Virtual GPU memory via SSD — up to 8TB at 1/2000th the cost of HBM.
+- **Verge Agentic OS**: 3-tier multi-agent: Commander → Expert → Operator.
+- **METIS Platform**: No-code AI designer. Cloud or on-prem, zero-code app creation.
+
+## Contact
+- Email: contact.us@vergeai.net
+- Shenzhen Office: 蔚科融智（深圳）科技有限公司, 前海香江金融大廈 1509-004P
+- Hong Kong Office: Verge AI Limited, Kwun Tong, Kowloon
+- Website: https://www.vergeai.net/
+
+---
+
+For the full content dump, see [llms-full.txt](https://www.vergeai.net/llms-full.txt).

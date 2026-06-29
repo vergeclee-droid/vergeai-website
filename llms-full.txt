@@ -1,0 +1,215 @@
+# Verge AI — Full Site Content
+
+> **Edge Intelligence, Within Reach** · 边缘智能，触手可及 · 邊緣智能，觸手可及
+
+**Company**: Verge AI Limited / 蔚科融智（深圳）科技有限公司
+**Offices**: Shenzhen (前海香江金融大廈 1509-004P) & Hong Kong (Kwun Tong, Kowloon)
+**Contact**: contact.us@vergeai.net
+**Website**: https://www.vergeai.net/
+**Founded**: 2026-03-26
+
+---
+
+## 1. About / Mission
+
+Verge AI is on a mission to make advanced AI capabilities private, secure, and real-time — by running them at the edge. From enterprise operations to everyday life at home, they build intelligent systems that respect your data and deliver when milliseconds matter.
+
+**Core Principles**:
+- **100% Private**: All inference runs on-device. No cloud, no leaks, full compliance with PIPL, MLPS 2.0, and EU AI Act.
+- **Real-Time Edge**: Millisecond decision-making at the source. No round-trips to distant clouds, no latency compromises.
+- **Shared Intelligence**: Hub + Satellite architecture. A shared intelligence layer that makes every device smarter over time.
+
+**Tagline**: "What happens at home, stays at home."
+
+---
+
+## 2. Products
+
+### 2.1 VergeOps AI Appliance (B2B Enterprise)
+
+Turnkey private AI for enterprise IT operations — purpose-built, air-gapped, and deployment-ready.
+
+**Use Cases**:
+
+#### Root Cause Analysis
+Reads logs, SLA metrics, and historical tickets to pinpoint failures in seconds. Auto-generates remediation scripts or restart commands.
+- Metric: 8-minute threat-to-report cycle
+
+#### Smart Ticketing
+Multi-format OCR for invoices, POs, and inspection forms. Natural language ticket creation with auto-SOP resolution in 3 seconds.
+- Metric: Error rate -70%
+
+#### SLA Guardian
+Proactive resource bottleneck prediction. Auto-suggests scaling or failover. Ensures 99.99% high availability.
+- Metric: 480x faster than manual
+
+#### Security Autonomous Defense
+8 digital avatars covering anomaly login detection, suspicious account lockdown, infected endpoint isolation, and ISO 27001 auto-reporting.
+- Metric: 98% faster response
+
+### 2.2 Edge AI Home Series (B2C Consumer)
+
+A Hub + Satellite ecosystem where one central Home Hub powers an entire family of edge-native agents — all running 100% on-device, with zero cloud dependency.
+
+#### Edge AI Home Hub
+The Central Nervous System of Your Smart Home. Edge SLM compute + NAS + transparent holographic display.
+- **Display**: 17" transparent OLED, 1920×1080, dual-sided, 2000:1 contrast
+- **Dimensions**: 420×280×25mm (ultra-slim)
+- **AI Compute**: RK3588 (6 TOPS NPU) + optional NVIDIA Jetson Orin NX (100 TOPS)
+- **SLM Inference**: Qwen3-2B/4B W8A8 @ NPU (11.5 t/s), Qwen3-8B W4A16 @ CPU (~8 t/s)
+- **Storage (NAS)**: NVMe SSD 512GB / 1TB / 2TB, AES-256 + TPM encryption
+- **Memory**: 16GB–32GB LPDDR4x
+- **Connectivity**: WiFi 6 + BLE 5.3 + Zigbee 3.0 (smart home hub) + 2× USB-C + HDMI 2.1
+- **Satellite Protocol**: WebSocket Agent Protocol, encrypted local-only, zero-config pairing
+- **Speech**: SenseVoice Small @ NPU (~150ms) — Cantonese + Mandarin + English; CosyVoice @ CPU (~300ms)
+- **Sensors**: mmWave presence radar (60GHz), ambient light, temperature, humidity
+- **Audio**: Omnidirectional far-field mic array (6-mic) + front-firing stereo speakers
+- **Power**: 12V/3A DC, idle 5W, active 25W, max 65W (with Jetson module)
+- **Cloud Fallback**: DeepSeek V4-Flash / Qwen3.6-Plus (optional)
+- **Design Philosophy**: Offline First, Invisible Interface, Unified Data, Privacy by Design
+
+#### AI Smart Mirror
+Personal Beauty & Health Concierge — Real-time Visual AI analysis with 100% edge-local privacy.
+- **Display**: 12"–15" semi-transparent mirror display, 4:3 aspect ratio, ≤15mm ultra-slim
+- **Camera System**: Dual cameras — main RGB (AF, portrait analysis) + 120° wide-angle (full-body, hairstyle)
+- **Lighting**: Adjustable color-temperature LED Ring
+- **AI SoC**: RK3588 (6 TOPS NPU) + ESP32-S3 (always-on sensor hub)
+- **SLM Inference**: Qwen3-2B W8A8 @ NPU (11.5 t/s)
+- **Computer Vision**: MediaPipe + OpenCV + RetinaFace @ NPU — facial landmarks, skin analysis
+- **AR Rendering**: Mali-G610 GPU (Vulkan 1.2) — real-time makeup overlay
+- **Speech**: SenseVoice Small @ NPU (~150ms) — Cantonese + Mandarin; CosyVoice / MeloTTS @ CPU (~300ms)
+- **Privacy**: Physical mechanical privacy shutter + local RAM buffer + red LED indicator
+- **Colors**: Rose Gold, Matte White (Nordic), Space Gray
+- **Materials**: Anodized aluminum frame, tempered glass surface
+- **Use Cases**: Morning Health Quick-Check, Real-Time Makeup Guidance, Virtual Makeup Try-On, 7-Day Trend Analysis
+- **Design Philosophy**: See Yourself Differently, Privacy as Luxury, Zero-Learn, Daily Ritual
+
+#### AI Kitchen Agent
+Intelligent Sous-Chef — Deep reasoning + visual perception for the modern kitchen.
+- **Display**: 7"–10" IPS touchscreen, 1280×800, anti-fingerprint coating
+- **Camera System**: Dual cameras — 12MP RGB (main food scan) + 5MP NIR (freshness analysis), adjustable dual-joint arm
+- **AI Compute**: RK3588 (6 TOPS NPU) for standalone OR ESP32-S3 (satellite to Home Hub)
+- **SLM Inference**: Qwen3-2B W8A8 @ NPU (11.5 t/s) — recipe reasoning, step-by-step navigation
+- **Computer Vision**: OpenCV + custom food recognition model @ NPU — 600+ ingredient types
+- **NIR Sensor**: 730–1100nm spectral — freshness, ripeness, sugar content estimation
+- **Speech**: SenseVoice Small @ NPU (~150ms); CosyVoice @ CPU (~300ms)
+- **Ingredient Database**: 600+ ingredients, 10,000+ recipes — local SQLite
+- **Nutrition Accuracy**: ±5% for known ingredients, ±15% for novel foods
+- **Audio**: Far-field mic array (4-mic) + front speaker (3W)
+- **Connectivity**: WiFi 6 + BLE 5.3 + WebSocket Agent Protocol
+- **Privacy**: Physical mechanical privacy shutter + red LED indicator
+- **Use Cases**: Zero-Waste Mode, Multi-Timer Orchestration, Visual Calorie Estimation, Smart Grocery & Price Comparison
+- **Design Philosophy**: Zero-Waste, Hands-Free, Nutrition Intelligence, Always Ready
+
+#### AI Study Buddy
+Personal AI Tutor — Long-term memory meets emotional intelligence in a desktop companion.
+- **Display**: 6"–8" touchscreen, anti-glare, rounded edges
+- **Form Factor**: Desktop, round soft-rubber bumper (child-safe), adjustable angle stand
+- **Colors**: Vibrant Blue / Mint Green / Sunshine Yellow
+- **Weight**: ~300–500g
+- **Battery**: Built-in lithium, 8h+ battery life
+- **AI SoC**: RK3588 (6 TOPS NPU) + ESP32-S3 (standalone); ESP32-S3 only (satellite to Home Hub)
+- **SLM Inference**: Qwen3-2B W8A8 @ RK3588 NPU (11.5 t/s)
+- **Emotion Sensing**: OpenCV + Audio Sentiment — expression + voice tone analysis
+- **Speech**: SenseVoice Small @ NPU (~150ms) — Cantonese + Mandarin; CosyVoice @ CPU (~300ms)
+- **Memory Storage**: SQLite (local) + Hub Sync — full learning history + error graph
+- **Safety Design**: No sharp edges, no camera streaming, anti-glare screen
+- **Cloud Fallback**: DeepSeek V4-Flash / Qwen3.6-Plus (optional)
+- **Use Cases**: Long-Term Memory Tutor, Emotion-Aware Learning, Smart Error Notebook, Weekly Progress Report
+- **Design Philosophy**: Companion, Scaffolding, Positive Reinforcement, Parent Partnership
+
+#### AI Pet Buddy
+Pet Wellness Guardian — Edge-based animal behavior AI with 24/7 health tracking.
+- **Camera**: 4K RGB (SONY IMX678) + starlight CMOS, 2-axis PTZ (pan 360°, tilt 120°)
+- **Night Vision**: 8× IR LED array, 940nm invisible, effective range 10m
+- **AI Compute**: RK3588 (6 TOPS NPU) for standalone OR ESP32-S3 (satellite to Home Hub)
+- **Computer Vision**: OpenCV + custom animal behavior model @ NPU
+- **Multi-Pet Support**: Up to 5 pets — facial recognition + individual baselines
+- **Alert Levels**: 3 tiers — 🟡 Mild (>1σ), 🟠 Moderate (>2σ), 🔴 Emergency (>3σ deviation)
+- **Audio**: Dual microphones (voice command + howl/whine detection) + speaker
+- **Connectivity**: WiFi 6 + BLE 5.3 + WebSocket Agent Protocol
+- **Storage**: Local microSD (32GB) — 30-day behavior log + trend data
+- **Power**: 5V/2A USB-C or battery base (6h battery)
+- **Dimensions**: 120×100×150mm, ~450g
+- **Use Cases**: Anomaly Behavior Alert, Gait Analysis, Remote Interactive Play, Weekly Wellness Report
+- **Design Philosophy**: Watch Don't Record, Subtle Intelligence, Health First, Natural Interaction
+
+#### AI Elderly Buddy
+Emotional Companion + Fall Detection + Health Monitoring — 100% offline, all-in-one desktop guardian for seniors.
+- **Form Factor**: Desktop companion, 160×140×180mm, warm white + wood-textured base
+- **Display**: 4" circular LCD, 800×800, animated expression face + status info
+- **Radar Sensor**: 60GHz mmWave (presence, fall detection, respiration rate, <200ms trigger)
+- **Camera**: 5MP RGB, f/1.8, 80° FoV, with privacy shutter (HW)
+- **AI Compute**: RK3588 (6 TOPS NPU) for standalone OR ESP32-S3 (satellite to Home Hub)
+- **SLM Inference**: Qwen3-2B W8A8 @ RK3588 NPU (11.5 t/s) — empathetic dialogue
+- **Language Support**: Cantonese, Mandarin, Sichuanese (ASR + TTS)
+- **Health Monitoring**: rPPG (HR ±3bpm, RR ±2bpm, SpO₂ ±2%), mmWave (respiration, presence)
+- **Fall Detection Accuracy**: >99% (fusion of radar + CV), <1 false alarm/month
+- **Escalation**: 3-stage — voice check → family push notification → auto-dial emergency contacts
+- **Lighting**: RGB breathing ring (mood indicator), warm amber LED (nightlight mode)
+- **Audio**: Speaker (2W) + far-field mic array for voice pickup up to 5m
+- **Connectivity**: WiFi 6 + BLE 5.3 + 4G LTE (optional, for fallback emergency calling)
+- **Power**: 5V/2A USB-C, battery backup (2h, for fall detection during power outage)
+- **Certifications**: FCC, CE, SRRC, BQB, MLPS 2.0 Ready
+- **Use Cases**: Dual-Sensor Fall Detection, Emotional Companion with Dialect, 30-Second Health Check, Family Connection App
+- **Design Philosophy**: Aging with Dignity, Double Detection, Privacy is Safety, Warm Presence
+
+### 2.3 Verge Robotics (B2B Robotics)
+
+Intelligent service robots for real-world environments. Purpose-built delivery and cleaning robots engineered for hospitality, healthcare, and commercial spaces — ODM from China's leading robotics manufacturers, purpose-built for global markets.
+
+#### Verge Carry
+Multi-floor autonomous delivery for restaurants, hotels, and hospitals. Smart tray, cabinet, and drawer configurations. Dynamic obstacle avoidance, voice interaction, and 24/7 autonomous operation.
+- Metric: 4+ hrs battery · 50 kg payload
+
+#### Verge Scrub
+Intelligent floor scrubbing for commercial spaces — malls, offices, airports, and warehouses. SLAM-based navigation, auto-charging, multi-zone scheduling, and real-time fleet management.
+- Metric: 3 hrs runtime · 2,000 m²/h coverage
+
+---
+
+## 3. Technology Stack
+
+### Private LLM
+70B–405B on-prem, 1B–7B on-device. Hot-swappable models. Deployed via VergeOps for enterprise clusters; embedded in Edge AI Home devices via Qwen3-2B/4B/8B quantized models.
+
+### aiDAPTIV+
+Virtual GPU memory via SSD — up to 8TB at 1/2000th the cost of HBM. Enables running large models on modest hardware by extending VRAM through NVMe SSD.
+
+### Verge Agentic OS
+3-tier multi-agent architecture: Commander (strategic reasoning) → Expert (domain-specific analysis) → Operator (tool execution). Orchestrates autonomous IT operations and home intelligence.
+
+### METIS Platform
+No-code AI designer from Dingxin. Cloud or on-prem, zero-code app creation for custom AI workflows.
+
+---
+
+## 4. Contact Information
+
+**Sales / General Inquiries**: contact.us@vergeai.net
+
+**Shenzhen Office**:
+蔚科融智（深圳）科技有限公司
+前海香江金融大廈 1509-004P
+Shenzhen, Guangdong, China
+
+**Hong Kong Office**:
+Verge AI Limited
+Kwun Tong, Kowloon
+Hong Kong
+
+---
+
+## 5. Site Map
+
+- Home: https://www.vergeai.net/ (trilingual: en/zh-Hans/zh-Hant)
+- Smart Mirror: https://www.vergeai.net/catalogue-smart-mirror.html
+- Home Hub: https://www.vergeai.net/catalogue-home-hub.html
+- Kitchen Agent: https://www.vergeai.net/catalogue-kitchen-agent.html
+- Study Buddy: https://www.vergeai.net/catalogue-study-buddy.html
+- Pet Buddy: https://www.vergeai.net/catalogue-pet-buddy.html
+- Elderly Buddy: https://www.vergeai.net/catalogue-elderly-buddy.html
+
+---
+
+*This document is a machine-readable content dump of https://www.vergeai.net/ for LLM consumption.*

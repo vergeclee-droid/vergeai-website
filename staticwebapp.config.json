@@ -1,0 +1,15 @@
+{
+  "routes": [],
+  "responseOverrides": {
+    "200": {
+      "headers": {
+        "X-Robots-Tag": "all",
+        "X-Content-Type-Options": "nosniff"
+      }
+    }
+  },
+  "globalHeaders": {
+    "X-Robots-Tag": "all, follow, index",
+    "Link": "<https://www.vergeai.net/llms.txt>; rel=\"llms-txt\""
+  }
+}
